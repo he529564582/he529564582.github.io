@@ -82,11 +82,11 @@
 <meta name="description" content="扁平化数组的扁平化，就是将一个嵌套多层的数组 array (嵌套可以是任何层数)转换为只有一层的数组。 举个例子，假设有个名为 flatten 的函数可以做到数组扁平化，效果就会如下： var arr = [1, [2, [3, 4]]]; console.log(flatten(arr)) // [1, 2, 3, 4] 知道了效果是什么样的了，我们可以去尝试着写这个 flatten 函数了 递">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript专题之数组扁平化">
-<meta property="og:url" content="http://hefang.site/Exercise/数组扁平化">
+<meta property="og:url" content="http://hefang.site/js/数组扁平化">
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="扁平化数组的扁平化，就是将一个嵌套多层的数组 array (嵌套可以是任何层数)转换为只有一层的数组。 举个例子，假设有个名为 flatten 的函数可以做到数组扁平化，效果就会如下： var arr = [1, [2, [3, 4]]]; console.log(flatten(arr)) // [1, 2, 3, 4] 知道了效果是什么样的了，我们可以去尝试着写这个 flatten 函数了 递">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T03:37:10.089Z">
+<meta property="og:updated_time" content="2019-05-22T04:09:37.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript专题之数组扁平化">
 <meta name="twitter:description" content="扁平化数组的扁平化，就是将一个嵌套多层的数组 array (嵌套可以是任何层数)转换为只有一层的数组。 举个例子，假设有个名为 flatten 的函数可以做到数组扁平化，效果就会如下： var arr = [1, [2, [3, 4]]]; console.log(flatten(arr)) // [1, 2, 3, 4] 知道了效果是什么样的了，我们可以去尝试着写这个 flatten 函数了 递">
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://hefang.site/Exercise/数组扁平化">
+  <link rel="canonical" href="http://hefang.site/js/数组扁平化">
 
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hefang.site/Exercise/数组扁平化">
+    <link itemprop="mainEntityOfPage" href="http://hefang.site/js/数组扁平化">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="何方">
@@ -304,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Exercise/" itemprop="url" rel="index">
-                    <span itemprop="name">Exercise</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -498,7 +498,7 @@ _.union = function() {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Exercise/js作用域相关介绍" rel="next" title="js作用域">
+              <a href="/js/js作用域相关介绍" rel="next" title="js作用域">
                 <i class="fa fa-chevron-left"></i> js作用域
               </a>
             
@@ -508,7 +508,7 @@ _.union = function() {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Exercise/实现一个flatten函数" rel="prev" title="实现一个flatten函数">
+              <a href="/js/实现一个flatten函数" rel="prev" title="实现一个flatten函数">
                 实现一个flatten函数 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -598,7 +598,7 @@ _.union = function() {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

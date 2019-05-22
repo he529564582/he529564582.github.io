@@ -82,7 +82,7 @@
 <meta name="description" content="例子1function Person(name){     this.name = name;     this.age = age; } Person.prototype.sayName = function(){     console.log(this.name); }  var p1 = new Person(&amp;apos;a&amp;apos;); var p2 = new Person(&amp;apo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型与原型链">
-<meta property="og:url" content="http://hefang.site/Exercise/原型与原型链">
+<meta property="og:url" content="http://hefang.site/js/原型与原型链">
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="例子1function Person(name){     this.name = name;     this.age = age; } Person.prototype.sayName = function(){     console.log(this.name); }  var p1 = new Person(&amp;apos;a&amp;apos;); var p2 = new Person(&amp;apo">
 <meta property="og:locale" content="zh-Hans">
@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://video.jirengu.com/xdml/image/996010fa-de82-489f-9b0a-20943cd224cf/2018-12-11-15-9-42.png">
 <meta property="og:image" content="https://pic1.zhimg.com/b6aa8d4260e78ce3618e0d85febc2bbc_r.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/c2891fbeeb0530ef61885c0e6414170a_r.jpg">
-<meta property="og:updated_time" content="2019-05-22T03:36:52.057Z">
+<meta property="og:updated_time" content="2019-05-22T04:09:13.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型与原型链">
 <meta name="twitter:description" content="例子1function Person(name){     this.name = name;     this.age = age; } Person.prototype.sayName = function(){     console.log(this.name); }  var p1 = new Person(&amp;apos;a&amp;apos;); var p2 = new Person(&amp;apo">
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://hefang.site/Exercise/原型与原型链">
+  <link rel="canonical" href="http://hefang.site/js/原型与原型链">
 
 
 
@@ -257,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hefang.site/Exercise/原型与原型链">
+    <link itemprop="mainEntityOfPage" href="http://hefang.site/js/原型与原型链">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="何方">
@@ -309,8 +309,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Exercise/" itemprop="url" rel="index">
-                    <span itemprop="name">Exercise</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -403,7 +403,7 @@ obj.__proto__..._proto__ === fn.prototype
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Exercise/动画队列" rel="next" title="动画队列">
+              <a href="/jquery/动画队列" rel="next" title="动画队列">
                 <i class="fa fa-chevron-left"></i> 动画队列
               </a>
             
@@ -413,7 +413,7 @@ obj.__proto__..._proto__ === fn.prototype
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Exercise/常见排序算法" rel="prev" title="常见排序算法">
+              <a href="/other/常见排序算法" rel="prev" title="常见排序算法">
                 常见排序算法 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -503,7 +503,7 @@ obj.__proto__..._proto__ === fn.prototype
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

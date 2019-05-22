@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="he&#39;blog">
-<meta property="og:url" content="http://hefang.site/page/2/index.html">
+<meta name="description" content="动画队列jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。 .stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）clearQueue类型: Boolean一个布尔值，指示是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动画队列">
+<meta property="og:url" content="http://hefang.site/jquery/动画队列">
 <meta property="og:site_name" content="he&#39;blog">
+<meta property="og:description" content="动画队列jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。 .stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）clearQueue类型: Boolean一个布尔值，指示是">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-22T04:09:09.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="he&#39;blog">
+<meta name="twitter:title" content="动画队列">
+<meta name="twitter:description" content="动画队列jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。 .stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）clearQueue类型: Boolean一个布尔值，指示是">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://hefang.site/page/2/">
+  <link rel="canonical" href="http://hefang.site/jquery/动画队列">
 
 
 
 
 
-  <title>he'blog</title>
+  <title>动画队列 | he'blog</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,9 +237,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -249,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hefang.site/js/js作用域相关介绍">
+    <link itemprop="mainEntityOfPage" href="http://hefang.site/jquery/动画队列">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="何方">
@@ -266,9 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/js/js作用域相关介绍" itemprop="url">js作用域</a></h1>
+          <h1 class="post-title" itemprop="name headline">动画队列</h1>
         
 
         <div class="post-meta">
@@ -280,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-27T23:27:29+08:00">
-                2018-08-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-26T18:27:29+08:00">
+                2018-10-26
               </time>
             
 
@@ -303,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
                   </a>
                 </span>
 
@@ -340,19 +341,60 @@
       
 
       
-        
-          
-            <h4 id="JavaScript的作用域是什么"><a href="#JavaScript的作用域是什么" class="headerlink" title="JavaScript的作用域是什么"></a>JavaScript的作用域是什么</h4><p>作用域，在维基百科上解释是：在电脑程序设计中，作用域（scope，或译作有效范围）是名字（name）与实体（entity）的绑定（binding）保持有效的那部分计算机程序。<br>简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种，局部作用域又称为函数作用域。</p>
-<h4 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h4><p>在代码中任何地方都能访问到的对象拥有全局作用域，一般来说以下几种情形拥有全局作用域：</p>
-<p>(1）程序最外层定义的函数或者变量<br>var a = “tsrot”;<br>function hello(){<br>    alert(a);<br>}</p>
-<p>function sayHello(){<br>    hello();<br>}</p>
-<p>alert(a);     //能访问到tsrot<br>hello();      //能访问到tsrot<br>sayHello();   //能访问到hello函数，然后也能访问到tsrot<br>（2）所有末定义直接赋值的变量（不推荐）<br>function hello(){<br>    a = “tsrot”;<br>    var b = “hello tsrot”;<br>}</p>
-<p>alert(a);  //能访问到tsrot<br>alert(b);  //error 不能访问<br>（3）所有window对象的属性和方法<br>一般情况下，window对象的内置属性都拥有全局作用域，例如window.name、window.location、window.top等等。</p>
-<h4 id="局部作用域（函数作用域）"><a href="#局部作用域（函数作用域）" class="headerlink" title="局部作用域（函数作用域）"></a>局部作用域（函数作用域）</h4><p>局部作用域在函数内创建，在函数内可访问，函数外不可访问。<br>function hello(){<br>    var a = “tsrot”;<br>    alert(a);<br>}</p>
-<p>hello(); //函数内可访问到tsrot<br>alert(a); //error not defined</p>
+        <h2 id="动画队列"><a href="#动画队列" class="headerlink" title="动画队列"></a>动画队列</h2><p>jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。</p>
+<h3 id="stop-clearQueue-jumpToEnd-（添加版本1-2）"><a href="#stop-clearQueue-jumpToEnd-（添加版本1-2）" class="headerlink" title=".stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）"></a>.stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）</h3><p>clearQueue<br>类型: Boolean<br>一个布尔值，指示是否取消以列队动画。默认 false.<br>jumpToEnd<br>类型: Boolean<br>一个布尔值指示是否当前动画立即完成。默认false.</p>
+<h3 id="stop-queue-clearQueue-jumpToEnd-（添加版本1-7）"><a href="#stop-queue-clearQueue-jumpToEnd-（添加版本1-7）" class="headerlink" title=".stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）"></a>.stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）</h3><p>queue<br>类型: String<br>停止动画队列的名称。<br>clearQueue<br>类型: Boolean<br>一个布尔值，指示是否取消以列队动画。默认 false.<br>jumpToEnd<br>类型: Boolean<br>一个布尔值指示是否当前动画立即完成。默认false.<br>jQuery中有stop这个方法可以停止当前执行的动画，并且它有两个布尔参数，默认值都为false。</p>
+<pre><code>clearQueue(default: false)
+jumpToEnd(default: false)
+</code></pre><p>第一个参数为true时会清空动画队列，第二个参数为true时会瞬间完成掉当前动画。所以，我们经常使用obj.stop(true,true)来停止动画。但是这还不够！正如jQuery文档中的说法，即使第二个参数为true，也仅仅是把当前在执行的动画跳转到完成状态。这时第一个参数如果也为true，后面的队列就会被清空。如果一个效果需要多个动画同时处理，我们仅完成其中的一个而把后面的队列丢弃了，这就会出现意料之外的结果。</p>
+<p>###<br>我们可以看到如下整理结果:</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>stop()</td>
+<td></td>
+<td>清空队列，当前执行动作立即停止。后续动作会不再执行。 等同于：stop(false,false)</td>
+</tr>
+<tr>
+<td>stop(true)</td>
+<td>[clearQueue]</td>
+<td>清空队列，当前执行动作立即停止。后续动作会不再执行</td>
+</tr>
+<tr>
+<td>stop(true,true)</td>
+<td>[clearQueue],[gotoEnd]</td>
+<td>清空队列，当前执行动作<font color="red" size="5">立即完成</font>。后续动作会不再执行</td>
+</tr>
+<tr>
+<td>stop(true,false)</td>
+<td>[clearQueue],[gotoEnd]</td>
+<td>清空队列，当前执行动作立即停止。后续动作会不再执行</td>
+</tr>
+<tr>
+<td>stop(false)</td>
+<td>[clearQueue]</td>
+<td>不清空队列，当前执行动作立即停止。后续动作会立即执行</td>
+</tr>
+<tr>
+<td>stop(false,true)</td>
+<td>[clearQueue],[gotoEnd]</td>
+<td>不清空队列，当前执行动作<font color="red" size="5">立即完成</font>。后续动作会立即执行</td>
+</tr>
+<tr>
+<td>stop(false,false)</td>
+<td>[clearQueue],[gotoEnd]</td>
+<td>不清空队列，当前执行动作立即停止。后续动作会立即执行</td>
+</tr>
+</tbody>
+</table>
 
-          
-        
       
     </div>
     
@@ -369,12 +411,32 @@
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/http/跨域(CORS)" rel="next" title="CORS">
+                <i class="fa fa-chevron-left"></i> CORS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/js/原型与原型链" rel="prev" title="原型与原型链">
+                原型与原型链 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -384,14 +446,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -399,6 +458,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -419,8 +482,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -471,6 +543,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#动画队列"><span class="nav-number">1.</span> <span class="nav-text">动画队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#stop-clearQueue-jumpToEnd-（添加版本1-2）"><span class="nav-number">1.1.</span> <span class="nav-text">.stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stop-queue-clearQueue-jumpToEnd-（添加版本1-7）"><span class="nav-number">1.2.</span> <span class="nav-text">.stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -611,6 +699,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="cors为什么要跨域？跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个">
+<meta name="description" content="实现一个flatten函数实现一个flatten函数，将一个嵌套多层的数组 array（数组） (嵌套可以是任何层数)转换为只有一层的数组，数组中元素仅基本类型的元素或数组，不存在循环引用的情况。 Ex: flatten([1, [2], [3, [[4]]]]) =&amp;gt; [1, 2, 3, 4]; //方法1 var arr = ([1, [2], [3, [[4]]]]) function">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CORS">
-<meta property="og:url" content="http://hefang.site/Exercise/跨域(CORS)">
+<meta property="og:title" content="实现一个flatten函数">
+<meta property="og:url" content="http://hefang.site/js/实现一个flatten函数">
 <meta property="og:site_name" content="he&#39;blog">
-<meta property="og:description" content="cors为什么要跨域？跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个">
+<meta property="og:description" content="实现一个flatten函数实现一个flatten函数，将一个嵌套多层的数组 array（数组） (嵌套可以是任何层数)转换为只有一层的数组，数组中元素仅基本类型的元素或数组，不存在循环引用的情况。 Ex: flatten([1, [2], [3, [[4]]]]) =&amp;gt; [1, 2, 3, 4]; //方法1 var arr = ([1, [2], [3, [[4]]]]) function">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T03:37:43.644Z">
+<meta property="og:updated_time" content="2019-05-22T04:09:22.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CORS">
-<meta name="twitter:description" content="cors为什么要跨域？跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个">
+<meta name="twitter:title" content="实现一个flatten函数">
+<meta name="twitter:description" content="实现一个flatten函数实现一个flatten函数，将一个嵌套多层的数组 array（数组） (嵌套可以是任何层数)转换为只有一层的数组，数组中元素仅基本类型的元素或数组，不存在循环引用的情况。 Ex: flatten([1, [2], [3, [[4]]]]) =&amp;gt; [1, 2, 3, 4]; //方法1 var arr = ([1, [2], [3, [[4]]]]) function">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://hefang.site/Exercise/跨域(CORS)">
+  <link rel="canonical" href="http://hefang.site/js/实现一个flatten函数">
 
 
 
 
 
-  <title>CORS | he'blog</title>
+  <title>实现一个flatten函数 | he'blog</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hefang.site/Exercise/跨域(CORS)">
+    <link itemprop="mainEntityOfPage" href="http://hefang.site/js/实现一个flatten函数">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="何方">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CORS</h1>
+          <h1 class="post-title" itemprop="name headline">实现一个flatten函数</h1>
         
 
         <div class="post-meta">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T16:27:29+08:00">
-                2018-10-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T12:44:29+08:00">
+                2018-09-01
               </time>
             
 
@@ -304,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Exercise/" itemprop="url" rel="index">
-                    <span itemprop="name">Exercise</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -341,56 +341,32 @@
       
 
       
-        <h3 id="cors"><a href="#cors" class="headerlink" title="cors"></a>cors</h3><h4 id="为什么要跨域？"><a href="#为什么要跨域？" class="headerlink" title="为什么要跨域？"></a>为什么要跨域？</h4><p>跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。<br>一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 <a href="https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个有一个不同，就会产生跨域问题。即使是在http://localhost:80/" target="_blank" rel="noopener">https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个有一个不同，就会产生跨域问题。即使是在http://localhost:80/</a> 页面请求<a href="http://127.0.0.1:80" target="_blank" rel="noopener">http://127.0.0.1:80</a> 也会有跨域问题（因为域名不一样嘛~）</p>
-<h4 id="跨域的实现的几种方式"><a href="#跨域的实现的几种方式" class="headerlink" title="跨域的实现的几种方式"></a>跨域的实现的几种方式</h4><h5 id="1、Jsonp"><a href="#1、Jsonp" class="headerlink" title="1、Jsonp"></a>1、Jsonp</h5><p>最常见的一种跨域方式，其背后的原理就是利用script标签不受同源策略的限制，在页面中动态插入script，script标签的src属性就是后端api接口的地址，并且以get的方式将前端回调处理的函数名名告诉后端，后端在响应请求时会将函数回调返回，并且将数据以参数的形式传递回去<br>代码部分：</p>
-<script src="http://api.sta.com/weather.php?callback=showData"></script>
-
-<pre><code>&lt;script&gt;
-    function showData(ret){
-    console.log(ret);
+        <h3 id="实现一个flatten函数"><a href="#实现一个flatten函数" class="headerlink" title="实现一个flatten函数"></a>实现一个flatten函数</h3><p>实现一个flatten函数，将一个嵌套多层的数组 array（数组） (嵌套可以是任何层数)转换为只有一层的数组，数组中元素仅基本类型的元素或数组，不存在循环引用的情况。 Ex: flatten([1, [2], [3, [[4]]]]) =&gt; [1, 2, 3, 4];</p>
+<pre><code>//方法1
+var arr = ([1, [2], [3, [[4]]]])
+function flatten(arr){
+var newArr = []
+function _flat(arr){
+    arr.forEach(val=&gt;{
+    if(Array.isArray(val)){
+        _flat(val)
+    }else{
+        newArr.push(val)
     }
-&lt;/script&gt;
-</code></pre><h5 id="2、CORS"><a href="#2、CORS" class="headerlink" title="2、CORS"></a>2、CORS</h5><p>当使用XMLHttpRequest发送请求是，如果浏览器发现了违反了同源策略就会自动加上一个请求头：origin，后端在接受请求的时候确定响应后会在Response Headers中加入一个熟悉：Access-Control-Allow-Origin，value就是发起请求的源地址 <a href="http://127.0.0.1:8080，浏览器得到响应会继续判断Access-Control—Allow—Origin的值是否和当前的地址相同，只有匹配成功后才进行响应处理" target="_blank" rel="noopener">http://127.0.0.1:8080，浏览器得到响应会继续判断Access-Control—Allow—Origin的值是否和当前的地址相同，只有匹配成功后才进行响应处理</a></p>
-<pre><code>var http = require(&apos;http&apos;)
-var fs = require(&apos;fs&apos;)
-var path = require(&apos;path&apos;)
-var url = require(&apos;url&apos;)
-http.createServer(function(req,res){
-    var pathObj = url.parse(req.url,true)
-    switch(pathObj.pathname){
-        case &apos;/getWeather&apos;:
-        var  weather =[
-            &quot;beijing&quot;:&quot;sunny&quot;,
-            &quot;shanghai&quot;:&quot;cloudy&quot;
-        ]
-        res.setHeader(&apos;Access-Control-Allow-Origin&apos;,http://localhost:8080)
-        res.end(JSON.stringify(weather))
-        break;
-        default:
-        fs.readFile(parse.join(__dirname,pathObj.pathname),function(e,data){
-            if(e){
-                res.writeHead(404, &apos;not found&apos;)
-                res.end(&apos;&lt;h1&gt;404 not found&lt;/h1&gt;&apos;)
-            }else{
-                res.end(data)
-            }
-        })
-    }
-}).listen(8080)
-
-
- $(&apos;.change&apos;).addEventListener(&apos;click&apos;, function () {
-    var xhr = new XMLHttpRequest();
-    xhr.open(&apos;get&apos;, &apos;http://localhost:8080/getWeather&apos;, true);
-    xhr.send();
-    xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
-        appendHtml(JSON.parse(xhr.responseText))
-    }
-    };
-});
-</code></pre><h5 id="2、window-postMessage-message-targetOrigin"><a href="#2、window-postMessage-message-targetOrigin" class="headerlink" title="2、window.postMessage(message,targetOrigin)"></a>2、window.postMessage(message,targetOrigin)</h5><p>方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。这种方法不能和服务端交换数据，只能在两个窗口（iframe）之间交换数据 </p>
-
+    })    
+}
+_flat(arr)
+return newArr
+}
+//方法2
+var arr = ([1, [2], [3, [[4]]]])
+function flatten2(arr){
+return arr.reduce(function(initArr, currentArr){
+    return initArr.concat(Array.isArray(currentArr)?flatten2(currentArr):currentArr)
+}, [])
+}
+console.log(flatten2(arr)) //[1, 2, 3, 4]
+</code></pre>
       
     </div>
     
@@ -414,8 +390,8 @@ http.createServer(function(req,res){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Exercise/cookie&session&localStorage" rel="next" title="cookie&session&localStorage">
-                <i class="fa fa-chevron-left"></i> cookie&session&localStorage
+              <a href="/js/数组扁平化" rel="next" title="JavaScript专题之数组扁平化">
+                <i class="fa fa-chevron-left"></i> JavaScript专题之数组扁平化
               </a>
             
           </div>
@@ -424,8 +400,8 @@ http.createServer(function(req,res){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Exercise/动画队列" rel="prev" title="动画队列">
-                动画队列 <i class="fa fa-chevron-right"></i>
+              <a href="/js/随机生成IP、字符串、颜色等" rel="prev" title="随机生成ip、字符串、color">
+                随机生成ip、字符串、color <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -514,7 +490,7 @@ http.createServer(function(req,res){
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -549,7 +525,7 @@ http.createServer(function(req,res){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#cors"><span class="nav-number">1.</span> <span class="nav-text">cors</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要跨域？"><span class="nav-number">1.1.</span> <span class="nav-text">为什么要跨域？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域的实现的几种方式"><span class="nav-number">1.2.</span> <span class="nav-text">跨域的实现的几种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、Jsonp"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、Jsonp</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、CORS"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、CORS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、window-postMessage-message-targetOrigin"><span class="nav-number">1.2.3.</span> <span class="nav-text">2、window.postMessage(message,targetOrigin)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现一个flatten函数"><span class="nav-number">1.</span> <span class="nav-text">实现一个flatten函数</span></a></li></ol></div>
             
 
           </div>
