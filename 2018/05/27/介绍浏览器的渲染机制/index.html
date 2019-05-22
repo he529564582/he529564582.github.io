@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="动画队列jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。 .stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）clearQueue类型: Boolean一个布尔值，指示是">
+<meta name="description" content="浏览器的渲染机制首先当用户输入一个URL的时候，浏览器就会发送一个请求，请求URL对应的资源。然后浏览器的HTML解析器会将这个文件解析，并且构建成一棵DOM树。在构建DOM树的时候，遇到JS和CSS元素，HTML解析器就换将控制权转让给JS解析器或者是CSS解析器。JS解析器或者是CSS解析器解析完这个元素时候，HTML又继续解析下个元素，直到整棵DOM树构建完成。DOM树构建完之后，浏览器把D">
 <meta property="og:type" content="article">
-<meta property="og:title" content="动画队列">
-<meta property="og:url" content="http://hefang.site/jquery/动画队列">
+<meta property="og:title" content="浏览器的渲染机制">
+<meta property="og:url" content="http://www.hefang.site/2018/05/27/介绍浏览器的渲染机制/index.html">
 <meta property="og:site_name" content="he&#39;blog">
-<meta property="og:description" content="动画队列jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。 .stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）clearQueue类型: Boolean一个布尔值，指示是">
+<meta property="og:description" content="浏览器的渲染机制首先当用户输入一个URL的时候，浏览器就会发送一个请求，请求URL对应的资源。然后浏览器的HTML解析器会将这个文件解析，并且构建成一棵DOM树。在构建DOM树的时候，遇到JS和CSS元素，HTML解析器就换将控制权转让给JS解析器或者是CSS解析器。JS解析器或者是CSS解析器解析完这个元素时候，HTML又继续解析下个元素，直到整棵DOM树构建完成。DOM树构建完之后，浏览器把D">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T04:09:09.298Z">
+<meta property="og:updated_time" content="2019-05-22T04:29:48.977Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="动画队列">
-<meta name="twitter:description" content="动画队列jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。 .stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）clearQueue类型: Boolean一个布尔值，指示是">
+<meta name="twitter:title" content="浏览器的渲染机制">
+<meta name="twitter:description" content="浏览器的渲染机制首先当用户输入一个URL的时候，浏览器就会发送一个请求，请求URL对应的资源。然后浏览器的HTML解析器会将这个文件解析，并且构建成一棵DOM树。在构建DOM树的时候，遇到JS和CSS元素，HTML解析器就换将控制权转让给JS解析器或者是CSS解析器。JS解析器或者是CSS解析器解析完这个元素时候，HTML又继续解析下个元素，直到整棵DOM树构建完成。DOM树构建完之后，浏览器把D">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://hefang.site/jquery/动画队列">
+  <link rel="canonical" href="http://www.hefang.site/2018/05/27/介绍浏览器的渲染机制/">
 
 
 
 
 
-  <title>动画队列 | he'blog</title>
+  <title>浏览器的渲染机制 | he'blog</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hefang.site/jquery/动画队列">
+    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2018/05/27/介绍浏览器的渲染机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="何方">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">动画队列</h1>
+          <h1 class="post-title" itemprop="name headline">浏览器的渲染机制</h1>
         
 
         <div class="post-meta">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-26T18:27:29+08:00">
-                2018-10-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-27T19:27:29+08:00">
+                2018-05-27
               </time>
             
 
@@ -304,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/jquery/" itemprop="url" rel="index">
-                    <span itemprop="name">jquery</span>
+                  <a href="/categories/http/" itemprop="url" rel="index">
+                    <span itemprop="name">http</span>
                   </a>
                 </span>
 
@@ -341,59 +341,7 @@
       
 
       
-        <h2 id="动画队列"><a href="#动画队列" class="headerlink" title="动画队列"></a>动画队列</h2><p>jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。</p>
-<h3 id="stop-clearQueue-jumpToEnd-（添加版本1-2）"><a href="#stop-clearQueue-jumpToEnd-（添加版本1-2）" class="headerlink" title=".stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）"></a>.stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）</h3><p>clearQueue<br>类型: Boolean<br>一个布尔值，指示是否取消以列队动画。默认 false.<br>jumpToEnd<br>类型: Boolean<br>一个布尔值指示是否当前动画立即完成。默认false.</p>
-<h3 id="stop-queue-clearQueue-jumpToEnd-（添加版本1-7）"><a href="#stop-queue-clearQueue-jumpToEnd-（添加版本1-7）" class="headerlink" title=".stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）"></a>.stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）</h3><p>queue<br>类型: String<br>停止动画队列的名称。<br>clearQueue<br>类型: Boolean<br>一个布尔值，指示是否取消以列队动画。默认 false.<br>jumpToEnd<br>类型: Boolean<br>一个布尔值指示是否当前动画立即完成。默认false.<br>jQuery中有stop这个方法可以停止当前执行的动画，并且它有两个布尔参数，默认值都为false。</p>
-<pre><code>clearQueue(default: false)
-jumpToEnd(default: false)
-</code></pre><p>第一个参数为true时会清空动画队列，第二个参数为true时会瞬间完成掉当前动画。所以，我们经常使用obj.stop(true,true)来停止动画。但是这还不够！正如jQuery文档中的说法，即使第二个参数为true，也仅仅是把当前在执行的动画跳转到完成状态。这时第一个参数如果也为true，后面的队列就会被清空。如果一个效果需要多个动画同时处理，我们仅完成其中的一个而把后面的队列丢弃了，这就会出现意料之外的结果。</p>
-<p>###<br>我们可以看到如下整理结果:</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>stop()</td>
-<td></td>
-<td>清空队列，当前执行动作立即停止。后续动作会不再执行。 等同于：stop(false,false)</td>
-</tr>
-<tr>
-<td>stop(true)</td>
-<td>[clearQueue]</td>
-<td>清空队列，当前执行动作立即停止。后续动作会不再执行</td>
-</tr>
-<tr>
-<td>stop(true,true)</td>
-<td>[clearQueue],[gotoEnd]</td>
-<td>清空队列，当前执行动作<font color="red" size="5">立即完成</font>。后续动作会不再执行</td>
-</tr>
-<tr>
-<td>stop(true,false)</td>
-<td>[clearQueue],[gotoEnd]</td>
-<td>清空队列，当前执行动作立即停止。后续动作会不再执行</td>
-</tr>
-<tr>
-<td>stop(false)</td>
-<td>[clearQueue]</td>
-<td>不清空队列，当前执行动作立即停止。后续动作会立即执行</td>
-</tr>
-<tr>
-<td>stop(false,true)</td>
-<td>[clearQueue],[gotoEnd]</td>
-<td>不清空队列，当前执行动作<font color="red" size="5">立即完成</font>。后续动作会立即执行</td>
-</tr>
-<tr>
-<td>stop(false,false)</td>
-<td>[clearQueue],[gotoEnd]</td>
-<td>不清空队列，当前执行动作立即停止。后续动作会立即执行</td>
-</tr>
-</tbody>
-</table>
+        <h3 id="浏览器的渲染机制"><a href="#浏览器的渲染机制" class="headerlink" title="浏览器的渲染机制"></a>浏览器的渲染机制</h3><p>首先当用户输入一个URL的时候，浏览器就会发送一个请求，请求URL对应的资源。<br>然后浏览器的HTML解析器会将这个文件解析，并且构建成一棵DOM树。<br>在构建DOM树的时候，遇到JS和CSS元素，HTML解析器就换将控制权转让给JS解析器或者是CSS解析器。<br>JS解析器或者是CSS解析器解析完这个元素时候，HTML又继续解析下个元素，直到整棵DOM树构建完成。<br>DOM树构建完之后，浏览器把DOM树中的一些不可视元素去掉，然后与CSSOM合成一棵render树。<br>接着浏览器根据这棵render树，计算出各个节点(元素)在屏幕的位置。这个过程叫做layout，输出的是一棵layout树。<br>最后浏览器根据这棵layout树，将页面渲染到屏幕上去。</p>
 
       
     </div>
@@ -418,18 +366,14 @@ jumpToEnd(default: false)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/http/跨域(CORS)" rel="next" title="CORS">
-                <i class="fa fa-chevron-left"></i> CORS
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/js/原型与原型链" rel="prev" title="原型与原型链">
-                原型与原型链 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/27/js作用域相关介绍/" rel="prev" title="js作用域">
+                js作用域 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -553,7 +497,7 @@ jumpToEnd(default: false)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#动画队列"><span class="nav-number">1.</span> <span class="nav-text">动画队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#stop-clearQueue-jumpToEnd-（添加版本1-2）"><span class="nav-number">1.1.</span> <span class="nav-text">.stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stop-queue-clearQueue-jumpToEnd-（添加版本1-7）"><span class="nav-number">1.2.</span> <span class="nav-text">.stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器的渲染机制"><span class="nav-number">1.</span> <span class="nav-text">浏览器的渲染机制</span></a></li></ol></div>
             
 
           </div>
