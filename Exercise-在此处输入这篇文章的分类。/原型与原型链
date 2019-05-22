@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://hefang.site/Exercise-在此处输入这篇文章的分类。/原型与原型链">
 <meta property="og:site_name" content="he">
 <meta property="og:description" content="例子1function Person(name){     this.name = name;     this.age = age; } Person.prototype.sayName = function(){     console.log(this.name); }  var p1 = new Person(&amp;apos;a&amp;apos;); var p2 = new Person(&amp;apo">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://video.jirengu.com/xdml/image/996010fa-de82-489f-9b0a-20943cd224cf/2018-12-10-22-29-34.png">
 <meta property="og:image" content="http://video.jirengu.com/xdml/image/996010fa-de82-489f-9b0a-20943cd224cf/2018-12-11-15-9-42.png">
 <meta property="og:image" content="https://pic1.zhimg.com/b6aa8d4260e78ce3618e0d85febc2bbc_r.jpg">

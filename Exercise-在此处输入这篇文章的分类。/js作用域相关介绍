@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://hefang.site/Exercise-在此处输入这篇文章的分类。/js作用域相关介绍">
 <meta property="og:site_name" content="he">
 <meta property="og:description" content="JavaScript的作用域是什么作用域，在维基百科上解释是：在电脑程序设计中，作用域（scope，或译作有效范围）是名字（name）与实体（entity）的绑定（binding）保持有效的那部分计算机程序。简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种，局部作用域又称为函数作用域。 全局作">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-12-11T12:08:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js作用域">

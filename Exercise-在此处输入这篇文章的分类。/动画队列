@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://hefang.site/Exercise-在此处输入这篇文章的分类。/动画队列">
 <meta property="og:site_name" content="he">
 <meta property="og:description" content="动画队列jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。 .stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）clearQueue类型: Boolean一个布尔值，指示是">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-12-11T12:08:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动画队列">

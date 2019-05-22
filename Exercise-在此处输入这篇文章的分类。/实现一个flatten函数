@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://hefang.site/Exercise-在此处输入这篇文章的分类。/实现一个flatten函数">
 <meta property="og:site_name" content="he">
 <meta property="og:description" content="实现一个flatten函数实现一个flatten函数，将一个嵌套多层的数组 array（数组） (嵌套可以是任何层数)转换为只有一层的数组，数组中元素仅基本类型的元素或数组，不存在循环引用的情况。 Ex: flatten([1, [2], [3, [[4]]]]) =&amp;gt; [1, 2, 3, 4]; //方法1 var arr = ([1, [2], [3, [[4]]]]) function">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-12-11T12:02:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实现一个flatten函数">
