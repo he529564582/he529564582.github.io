@@ -82,11 +82,11 @@
 <meta name="description" content="HTMLCollection 和 NodeList节点都是单个对象，有时会需要一种数据结构，能够容纳多个节点。DOM提供两种集合对象，用于实现这种节点的集合：NodeList和HTMLCollection。 NodeList 对象代表一个有顺序的节点列表，HTMLCollection 是一个接口，表示 HTML 元素的集合，它提供了可以遍历列表的方法和属性 以下方法获取的为HTMLCollecti">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTMLCollection 和 NodeList">
-<meta property="og:url" content="http://hefang.site/othre/HTMLCollection 和 NodeList">
+<meta property="og:url" content="http://hefang.site/other/HTMLCollection 和 NodeList">
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="HTMLCollection 和 NodeList节点都是单个对象，有时会需要一种数据结构，能够容纳多个节点。DOM提供两种集合对象，用于实现这种节点的集合：NodeList和HTMLCollection。 NodeList 对象代表一个有顺序的节点列表，HTMLCollection 是一个接口，表示 HTML 元素的集合，它提供了可以遍历列表的方法和属性 以下方法获取的为HTMLCollecti">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T04:08:42.121Z">
+<meta property="og:updated_time" content="2019-05-22T04:11:15.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTMLCollection 和 NodeList">
 <meta name="twitter:description" content="HTMLCollection 和 NodeList节点都是单个对象，有时会需要一种数据结构，能够容纳多个节点。DOM提供两种集合对象，用于实现这种节点的集合：NodeList和HTMLCollection。 NodeList 对象代表一个有顺序的节点列表，HTMLCollection 是一个接口，表示 HTML 元素的集合，它提供了可以遍历列表的方法和属性 以下方法获取的为HTMLCollecti">
@@ -119,7 +119,7 @@
 
 
 
-  <link rel="canonical" href="http://hefang.site/othre/HTMLCollection 和 NodeList">
+  <link rel="canonical" href="http://hefang.site/other/HTMLCollection 和 NodeList">
 
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hefang.site/othre/HTMLCollection 和 NodeList">
+    <link itemprop="mainEntityOfPage" href="http://hefang.site/other/HTMLCollection 和 NodeList">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="何方">
@@ -304,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/othre/" itemprop="url" rel="index">
-                    <span itemprop="name">othre</span>
+                  <a href="/categories/other/" itemprop="url" rel="index">
+                    <span itemprop="name">other</span>
                   </a>
                 </span>
 
@@ -484,7 +484,7 @@ HTMLCollection与NodeList基本相似
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
