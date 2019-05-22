@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>CORS | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="cors为什么要跨域？跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CORS">
+<meta property="og:url" content="http://yoursite.com/2018/12/11/跨域(CORS)/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="cors为什么要跨域？跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-11T12:04:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CORS">
+<meta name="twitter:description" content="cors为什么要跨域？跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-跨域(CORS)" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/11/跨域(CORS)/" class="article-date">
+  <time datetime="2018-12-11T12:04:53.000Z" itemprop="datePublished">2018-12-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Exercise-在此处输入这篇文章的分类。/">Exercise   //在此处输入这篇文章的分类。</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CORS
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="cors"><a href="#cors" class="headerlink" title="cors"></a>cors</h3><h4 id="为什么要跨域？"><a href="#为什么要跨域？" class="headerlink" title="为什么要跨域？"></a>为什么要跨域？</h4><p>跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。<br>一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 <a href="https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个有一个不同，就会产生跨域问题。即使是在http://localhost:80/" target="_blank" rel="noopener">https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个有一个不同，就会产生跨域问题。即使是在http://localhost:80/</a> 页面请求<a href="http://127.0.0.1:80" target="_blank" rel="noopener">http://127.0.0.1:80</a> 也会有跨域问题（因为域名不一样嘛~）</p>
+<h4 id="跨域的实现的几种方式"><a href="#跨域的实现的几种方式" class="headerlink" title="跨域的实现的几种方式"></a>跨域的实现的几种方式</h4><h5 id="1、Jsonp"><a href="#1、Jsonp" class="headerlink" title="1、Jsonp"></a>1、Jsonp</h5><p>最常见的一种跨域方式，其背后的原理就是利用script标签不受同源策略的限制，在页面中动态插入script，script标签的src属性就是后端api接口的地址，并且以get的方式将前端回调处理的函数名名告诉后端，后端在响应请求时会将函数回调返回，并且将数据以参数的形式传递回去<br>代码部分：</p>
+<script src="http://api.sta.com/weather.php?callback=showData"></script>
+
+<pre><code>&lt;script&gt;
+    function showData(ret){
+    console.log(ret);
+    }
+&lt;/script&gt;
+</code></pre><h5 id="2、CORS"><a href="#2、CORS" class="headerlink" title="2、CORS"></a>2、CORS</h5><p>当使用XMLHttpRequest发送请求是，如果浏览器发现了违反了同源策略就会自动加上一个请求头：origin，后端在接受请求的时候确定响应后会在Response Headers中加入一个熟悉：Access-Control-Allow-Origin，value就是发起请求的源地址 <a href="http://127.0.0.1:8080，浏览器得到响应会继续判断Access-Control—Allow—Origin的值是否和当前的地址相同，只有匹配成功后才进行响应处理" target="_blank" rel="noopener">http://127.0.0.1:8080，浏览器得到响应会继续判断Access-Control—Allow—Origin的值是否和当前的地址相同，只有匹配成功后才进行响应处理</a></p>
+<pre><code>var http = require(&apos;http&apos;)
+var fs = require(&apos;fs&apos;)
+var path = require(&apos;path&apos;)
+var url = require(&apos;url&apos;)
+http.createServer(function(req,res){
+    var pathObj = url.parse(req.url,true)
+    switch(pathObj.pathname){
+        case &apos;/getWeather&apos;:
+        var  weather =[
+            &quot;beijing&quot;:&quot;sunny&quot;,
+            &quot;shanghai&quot;:&quot;cloudy&quot;
+        ]
+        res.setHeader(&apos;Access-Control-Allow-Origin&apos;,http://localhost:8080)
+        res.end(JSON.stringify(weather))
+        break;
+        default:
+        fs.readFile(parse.join(__dirname,pathObj.pathname),function(e,data){
+            if(e){
+                res.writeHead(404, &apos;not found&apos;)
+                res.end(&apos;&lt;h1&gt;404 not found&lt;/h1&gt;&apos;)
+            }else{
+                res.end(data)
+            }
+        })
+    }
+}).listen(8080)
+
+
+ $(&apos;.change&apos;).addEventListener(&apos;click&apos;, function () {
+    var xhr = new XMLHttpRequest();
+    xhr.open(&apos;get&apos;, &apos;http://localhost:8080/getWeather&apos;, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
+        appendHtml(JSON.parse(xhr.responseText))
+    }
+    };
+});
+</code></pre><h5 id="2、window-postMessage-message-targetOrigin"><a href="#2、window-postMessage-message-targetOrigin" class="headerlink" title="2、window.postMessage(message,targetOrigin)"></a>2、window.postMessage(message,targetOrigin)</h5><p>方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。这种方法不能和服务端交换数据，只能在两个窗口（iframe）之间交换数据 </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/11/跨域(CORS)/" data-id="cjvympv3n000j3fwiqlpmsb9r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/11/HTMLCollection 和 NodeList/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          HTMLCollection 和 NodeList
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/12/11/数组扁平化/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript专题之数组扁平化</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Exercise-在此处输入这篇文章的分类。/">Exercise   //在此处输入这篇文章的分类。</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/21/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/24/原型与原型链/">原型与原型链</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/动画队列/">动画队列</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/js作用域相关介绍/">js作用域</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/介绍浏览器的渲染机制/">浏览器的渲染机制</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

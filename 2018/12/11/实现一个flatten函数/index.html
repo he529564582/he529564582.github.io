@@ -5,15 +5,19 @@
   
 
   
-  <title>Archives: 2019/5 | Hexo</title>
+  <title>实现一个flatten函数 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/05/index.html">
+  <meta name="description" content="实现一个flatten函数实现一个flatten函数，将一个嵌套多层的数组 array（数组） (嵌套可以是任何层数)转换为只有一层的数组，数组中元素仅基本类型的元素或数组，不存在循环引用的情况。 Ex: flatten([1, [2], [3, [[4]]]]) =&amp;gt; [1, 2, 3, 4]; //方法1 var arr = ([1, [2], [3, [[4]]]]) function">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实现一个flatten函数">
+<meta property="og:url" content="http://yoursite.com/2018/12/11/实现一个flatten函数/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="实现一个flatten函数实现一个flatten函数，将一个嵌套多层的数组 array（数组） (嵌套可以是任何层数)转换为只有一层的数组，数组中元素仅基本类型的元素或数组，不存在循环引用的情况。 Ex: flatten([1, [2], [3, [[4]]]]) =&amp;gt; [1, 2, 3, 4]; //方法1 var arr = ([1, [2], [3, [[4]]]]) function">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-11T12:02:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="实现一个flatten函数">
+<meta name="twitter:description" content="实现一个flatten函数实现一个flatten函数，将一个嵌套多层的数组 array（数组） (嵌套可以是任何层数)转换为只有一层的数组，数组中元素仅基本类型的元素或数组，不存在循环引用的情况。 Ex: flatten([1, [2], [3, [[4]]]]) =&amp;gt; [1, 2, 3, 4]; //方法1 var arr = ([1, [2], [3, [[4]]]]) function">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,40 +64,84 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/21/常见排序算法/" class="archive-article-date">
-  <time datetime="2019-05-21T06:48:42.894Z" itemprop="datePublished">May 21</time>
+        <section id="main"><article id="post-实现一个flatten函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/11/实现一个flatten函数/" class="article-date">
+  <time datetime="2018-12-11T12:02:35.000Z" itemprop="datePublished">2018-12-11</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Exercise-在此处输入这篇文章的分类。/">Exercise   //在此处输入这篇文章的分类。</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/21/常见排序算法/">常见排序算法</a>
+    <h1 class="article-title" itemprop="name">
+      实现一个flatten函数
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="实现一个flatten函数"><a href="#实现一个flatten函数" class="headerlink" title="实现一个flatten函数"></a>实现一个flatten函数</h3><p>实现一个flatten函数，将一个嵌套多层的数组 array（数组） (嵌套可以是任何层数)转换为只有一层的数组，数组中元素仅基本类型的元素或数组，不存在循环引用的情况。 Ex: flatten([1, [2], [3, [[4]]]]) =&gt; [1, 2, 3, 4];</p>
+<pre><code>//方法1
+var arr = ([1, [2], [3, [[4]]]])
+function flatten(arr){
+var newArr = []
+function _flat(arr){
+    arr.forEach(val=&gt;{
+    if(Array.isArray(val)){
+        _flat(val)
+    }else{
+        newArr.push(val)
+    }
+    })    
+}
+_flat(arr)
+return newArr
+}
+//方法2
+var arr = ([1, [2], [3, [[4]]]])
+function flatten2(arr){
+return arr.reduce(function(initArr, currentArr){
+    return initArr.concat(Array.isArray(currentArr)?flatten2(currentArr):currentArr)
+}, [])
+}
+console.log(flatten2(arr)) //[1, 2, 3, 4]
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/11/实现一个flatten函数/" data-id="cjvympv3i000c3fwis78s9ori" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/11/随机生成IP、字符串、颜色等/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          随机生成ip、字符串、color
+        
+      </div>
+    </a>
   
   
-    </div></section>
-  
+</nav>
 
+  
+</article>
 
 </section>
         

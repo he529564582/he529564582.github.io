@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>原型与原型链 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="例子1function Person(name){     this.name = name;     this.age = age; } Person.prototype.sayName = function(){     console.log(this.name); }  var p1 = new Person(&amp;apos;a&amp;apos;); var p2 = new Person(&amp;apo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原型与原型链">
+<meta property="og:url" content="http://yoursite.com/2018/12/24/原型与原型链/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="例子1function Person(name){     this.name = name;     this.age = age; } Person.prototype.sayName = function(){     console.log(this.name); }  var p1 = new Person(&amp;apos;a&amp;apos;); var p2 = new Person(&amp;apo">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://video.jirengu.com/xdml/image/996010fa-de82-489f-9b0a-20943cd224cf/2018-12-10-22-29-34.png">
+<meta property="og:image" content="http://video.jirengu.com/xdml/image/996010fa-de82-489f-9b0a-20943cd224cf/2018-12-11-15-9-42.png">
+<meta property="og:image" content="https://pic1.zhimg.com/b6aa8d4260e78ce3618e0d85febc2bbc_r.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/c2891fbeeb0530ef61885c0e6414170a_r.jpg">
+<meta property="og:updated_time" content="2018-12-24T11:20:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="原型与原型链">
+<meta name="twitter:description" content="例子1function Person(name){     this.name = name;     this.age = age; } Person.prototype.sayName = function(){     console.log(this.name); }  var p1 = new Person(&amp;apos;a&amp;apos;); var p2 = new Person(&amp;apo">
+<meta name="twitter:image" content="http://video.jirengu.com/xdml/image/996010fa-de82-489f-9b0a-20943cd224cf/2018-12-10-22-29-34.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-原型与原型链" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/24/原型与原型链/" class="article-date">
+  <time datetime="2018-12-24T11:20:17.000Z" itemprop="datePublished">2018-12-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Exercise-在此处输入这篇文章的分类。/">Exercise   //在此处输入这篇文章的分类。</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      原型与原型链
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="例子1"><a href="#例子1" class="headerlink" title="例子1"></a>例子1</h4><pre><code>function Person(name){
+    this.name = name;
+    this.age = age;
+}
+Person.prototype.sayName = function(){
+    console.log(this.name);
+}
+
+var p1 = new Person(&apos;a&apos;);
+var p2 = new Person(&apos;b&apos;);
+p1.sayName();  
+p2.sayName();  
+</code></pre><p>1.new 一个函数本质上做了什么？<br>  1)创建了一个空的对象<br>  2)空对象的<strong>proto</strong>指向了类Modal()的prototype<br>  3)在执行函数的过程中，给this赋值，函数里的this代表了空对象，返回出去<br>  4)将this赋值给modal<br>2.通过函数定义了一个类Person，它自动获取了属性prototype，<br>每个类的实例也就是p1、p2内部都会有一个<strong>proto</strong>的属性，如下图:<br><img src="http://video.jirengu.com/xdml/image/996010fa-de82-489f-9b0a-20943cd224cf/2018-12-10-22-29-34.png" alt="image1"></p>
+<h3 id="例子2"><a href="#例子2" class="headerlink" title="例子2"></a>例子2</h3><p>当前的p1实例，查找toString()的方法先从p1的属性里找，<br>没有找到,再从 p1.<strong>proto</strong> 中找，没有找到,<br>再从 p1.<strong>proto</strong>.<strong>proto</strong> 中找，找到后返回<br><img src="http://video.jirengu.com/xdml/image/996010fa-de82-489f-9b0a-20943cd224cf/2018-12-11-15-9-42.png" alt="image2"></p>
+<h3 id="例子3"><a href="#例子3" class="headerlink" title="例子3"></a>例子3</h3><pre><code>function People(){}
+var p = new People()
+p.__proto__ === People.prototype 
+People.__proto__ === Function.prototype
+People.prototype.__proto__ === Object.prototype
+</code></pre><p><img src="https://pic1.zhimg.com/b6aa8d4260e78ce3618e0d85febc2bbc_r.jpg" alt="image3"><br>（1）People函数创建了对象 p，所以People.prototype === p.<strong>proto</strong>；<br>（2）Object函数创建了People.prototype对象，所以Object.prototype === People.prototype.<strong>proto</strong>；<br>（3）People 作为对象的角色被函数Function创建，所以 Function.prototype === People.<strong>proto</strong>;</p>
+<h3 id="例子4"><a href="#例子4" class="headerlink" title="例子4"></a>例子4</h3><p><img src="https://pic3.zhimg.com/c2891fbeeb0530ef61885c0e6414170a_r.jpg" alt="image4"><br>（1）任何函数都是 Function 创建，所以Function 创建了 Function，所以 Function.prototype === Function.<strong>proto</strong>；<br>（2）Object 也是函数。所以Function创建了Object，所以 Function.prototype === Object.<strong>proto</strong> ；<br>（3）Function.prototype 是普通对象，普通对象是由Object创建的，所以 Function.prototype.<strong>proto</strong> === Object.prototype</p>
+<h3 id="例子5"><a href="#例子5" class="headerlink" title="例子5"></a>例子5</h3><pre><code>Object instanceof Function
+Function instanceof Object
+Function instanceof Function
+Object instanceof Object
+</code></pre><p>instanceof的作用是判断一个对象是不是一个函数的实例。比如obj instanceof fn,<br>实际上是判断fn的prototype是不是在obj的原型链上。<br>比如: </p>
+<pre><code>obj.__proto__ === fn.prototype
+obj.__proto__.__proto__ === fn.prototype
+obj.__proto__..._proto__ === fn.prototype
+</code></pre><p>只要一个成立即可。<br>1.对于Function instanceof Function,<br>因为 Function.<strong>proto</strong> === Function.prototype<br>所以为true。</p>
+<p>2.对于Object instanceof Object,<br>因为 Object.<strong>proto</strong>.<strong>proto</strong> === Function.prototype.<strong>proto</strong> === Object.prototype,<br>所以为true</p>
+<p>3.对于Function instanceof Object,<br>因为 Function.<strong>proto</strong>.<strong>proto</strong> === Function.prototype.<strong>proto</strong> === Object.prototype,<br>所以为true</p>
+<p>4.对于Object instanceof Function,因为 Object.<strong>proto</strong> === Function.prototype<br>所以为true</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/24/原型与原型链/" data-id="cjvympv3e000b3fwixnk0ncug" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/21/常见排序算法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          常见排序算法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/12/11/动画队列/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">动画队列</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Exercise-在此处输入这篇文章的分类。/">Exercise   //在此处输入这篇文章的分类。</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/21/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/24/原型与原型链/">原型与原型链</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/动画队列/">动画队列</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/js作用域相关介绍/">js作用域</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/介绍浏览器的渲染机制/">浏览器的渲染机制</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

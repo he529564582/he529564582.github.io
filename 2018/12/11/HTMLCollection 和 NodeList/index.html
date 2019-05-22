@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>HTMLCollection 和 NodeList | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="HTMLCollection 和 NodeList节点都是单个对象，有时会需要一种数据结构，能够容纳多个节点。DOM提供两种集合对象，用于实现这种节点的集合：NodeList和HTMLCollection。 NodeList 对象代表一个有顺序的节点列表，HTMLCollection 是一个接口，表示 HTML 元素的集合，它提供了可以遍历列表的方法和属性 以下方法获取的为HTMLCollecti">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTMLCollection 和 NodeList">
+<meta property="og:url" content="http://yoursite.com/2018/12/11/HTMLCollection 和 NodeList/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="HTMLCollection 和 NodeList节点都是单个对象，有时会需要一种数据结构，能够容纳多个节点。DOM提供两种集合对象，用于实现这种节点的集合：NodeList和HTMLCollection。 NodeList 对象代表一个有顺序的节点列表，HTMLCollection 是一个接口，表示 HTML 元素的集合，它提供了可以遍历列表的方法和属性 以下方法获取的为HTMLCollecti">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-11T12:06:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTMLCollection 和 NodeList">
+<meta name="twitter:description" content="HTMLCollection 和 NodeList节点都是单个对象，有时会需要一种数据结构，能够容纳多个节点。DOM提供两种集合对象，用于实现这种节点的集合：NodeList和HTMLCollection。 NodeList 对象代表一个有顺序的节点列表，HTMLCollection 是一个接口，表示 HTML 元素的集合，它提供了可以遍历列表的方法和属性 以下方法获取的为HTMLCollecti">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-HTMLCollection 和 NodeList" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/11/HTMLCollection 和 NodeList/" class="article-date">
+  <time datetime="2018-12-11T12:06:02.000Z" itemprop="datePublished">2018-12-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Exercise-在此处输入这篇文章的分类。/">Exercise   //在此处输入这篇文章的分类。</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTMLCollection 和 NodeList
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="HTMLCollection-和-NodeList"><a href="#HTMLCollection-和-NodeList" class="headerlink" title="HTMLCollection 和 NodeList"></a>HTMLCollection 和 NodeList</h3><p>节点都是单个对象，有时会需要一种数据结构，能够容纳多个节点。DOM提供两种集合对象，用于实现这种节点的集合：NodeList和HTMLCollection。</p>
+<p>NodeList 对象代表一个有顺序的节点列表，HTMLCollection 是一个接口，表示 HTML 元素的集合，它提供了可以遍历列表的方法和属性</p>
+<p>以下方法获取的为HTMLCollection对象</p>
+<pre><code>document.images //所有img元素
+document.links //所有带href属性的a元素和area元素
+document.forms //所有form元素
+document.scripts //所有script元素
+document.body.children
+document.getElementsByClassName(&quot;class1&quot;)
+</code></pre><p>以下方法获取的为NodeList对象</p>
+<pre><code>document.getElementsByName(&quot;name1&quot;)
+document.getElementsByTagName(&quot;a&quot;)
+document.querySelectorAll(&quot;a&quot;)
+document.body.childNodes
+</code></pre><p>如何查看？</p>
+<pre><code>document.body.childNodes.constructor
+HTMLCollection与NodeList基本相似
+</code></pre><p>相同点： 都是类数组对象，节点的变化都会实时反映在集合中</p>
+<p>不同点： 少部分方法不一样，比如 NodeList 有 forEach 方法，而 HTMLCollection 没有</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/11/HTMLCollection 和 NodeList/" data-id="cjvympv2w00003fwie8mb8af1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/11/cookie&session&localStorage/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          cookie&amp;session&amp;localStorage
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/12/11/跨域(CORS)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CORS</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Exercise-在此处输入这篇文章的分类。/">Exercise   //在此处输入这篇文章的分类。</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/21/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/24/原型与原型链/">原型与原型链</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/动画队列/">动画队列</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/js作用域相关介绍/">js作用域</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/介绍浏览器的渲染机制/">浏览器的渲染机制</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

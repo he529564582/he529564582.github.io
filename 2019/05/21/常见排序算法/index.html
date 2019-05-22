@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>常见排序算法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="常见排序算法 - 冒泡排序 (Bubble Sort)冒泡排序算法的流程如下：1、比较相邻的元素。如果第一个比第二个大，就交换他们两个。2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。3、针对所有的元素重复以上的步骤，除了最后一个。4、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 实例分析：以数组 arr = [5,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见排序算法">
+<meta property="og:url" content="http://yoursite.com/2019/05/21/常见排序算法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="常见排序算法 - 冒泡排序 (Bubble Sort)冒泡排序算法的流程如下：1、比较相邻的元素。如果第一个比第二个大，就交换他们两个。2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。3、针对所有的元素重复以上的步骤，除了最后一个。4、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 实例分析：以数组 arr = [5,">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-21T09:37:37.921Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常见排序算法">
+<meta name="twitter:description" content="常见排序算法 - 冒泡排序 (Bubble Sort)冒泡排序算法的流程如下：1、比较相邻的元素。如果第一个比第二个大，就交换他们两个。2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。3、针对所有的元素重复以上的步骤，除了最后一个。4、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 实例分析：以数组 arr = [5,">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-常见排序算法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/21/常见排序算法/" class="article-date">
+  <time datetime="2019-05-21T06:48:42.894Z" itemprop="datePublished">2019-05-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Exercise-在此处输入这篇文章的分类。/">Exercise   //在此处输入这篇文章的分类。</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      常见排序算法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="常见排序算法-冒泡排序-Bubble-Sort"><a href="#常见排序算法-冒泡排序-Bubble-Sort" class="headerlink" title="常见排序算法 - 冒泡排序 (Bubble Sort)"></a>常见排序算法 - 冒泡排序 (Bubble Sort)</h3><h4 id="冒泡排序算法的流程如下："><a href="#冒泡排序算法的流程如下：" class="headerlink" title="冒泡排序算法的流程如下："></a>冒泡排序算法的流程如下：</h4><p>1、比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。<br>3、针对所有的元素重复以上的步骤，除了最后一个。<br>4、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
+<h5 id="实例分析："><a href="#实例分析：" class="headerlink" title="实例分析："></a>实例分析：</h5><p>以数组 arr = [5, 1, 4, 2, 8] 为例说明，加粗的数字表示每次循环要比较的两个数字：<br>第一次外循环</p>
+<pre><code>( 5 1 4 2 8 ) → ( 1 5 4 2 8 )， 5 &gt; 1 交换位置
+( 1 5 4 2 8 ) → ( 1 4 5 2 8 )， 5 &gt; 4 交换位置
+( 1 4 5 2 8 ) → ( 1 4 2 5 8 )， 5 &gt; 2 交换位置
+( 1 4 2 5 8 ) → ( 1 4 2 5 8 )， 5 &lt; 8 位置不变
+</code></pre><p>第二次外循环（除开最后一个元素8，对剩余的序列）</p>
+<pre><code>( 1 4 2 5 8 ) → ( 1 4 2 5 8 )， 1 &lt; 4 位置不变
+( 1 4 2 5 8 ) → ( 1 2 4 5 8 )， 4 &gt; 2 交换位置
+( 1 2 4 5 8 ) → ( 1 2 4 5 8 )， 4 &lt; 5 位置不变
+</code></pre><p>第三次外循环（除开已经排序好的最后两个元素，可以注意到上面的数组其实已经排序完成，但是程序本身并不知道，所以还要进行后续的循环，直到剩余的序列为 1）</p>
+<pre><code>( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
+</code></pre><p>第四次外循环（最后一次）</p>
+<pre><code>( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
+</code></pre><h4 id="JavaScript-语言实现"><a href="#JavaScript-语言实现" class="headerlink" title="JavaScript 语言实现"></a>JavaScript 语言实现</h4><pre><code>function bubbleSort(array) {
+var length = array.length,
+i,
+j,
+temp;
+for (i = length - 1; 0 &lt; i; i--) {
+for (j = 0; j &lt; i; j++) {
+        if (array[j] &gt; array[j + 1]) {
+        temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+        }
+}
+}
+return array;
+}
+</code></pre><h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><p><a href="https://www.processon.com/view/link/5ce3a2f1e4b0e03e4216ac80" target="_blank" rel="noopener">预览地址</a></p>
+<h3 id="常见排序算法-选择排序-Selection-Sort"><a href="#常见排序算法-选择排序-Selection-Sort" class="headerlink" title="常见排序算法 - 选择排序 (Selection Sort)"></a>常见排序算法 - 选择排序 (Selection Sort)</h3><h4 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h4><p>选择排序（Selection Sort）是一种简单直观的排序算法。它的工作原理如下，首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
+<p>选择排序的主要优点与数据移动有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对n个元素的序列进行排序总共进行至多n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。</p>
+<h5 id="实例分析：-1"><a href="#实例分析：-1" class="headerlink" title="实例分析："></a>实例分析：</h5><p>以数组 arr = [8, 5, 2, 6, 9, 3, 1, 4, 0, 7] 为例，先直观看一下每一步的变化，后面再介绍细节<br>第一次从数组 [8, 5, 2, 6, 9, 3, 1, 4, 0, 7] 中找到最小的数 0，放到数组的最前面（与第一个元素进行交换）：</p>
+<pre><code>                               min
+                                ↓
+8   5   2   6   9   3   1   4   0   7
+↑                               ↑
+└───────────────────────────────┘
+</code></pre><p>交换后：</p>
+<pre><code>0   5   2   6   9   3   1   4   8   7
+</code></pre><p>在剩余的序列中 [5, 2, 6, 9, 3, 1, 4, 8, 7] 中找到最小的数 1，与该序列的第一个个元素进行位置交换：</p>
+<pre><code>                       min
+                        ↓
+0   5   2   6   9   3   1   4   8   7
+↑                   ↑
+└───────────────────┘
+</code></pre><p>交换后：</p>
+<pre><code>0   1   2   6   9   3   5   4   8   7
+</code></pre><p>在剩余的序列中 [2, 6, 9, 3, 5, 4, 8, 7] 中找到最小的数 2，与该序列的第一个个元素进行位置交换（实际上不需要交换）：</p>
+<pre><code>       min
+        ↓
+0   1   2   6   9   3   5   4   8   7
+        ↑
+</code></pre><p> 重复上述过程，直到最后一个元素就完成了排序。</p>
+<pre><code>                   min
+                    ↓
+0   1   2   6   9   3   5   4   8   7
+            ↑       ↑
+            └───────┘
+                           min
+                            ↓
+0   1   2   3   9   6   5   4   8   7
+                ↑           ↑
+                └───────────┘
+                       min
+                        ↓
+0   1   2   3   4   6   5   9   8   7
+                    ↑   ↑
+                    └───┘
+                       min
+                        ↓
+0   1   2   3   4   5   6   9   8   7
+                        ↑   
+                                   min
+                                    ↓
+0   1   2   3   4   5   6   9   8   7
+                            ↑       ↑
+                            └───────┘  
+                               min
+                                ↓
+0   1   2   3   4   5   6   7   8   9
+                                ↑      
+                                   min
+                                    ↓
+0   1   2   3   4   5   6   7   8   9
+                                    ↑
+</code></pre><h4 id="JavaScript-语言实现-1"><a href="#JavaScript-语言实现-1" class="headerlink" title="JavaScript 语言实现"></a>JavaScript 语言实现</h4><pre><code>function selectionSort(array) {
+var length = array.length,
+i,
+j,
+minIndex,
+minValue,
+temp;
+for (i = 0; i &lt; length - 1; i++) {
+minIndex = i;
+minValue = array[minIndex];
+for (j = i + 1; j &lt; length; j++) {
+if (array[j] &lt; minValue) {
+        minIndex = j;
+        minValue = array[minIndex];
+}
+}
+// 交换位置
+temp = array[i];
+array[i] = minValue;
+array[minIndex] = temp;
+}
+return array
+}
+</code></pre><h4 id="流程图-1"><a href="#流程图-1" class="headerlink" title="流程图"></a>流程图</h4><p><a href="https://www.processon.com/view/link/5ce3b60de4b0f34230d661f4" target="_blank" rel="noopener">预览地址</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/21/常见排序算法/" data-id="cjvympv3j000f3fwi5t2rycj3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/24/原型与原型链/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">原型与原型链</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Exercise-在此处输入这篇文章的分类。/">Exercise   //在此处输入这篇文章的分类。</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/21/常见排序算法/">常见排序算法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/24/原型与原型链/">原型与原型链</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/动画队列/">动画队列</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/js作用域相关介绍/">js作用域</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/11/介绍浏览器的渲染机制/">浏览器的渲染机制</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
