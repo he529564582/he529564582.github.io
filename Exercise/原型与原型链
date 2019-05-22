@@ -11,7 +11,7 @@
   <meta name="description" content="例子1function Person(name){     this.name = name;     this.age = age; } Person.prototype.sayName = function(){     console.log(this.name); }  var p1 = new Person(&amp;apos;a&amp;apos;); var p2 = new Person(&amp;apo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="原型与原型链">
-<meta property="og:url" content="http://hefang.site/Exercise-在此处输入这篇文章的分类。/原型与原型链">
+<meta property="og:url" content="http://hefang.site/Exercise/原型与原型链">
 <meta property="og:site_name" content="he">
 <meta property="og:description" content="例子1function Person(name){     this.name = name;     this.age = age; } Person.prototype.sayName = function(){     console.log(this.name); }  var p1 = new Person(&amp;apos;a&amp;apos;); var p2 = new Person(&amp;apo">
 <meta property="og:locale" content="zh-CN">
@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://video.jirengu.com/xdml/image/996010fa-de82-489f-9b0a-20943cd224cf/2018-12-11-15-9-42.png">
 <meta property="og:image" content="https://pic1.zhimg.com/b6aa8d4260e78ce3618e0d85febc2bbc_r.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/c2891fbeeb0530ef61885c0e6414170a_r.jpg">
-<meta property="og:updated_time" content="2018-12-24T11:20:17.000Z">
+<meta property="og:updated_time" content="2019-05-22T03:36:52.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型与原型链">
 <meta name="twitter:description" content="例子1function Person(name){     this.name = name;     this.age = age; } Person.prototype.sayName = function(){     console.log(this.name); }  var p1 = new Person(&amp;apos;a&amp;apos;); var p2 = new Person(&amp;apo">
@@ -171,8 +171,8 @@
   
 
         
-        <a href="/Exercise-在此处输入这篇文章的分类。/原型与原型链" class="archive-article-date">
-  	<time datetime="2018-12-24T11:20:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-24</time>
+        <a href="/Exercise/原型与原型链" class="archive-article-date">
+  	<time datetime="2018-12-11T02:44:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
 </a>
         
       </header>
@@ -247,7 +247,7 @@ obj.__proto__..._proto__ === fn.prototype
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
+        			<a href="/categories/Exercise//" class="article-tag-list-link color4">Exercise</a>
         		</li>
       		
 		</ul>
@@ -302,7 +302,7 @@ obj.__proto__..._proto__ === fn.prototype
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://hefang.site/Exercise-在此处输入这篇文章的分类。/原型与原型链" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://hefang.site/Exercise/原型与原型链" alt="微信分享二维码">
     </div>
 </div>
 
@@ -316,7 +316,7 @@ obj.__proto__..._proto__ === fn.prototype
   
 <nav id="article-nav">
   
-    <a href="/Exercise-在此处输入这篇文章的分类。/常见排序算法" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/Exercise/常见排序算法" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -326,7 +326,7 @@ obj.__proto__..._proto__ === fn.prototype
     </a>
   
   
-    <a href="/Exercise-在此处输入这篇文章的分类。/动画队列" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/Exercise/动画队列" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">动画队列</div>
       <i class="icon-circle-right"></i>
     </a>

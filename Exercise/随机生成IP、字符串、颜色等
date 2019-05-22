@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://hefang.site">
-  <title>动画队列 | he</title>
+  <title>随机生成ip、字符串、color | he</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="动画队列jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。 .stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）clearQueue类型: Boolean一个布尔值，指示是">
+  <meta name="description" content="随机生成ip、字符串、color//随机生成32位字符串 function getRandomStr(len) {     var a = &amp;apos;&amp;apos;     var b =&amp;quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&amp;quot;     for (i = 0 ; i &amp;lt;len; i++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="动画队列">
-<meta property="og:url" content="http://hefang.site/Exercise-在此处输入这篇文章的分类。/动画队列">
+<meta property="og:title" content="随机生成ip、字符串、color">
+<meta property="og:url" content="http://hefang.site/Exercise/随机生成IP、字符串、颜色等">
 <meta property="og:site_name" content="he">
-<meta property="og:description" content="动画队列jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。 .stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）clearQueue类型: Boolean一个布尔值，指示是">
+<meta property="og:description" content="随机生成ip、字符串、color//随机生成32位字符串 function getRandomStr(len) {     var a = &amp;apos;&amp;apos;     var b =&amp;quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&amp;quot;     for (i = 0 ; i &amp;lt;len; i++">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-11T12:08:40.000Z">
+<meta property="og:updated_time" content="2019-05-22T03:37:34.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="动画队列">
-<meta name="twitter:description" content="动画队列jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。 .stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）clearQueue类型: Boolean一个布尔值，指示是">
+<meta name="twitter:title" content="随机生成ip、字符串、color">
+<meta name="twitter:description" content="随机生成ip、字符串、color//随机生成32位字符串 function getRandomStr(len) {     var a = &amp;apos;&amp;apos;     var b =&amp;quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&amp;quot;     for (i = 0 ; i &amp;lt;len; i++">
   
     <link rel="alternative" href="/atom.xml" title="he" type="application/atom+xml">
   
@@ -154,80 +154,67 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-动画队列" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-随机生成IP、字符串、颜色等" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      动画队列
+      随机生成ip、字符串、color
     </h1>
   
 
         
-        <a href="/Exercise-在此处输入这篇文章的分类。/动画队列" class="archive-article-date">
-  	<time datetime="2018-12-11T12:08:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
+        <a href="/Exercise/随机生成IP、字符串、颜色等" class="archive-article-date">
+  	<time datetime="2018-09-01T12:44:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="动画队列"><a href="#动画队列" class="headerlink" title="动画队列"></a>动画队列</h2><p>jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。</p>
-<h3 id="stop-clearQueue-jumpToEnd-（添加版本1-2）"><a href="#stop-clearQueue-jumpToEnd-（添加版本1-2）" class="headerlink" title=".stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）"></a>.stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）</h3><p>clearQueue<br>类型: Boolean<br>一个布尔值，指示是否取消以列队动画。默认 false.<br>jumpToEnd<br>类型: Boolean<br>一个布尔值指示是否当前动画立即完成。默认false.</p>
-<h3 id="stop-queue-clearQueue-jumpToEnd-（添加版本1-7）"><a href="#stop-queue-clearQueue-jumpToEnd-（添加版本1-7）" class="headerlink" title=".stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）"></a>.stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）</h3><p>queue<br>类型: String<br>停止动画队列的名称。<br>clearQueue<br>类型: Boolean<br>一个布尔值，指示是否取消以列队动画。默认 false.<br>jumpToEnd<br>类型: Boolean<br>一个布尔值指示是否当前动画立即完成。默认false.<br>jQuery中有stop这个方法可以停止当前执行的动画，并且它有两个布尔参数，默认值都为false。</p>
-<pre><code>clearQueue(default: false)
-jumpToEnd(default: false)
-</code></pre><p>第一个参数为true时会清空动画队列，第二个参数为true时会瞬间完成掉当前动画。所以，我们经常使用obj.stop(true,true)来停止动画。但是这还不够！正如jQuery文档中的说法，即使第二个参数为true，也仅仅是把当前在执行的动画跳转到完成状态。这时第一个参数如果也为true，后面的队列就会被清空。如果一个效果需要多个动画同时处理，我们仅完成其中的一个而把后面的队列丢弃了，这就会出现意料之外的结果。</p>
-<p>###<br>我们可以看到如下整理结果:</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>stop()</td>
-<td></td>
-<td>清空队列，当前执行动作立即停止。后续动作会不再执行。 等同于：stop(false,false)</td>
-</tr>
-<tr>
-<td>stop(true)</td>
-<td>[clearQueue]</td>
-<td>清空队列，当前执行动作立即停止。后续动作会不再执行</td>
-</tr>
-<tr>
-<td>stop(true,true)</td>
-<td>[clearQueue],[gotoEnd]</td>
-<td>清空队列，当前执行动作<font color="red" size="5">立即完成</font>。后续动作会不再执行</td>
-</tr>
-<tr>
-<td>stop(true,false)</td>
-<td>[clearQueue],[gotoEnd]</td>
-<td>清空队列，当前执行动作立即停止。后续动作会不再执行</td>
-</tr>
-<tr>
-<td>stop(false)</td>
-<td>[clearQueue]</td>
-<td>不清空队列，当前执行动作立即停止。后续动作会立即执行</td>
-</tr>
-<tr>
-<td>stop(false,true)</td>
-<td>[clearQueue],[gotoEnd]</td>
-<td>不清空队列，当前执行动作<font color="red" size="5">立即完成</font>。后续动作会立即执行</td>
-</tr>
-<tr>
-<td>stop(false,false)</td>
-<td>[clearQueue],[gotoEnd]</td>
-<td>不清空队列，当前执行动作立即停止。后续动作会立即执行</td>
-</tr>
-</tbody>
-</table>
-
+        <h3 id="随机生成ip、字符串、color"><a href="#随机生成ip、字符串、color" class="headerlink" title="随机生成ip、字符串、color"></a>随机生成ip、字符串、color</h3><p>//随机生成32位字符串</p>
+<pre><code>function getRandomStr(len) {
+    var a = &apos;&apos;
+    var b =&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&quot;
+    for (i = 0 ; i &lt;len; i++){
+        var c = Math.floor(Math.random()*b.length)
+        a += b[c]
+    }
+    return a
+}
+var a = getRandomStr(32)
+console.log(a)
+</code></pre><p>//随机生成一个IP地址</p>
+<pre><code>function getRandIP(){
+    var ip=[]
+    for (i= 0 ; i&lt;4; i++){
+        ip[i]= Math.floor(Math.random()*256)
+    }
+    return ip.join(&apos;.&apos;)
+}
+var ip = getRandIP()
+console.log(ip)
+</code></pre><p>//生成一个随机颜色字符串</p>
+<pre><code>function getRandColor(){
+    var color = &apos;#&apos;
+    var dict =&apos;0123456abcdef&apos;
+    for(i = 0; i &lt; 6; i++){
+        var index =Math.floor(Math.random()*dict.length)
+        color += dict[index]
+    }
+    return color
+}
+var color = getRandColor()
+console.log(color)
+</code></pre><p>//min到max之间的 随机整数</p>
+<pre><code>function sum(min,max){
+    var sum =Math.floor(Math.random()*(max-min))+min
+    return sum
+}
+console.log(sum(1,100))
+</code></pre>
       
 
       
@@ -262,7 +249,7 @@ jumpToEnd(default: false)
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
+        			<a href="/categories/Exercise//" class="article-tag-list-link color4">Exercise</a>
         		</li>
       		
 		</ul>
@@ -317,7 +304,7 @@ jumpToEnd(default: false)
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://hefang.site/Exercise-在此处输入这篇文章的分类。/动画队列" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://hefang.site/Exercise/随机生成IP、字符串、颜色等" alt="微信分享二维码">
     </div>
 </div>
 
@@ -331,18 +318,18 @@ jumpToEnd(default: false)
   
 <nav id="article-nav">
   
-    <a href="/Exercise-在此处输入这篇文章的分类。/原型与原型链" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/Exercise/HTMLCollection 和 NodeList" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          原型与原型链
+          HTMLCollection 和 NodeList
         
       </div>
     </a>
   
   
-    <a href="/Exercise-在此处输入这篇文章的分类。/js作用域相关介绍" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js作用域</div>
+    <a href="/Exercise/实现一个flatten函数" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">实现一个flatten函数</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -369,7 +356,7 @@ jumpToEnd(default: false)
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#动画队列"><span class="toc-number">1.</span> <span class="toc-text">动画队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stop-clearQueue-jumpToEnd-（添加版本1-2）"><span class="toc-number">1.1.</span> <span class="toc-text">.stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stop-queue-clearQueue-jumpToEnd-（添加版本1-7）"><span class="toc-number">1.2.</span> <span class="toc-text">.stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#随机生成ip、字符串、color"><span class="toc-number">1.</span> <span class="toc-text">随机生成ip、字符串、color</span></a></li></ol>
                     </div>
                 </span>
             </div>

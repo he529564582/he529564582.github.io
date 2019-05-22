@@ -152,52 +152,35 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-实现一个flatten函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-js作用域相关介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/Exercise-在此处输入这篇文章的分类。/实现一个flatten函数">实现一个flatten函数</a>
+      <a class="article-title" href="/Exercise/js作用域相关介绍">js作用域</a>
     </h1>
   
 
         
-        <a href="/Exercise-在此处输入这篇文章的分类。/实现一个flatten函数" class="archive-article-date">
-  	<time datetime="2018-12-11T12:02:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
+        <a href="/Exercise/js作用域相关介绍" class="archive-article-date">
+  	<time datetime="2018-08-27T15:27:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="实现一个flatten函数"><a href="#实现一个flatten函数" class="headerlink" title="实现一个flatten函数"></a>实现一个flatten函数</h3><p>实现一个flatten函数，将一个嵌套多层的数组 array（数组） (嵌套可以是任何层数)转换为只有一层的数组，数组中元素仅基本类型的元素或数组，不存在循环引用的情况。 Ex: flatten([1, [2], [3, [[4]]]]) =&gt; [1, 2, 3, 4];</p>
-<pre><code>//方法1
-var arr = ([1, [2], [3, [[4]]]])
-function flatten(arr){
-var newArr = []
-function _flat(arr){
-    arr.forEach(val=&gt;{
-    if(Array.isArray(val)){
-        _flat(val)
-    }else{
-        newArr.push(val)
-    }
-    })    
-}
-_flat(arr)
-return newArr
-}
-//方法2
-var arr = ([1, [2], [3, [[4]]]])
-function flatten2(arr){
-return arr.reduce(function(initArr, currentArr){
-    return initArr.concat(Array.isArray(currentArr)?flatten2(currentArr):currentArr)
-}, [])
-}
-console.log(flatten2(arr)) //[1, 2, 3, 4]
-</code></pre>
+        <h4 id="JavaScript的作用域是什么"><a href="#JavaScript的作用域是什么" class="headerlink" title="JavaScript的作用域是什么"></a>JavaScript的作用域是什么</h4><p>作用域，在维基百科上解释是：在电脑程序设计中，作用域（scope，或译作有效范围）是名字（name）与实体（entity）的绑定（binding）保持有效的那部分计算机程序。<br>简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种，局部作用域又称为函数作用域。</p>
+<h4 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h4><p>在代码中任何地方都能访问到的对象拥有全局作用域，一般来说以下几种情形拥有全局作用域：</p>
+<p>(1）程序最外层定义的函数或者变量<br>var a = “tsrot”;<br>function hello(){<br>    alert(a);<br>}</p>
+<p>function sayHello(){<br>    hello();<br>}</p>
+<p>alert(a);     //能访问到tsrot<br>hello();      //能访问到tsrot<br>sayHello();   //能访问到hello函数，然后也能访问到tsrot<br>（2）所有末定义直接赋值的变量（不推荐）<br>function hello(){<br>    a = “tsrot”;<br>    var b = “hello tsrot”;<br>}</p>
+<p>alert(a);  //能访问到tsrot<br>alert(b);  //error 不能访问<br>（3）所有window对象的属性和方法<br>一般情况下，window对象的内置属性都拥有全局作用域，例如window.name、window.location、window.top等等。</p>
+<h4 id="局部作用域（函数作用域）"><a href="#局部作用域（函数作用域）" class="headerlink" title="局部作用域（函数作用域）"></a>局部作用域（函数作用域）</h4><p>局部作用域在函数内创建，在函数内可访问，函数外不可访问。<br>function hello(){<br>    var a = “tsrot”;<br>    alert(a);<br>}</p>
+<p>hello(); //函数内可访问到tsrot<br>alert(a); //error not defined</p>
+
       
 
       
@@ -211,7 +194,7 @@ console.log(flatten2(arr)) //[1, 2, 3, 4]
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
+        			<a href="/categories/Exercise//" class="article-tag-list-link color4">Exercise</a>
         		</li>
       		
 		</ul>
@@ -220,7 +203,7 @@ console.log(flatten2(arr)) //[1, 2, 3, 4]
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/Exercise-在此处输入这篇文章的分类。/实现一个flatten函数">展开全文 >></a>
+          <a class="article-more-a" href="/Exercise/js作用域相关介绍">展开全文 >></a>
         </p>
       
 
