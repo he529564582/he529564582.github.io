@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="浏览器的渲染机制首先当用户输入一个URL的时候，浏览器就会发送一个请求，请求URL对应的资源。然后浏览器的HTML解析器会将这个文件解析，并且构建成一棵DOM树。在构建DOM树的时候，遇到JS和CSS元素，HTML解析器就换将控制权转让给JS解析器或者是CSS解析器。JS解析器或者是CSS解析器解析完这个元素时候，HTML又继续解析下个元素，直到整棵DOM树构建完成。DOM树构建完之后，浏览器把D">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T04:09:01.250Z">
+<meta property="og:updated_time" content="2019-05-22T04:29:48.977Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器的渲染机制">
 <meta name="twitter:description" content="浏览器的渲染机制首先当用户输入一个URL的时候，浏览器就会发送一个请求，请求URL对应的资源。然后浏览器的HTML解析器会将这个文件解析，并且构建成一棵DOM树。在构建DOM树的时候，遇到JS和CSS元素，HTML解析器就换将控制权转让给JS解析器或者是CSS解析器。JS解析器或者是CSS解析器解析完这个元素时候，HTML又继续解析下个元素，直到整棵DOM树构建完成。DOM树构建完之后，浏览器把D">
@@ -190,16 +190,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -291,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-27T19:27:29+08:00">
-                2019-06-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-27T19:27:29+08:00">
+                2018-05-27
               </time>
             
 
@@ -376,15 +366,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/other/常见排序算法" rel="next" title="常见排序算法">
-                <i class="fa fa-chevron-left"></i> 常见排序算法
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/js/js作用域相关介绍" rel="prev" title="js作用域">
+                js作用域 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -461,7 +451,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -472,7 +462,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
