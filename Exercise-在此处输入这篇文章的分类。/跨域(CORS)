@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://hefang.site">
-  <title>Archives: 2018 | he</title>
+  <title>CORS | he</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="he">
-<meta property="og:url" content="http://hefang.site/archives/2018/index.html">
+  <meta name="description" content="cors为什么要跨域？跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CORS">
+<meta property="og:url" content="http://hefang.site/Exercise-在此处输入这篇文章的分类。/跨域(CORS)">
 <meta property="og:site_name" content="he">
+<meta property="og:description" content="cors为什么要跨域？跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-11T12:04:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="he">
+<meta name="twitter:title" content="CORS">
+<meta name="twitter:description" content="cors为什么要跨域？跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个">
   
     <link rel="alternative" href="/atom.xml" title="he" type="application/atom+xml">
   
@@ -150,265 +154,105 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-跨域(CORS)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/原型与原型链" class="archive-article-date">
-  	<time datetime="2018-12-24T11:20:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/原型与原型链">原型与原型链</a>
+    <h1 class="article-title" itemprop="name">
+      CORS
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/动画队列" class="archive-article-date">
-  	<time datetime="2018-12-11T12:08:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/动画队列">动画队列</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/js作用域相关介绍" class="archive-article-date">
-  	<time datetime="2018-12-11T12:08:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/js作用域相关介绍">js作用域</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/介绍浏览器的渲染机制" class="archive-article-date">
-  	<time datetime="2018-12-11T12:06:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/介绍浏览器的渲染机制">浏览器的渲染机制</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/cookie&session&localStorage" class="archive-article-date">
-  	<time datetime="2018-12-11T12:06:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/cookie&session&localStorage">cookie&amp;session&amp;localStorage</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/HTMLCollection 和 NodeList" class="archive-article-date">
-  	<time datetime="2018-12-11T12:06:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/HTMLCollection 和 NodeList">HTMLCollection 和 NodeList</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/跨域(CORS)" class="archive-article-date">
+        
+        <a href="/Exercise-在此处输入这篇文章的分类。/跨域(CORS)" class="archive-article-date">
   	<time datetime="2018-12-11T12:04:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/跨域(CORS)">CORS</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="cors"><a href="#cors" class="headerlink" title="cors"></a>cors</h3><h4 id="为什么要跨域？"><a href="#为什么要跨域？" class="headerlink" title="为什么要跨域？"></a>为什么要跨域？</h4><p>跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。<br>一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 <a href="https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个有一个不同，就会产生跨域问题。即使是在http://localhost:80/" target="_blank" rel="noopener">https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个有一个不同，就会产生跨域问题。即使是在http://localhost:80/</a> 页面请求<a href="http://127.0.0.1:80" target="_blank" rel="noopener">http://127.0.0.1:80</a> 也会有跨域问题（因为域名不一样嘛~）</p>
+<h4 id="跨域的实现的几种方式"><a href="#跨域的实现的几种方式" class="headerlink" title="跨域的实现的几种方式"></a>跨域的实现的几种方式</h4><h5 id="1、Jsonp"><a href="#1、Jsonp" class="headerlink" title="1、Jsonp"></a>1、Jsonp</h5><p>最常见的一种跨域方式，其背后的原理就是利用script标签不受同源策略的限制，在页面中动态插入script，script标签的src属性就是后端api接口的地址，并且以get的方式将前端回调处理的函数名名告诉后端，后端在响应请求时会将函数回调返回，并且将数据以参数的形式传递回去<br>代码部分：</p>
+<script src="http://api.sta.com/weather.php?callback=showData"></script>
 
-        <div class="article-info info-on-right">
-          
-          
+<pre><code>&lt;script&gt;
+    function showData(ret){
+    console.log(ret);
+    }
+&lt;/script&gt;
+</code></pre><h5 id="2、CORS"><a href="#2、CORS" class="headerlink" title="2、CORS"></a>2、CORS</h5><p>当使用XMLHttpRequest发送请求是，如果浏览器发现了违反了同源策略就会自动加上一个请求头：origin，后端在接受请求的时候确定响应后会在Response Headers中加入一个熟悉：Access-Control-Allow-Origin，value就是发起请求的源地址 <a href="http://127.0.0.1:8080，浏览器得到响应会继续判断Access-Control—Allow—Origin的值是否和当前的地址相同，只有匹配成功后才进行响应处理" target="_blank" rel="noopener">http://127.0.0.1:8080，浏览器得到响应会继续判断Access-Control—Allow—Origin的值是否和当前的地址相同，只有匹配成功后才进行响应处理</a></p>
+<pre><code>var http = require(&apos;http&apos;)
+var fs = require(&apos;fs&apos;)
+var path = require(&apos;path&apos;)
+var url = require(&apos;url&apos;)
+http.createServer(function(req,res){
+    var pathObj = url.parse(req.url,true)
+    switch(pathObj.pathname){
+        case &apos;/getWeather&apos;:
+        var  weather =[
+            &quot;beijing&quot;:&quot;sunny&quot;,
+            &quot;shanghai&quot;:&quot;cloudy&quot;
+        ]
+        res.setHeader(&apos;Access-Control-Allow-Origin&apos;,http://localhost:8080)
+        res.end(JSON.stringify(weather))
+        break;
+        default:
+        fs.readFile(parse.join(__dirname,pathObj.pathname),function(e,data){
+            if(e){
+                res.writeHead(404, &apos;not found&apos;)
+                res.end(&apos;&lt;h1&gt;404 not found&lt;/h1&gt;&apos;)
+            }else{
+                res.end(data)
+            }
+        })
+    }
+}).listen(8080)
+
+
+ $(&apos;.change&apos;).addEventListener(&apos;click&apos;, function () {
+    var xhr = new XMLHttpRequest();
+    xhr.open(&apos;get&apos;, &apos;http://localhost:8080/getWeather&apos;, true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
+        appendHtml(JSON.parse(xhr.responseText))
+    }
+    };
+});
+</code></pre><h5 id="2、window-postMessage-message-targetOrigin"><a href="#2、window-postMessage-message-targetOrigin" class="headerlink" title="2、window.postMessage(message,targetOrigin)"></a>2、window.postMessage(message,targetOrigin)</h5><p>方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。这种方法不能和服务端交换数据，只能在两个窗口（iframe）之间交换数据 </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -421,131 +265,126 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://hefang.site/Exercise-在此处输入这篇文章的分类。/跨域(CORS)" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/数组扁平化" class="archive-article-date">
-  	<time datetime="2018-12-11T12:03:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/Exercise-在此处输入这篇文章的分类。/HTMLCollection 和 NodeList" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          HTMLCollection 和 NodeList
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Exercise-在此处输入这篇文章的分类。/数组扁平化" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript专题之数组扁平化</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/数组扁平化">JavaScript专题之数组扁平化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#cors"><span class="toc-number">1.</span> <span class="toc-text">cors</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么要跨域？"><span class="toc-number">1.1.</span> <span class="toc-text">为什么要跨域？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#跨域的实现的几种方式"><span class="toc-number">1.2.</span> <span class="toc-text">跨域的实现的几种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、Jsonp"><span class="toc-number">1.2.1.</span> <span class="toc-text">1、Jsonp</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、CORS"><span class="toc-number">1.2.2.</span> <span class="toc-text">2、CORS</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、window-postMessage-message-targetOrigin"><span class="toc-number">1.2.3.</span> <span class="toc-text">2、window.postMessage(message,targetOrigin)</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/随机生成IP、字符串、颜色等" class="archive-article-date">
-  	<time datetime="2018-12-11T12:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/随机生成IP、字符串、颜色等">随机生成ip、字符串、color</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/实现一个flatten函数" class="archive-article-date">
-  	<time datetime="2018-12-11T12:02:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/实现一个flatten函数">实现一个flatten函数</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -568,8 +407,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

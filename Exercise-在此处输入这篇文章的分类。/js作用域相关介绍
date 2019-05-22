@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://hefang.site">
-  <title>Archives: 2018 | he</title>
+  <title>js作用域 | he</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="he">
-<meta property="og:url" content="http://hefang.site/archives/2018/index.html">
+  <meta name="description" content="JavaScript的作用域是什么作用域，在维基百科上解释是：在电脑程序设计中，作用域（scope，或译作有效范围）是名字（name）与实体（entity）的绑定（binding）保持有效的那部分计算机程序。简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种，局部作用域又称为函数作用域。 全局作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js作用域">
+<meta property="og:url" content="http://hefang.site/Exercise-在此处输入这篇文章的分类。/js作用域相关介绍">
 <meta property="og:site_name" content="he">
+<meta property="og:description" content="JavaScript的作用域是什么作用域，在维基百科上解释是：在电脑程序设计中，作用域（scope，或译作有效范围）是名字（name）与实体（entity）的绑定（binding）保持有效的那部分计算机程序。简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种，局部作用域又称为函数作用域。 全局作">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-11T12:08:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="he">
+<meta name="twitter:title" content="js作用域">
+<meta name="twitter:description" content="JavaScript的作用域是什么作用域，在维基百科上解释是：在电脑程序设计中，作用域（scope，或译作有效范围）是名字（name）与实体（entity）的绑定（binding）保持有效的那部分计算机程序。简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种，局部作用域又称为函数作用域。 全局作">
   
     <link rel="alternative" href="/atom.xml" title="he" type="application/atom+xml">
   
@@ -150,113 +154,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js作用域相关介绍" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/原型与原型链" class="archive-article-date">
-  	<time datetime="2018-12-24T11:20:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/原型与原型链">原型与原型链</a>
+    <h1 class="article-title" itemprop="name">
+      js作用域
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/动画队列" class="archive-article-date">
-  	<time datetime="2018-12-11T12:08:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/动画队列">动画队列</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/js作用域相关介绍" class="archive-article-date">
+        
+        <a href="/Exercise-在此处输入这篇文章的分类。/js作用域相关介绍" class="archive-article-date">
   	<time datetime="2018-12-11T12:08:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/js作用域相关介绍">js作用域</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="JavaScript的作用域是什么"><a href="#JavaScript的作用域是什么" class="headerlink" title="JavaScript的作用域是什么"></a>JavaScript的作用域是什么</h4><p>作用域，在维基百科上解释是：在电脑程序设计中，作用域（scope，或译作有效范围）是名字（name）与实体（entity）的绑定（binding）保持有效的那部分计算机程序。<br>简单的说，作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，变量的作用域有全局作用域和局部作用域两种，局部作用域又称为函数作用域。</p>
+<h4 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h4><p>在代码中任何地方都能访问到的对象拥有全局作用域，一般来说以下几种情形拥有全局作用域：</p>
+<p>(1）程序最外层定义的函数或者变量<br>var a = “tsrot”;<br>function hello(){<br>    alert(a);<br>}</p>
+<p>function sayHello(){<br>    hello();<br>}</p>
+<p>alert(a);     //能访问到tsrot<br>hello();      //能访问到tsrot<br>sayHello();   //能访问到hello函数，然后也能访问到tsrot<br>（2）所有末定义直接赋值的变量（不推荐）<br>function hello(){<br>    a = “tsrot”;<br>    var b = “hello tsrot”;<br>}</p>
+<p>alert(a);  //能访问到tsrot<br>alert(b);  //error 不能访问<br>（3）所有window对象的属性和方法<br>一般情况下，window对象的内置属性都拥有全局作用域，例如window.name、window.location、window.top等等。</p>
+<h4 id="局部作用域（函数作用域）"><a href="#局部作用域（函数作用域）" class="headerlink" title="局部作用域（函数作用域）"></a>局部作用域（函数作用域）</h4><p>局部作用域在函数内创建，在函数内可访问，函数外不可访问。<br>function hello(){<br>    var a = “tsrot”;<br>    alert(a);<br>}</p>
+<p>hello(); //函数内可访问到tsrot<br>alert(a); //error not defined</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -269,283 +224,126 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://hefang.site/Exercise-在此处输入这篇文章的分类。/js作用域相关介绍" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/介绍浏览器的渲染机制" class="archive-article-date">
-  	<time datetime="2018-12-11T12:06:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/Exercise-在此处输入这篇文章的分类。/动画队列" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          动画队列
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Exercise-在此处输入这篇文章的分类。/介绍浏览器的渲染机制" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">浏览器的渲染机制</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/介绍浏览器的渲染机制">浏览器的渲染机制</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaScript的作用域是什么"><span class="toc-number">1.</span> <span class="toc-text">JavaScript的作用域是什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#全局作用域"><span class="toc-number">2.</span> <span class="toc-text">全局作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#局部作用域（函数作用域）"><span class="toc-number">3.</span> <span class="toc-text">局部作用域（函数作用域）</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/cookie&session&localStorage" class="archive-article-date">
-  	<time datetime="2018-12-11T12:06:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/cookie&session&localStorage">cookie&amp;session&amp;localStorage</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/HTMLCollection 和 NodeList" class="archive-article-date">
-  	<time datetime="2018-12-11T12:06:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/HTMLCollection 和 NodeList">HTMLCollection 和 NodeList</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/跨域(CORS)" class="archive-article-date">
-  	<time datetime="2018-12-11T12:04:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/跨域(CORS)">CORS</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/数组扁平化" class="archive-article-date">
-  	<time datetime="2018-12-11T12:03:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/数组扁平化">JavaScript专题之数组扁平化</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/随机生成IP、字符串、颜色等" class="archive-article-date">
-  	<time datetime="2018-12-11T12:03:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/随机生成IP、字符串、颜色等">随机生成ip、字符串、color</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/Exercise-在此处输入这篇文章的分类。/实现一个flatten函数" class="archive-article-date">
-  	<time datetime="2018-12-11T12:02:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/Exercise-在此处输入这篇文章的分类。/实现一个flatten函数">实现一个flatten函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Exercise-在此处输入这篇文章的分类。//" class="article-tag-list-link color2">Exercise   //在此处输入这篇文章的分类。</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -568,8 +366,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
