@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="cors为什么要跨域？跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个">
+<meta name="description" content="1.块级元素和行内元素分别有哪些？块级元素：div，h1~h6，table，form，header， footer，nav，ul，li，ol，dl。。。。。行内元素：a，input，span，i，img，strong， select。。。。。 2.动手测试并列出4条以上的特性区别。    块级元素 行内元素      没有设置宽度的情况下，默认占据一整行 内容有多宽，我就有多宽     可以随便设">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CORS">
-<meta property="og:url" content="http://www.hefang.site/2018/10/02/跨域(CORS)/index.html">
+<meta property="og:title" content="原型与原型链">
+<meta property="og:url" content="http://www.hefang.site/2018/05/24/css常见样式/index.html">
 <meta property="og:site_name" content="he&#39;blog">
-<meta property="og:description" content="cors为什么要跨域？跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个">
+<meta property="og:description" content="1.块级元素和行内元素分别有哪些？块级元素：div，h1~h6，table，form，header， footer，nav，ul，li，ol，dl。。。。。行内元素：a，input，span，i，img，strong， select。。。。。 2.动手测试并列出4条以上的特性区别。    块级元素 行内元素      没有设置宽度的情况下，默认占据一整行 内容有多宽，我就有多宽     可以随便设">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T04:09:43.265Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/8126350-cfd4c8f3ff1fa676.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-05-24T14:38:57.975Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CORS">
-<meta name="twitter:description" content="cors为什么要跨域？跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个">
+<meta name="twitter:title" content="原型与原型链">
+<meta name="twitter:description" content="1.块级元素和行内元素分别有哪些？块级元素：div，h1~h6，table，form，header， footer，nav，ul，li，ol，dl。。。。。行内元素：a，input，span，i，img，strong， select。。。。。 2.动手测试并列出4条以上的特性区别。    块级元素 行内元素      没有设置宽度的情况下，默认占据一整行 内容有多宽，我就有多宽     可以随便设">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/8126350-cfd4c8f3ff1fa676.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://www.hefang.site/2018/10/02/跨域(CORS)/">
+  <link rel="canonical" href="http://www.hefang.site/2018/05/24/css常见样式/">
 
 
 
 
 
-  <title>CORS | he'blog</title>
+  <title>原型与原型链 | he'blog</title>
   
 
 
@@ -252,7 +254,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2018/10/02/跨域(CORS)/">
+    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2018/05/24/css常见样式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="何方">
@@ -269,7 +271,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CORS</h1>
+          <h1 class="post-title" itemprop="name headline">原型与原型链</h1>
         
 
         <div class="post-meta">
@@ -281,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T16:27:29+08:00">
-                2018-10-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T22:44:29+08:00">
+                2018-05-24
               </time>
             
 
@@ -304,8 +306,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/http/" itemprop="url" rel="index">
-                    <span itemprop="name">http</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -341,55 +343,136 @@
       
 
       
-        <h3 id="cors"><a href="#cors" class="headerlink" title="cors"></a>cors</h3><h4 id="为什么要跨域？"><a href="#为什么要跨域？" class="headerlink" title="为什么要跨域？"></a>为什么要跨域？</h4><p>跨域问题是浏览器同源策略限制，当前域名的js只能读取同域下的窗口属性。<br>一个网站的网址组成包括协议名，子域名，主域名，端口号。比如 <a href="https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个有一个不同，就会产生跨域问题。即使是在http://localhost:80/" target="_blank" rel="noopener">https://www.github.com/80，其中https是协议名,www.github.com是子域名，github.com是主域名，端口号是80，当在在页面中从一个url请求数据时，如果这个url的协议名、子域名、主域名、端口号任意一个有一个不同，就会产生跨域问题。即使是在http://localhost:80/</a> 页面请求<a href="http://127.0.0.1:80" target="_blank" rel="noopener">http://127.0.0.1:80</a> 也会有跨域问题（因为域名不一样嘛~）</p>
-<h4 id="跨域的实现的几种方式"><a href="#跨域的实现的几种方式" class="headerlink" title="跨域的实现的几种方式"></a>跨域的实现的几种方式</h4><h5 id="1、Jsonp"><a href="#1、Jsonp" class="headerlink" title="1、Jsonp"></a>1、Jsonp</h5><p>最常见的一种跨域方式，其背后的原理就是利用script标签不受同源策略的限制，在页面中动态插入script，script标签的src属性就是后端api接口的地址，并且以get的方式将前端回调处理的函数名名告诉后端，后端在响应请求时会将函数回调返回，并且将数据以参数的形式传递回去<br>代码部分：</p>
-<script src="http://api.sta.com/weather.php?callback=showData"></script>
-
-<pre><code>&lt;script&gt;
-    function showData(ret){
-    console.log(ret);
-    }
-&lt;/script&gt;
-</code></pre><h5 id="2、CORS"><a href="#2、CORS" class="headerlink" title="2、CORS"></a>2、CORS</h5><p>当使用XMLHttpRequest发送请求是，如果浏览器发现了违反了同源策略就会自动加上一个请求头：origin，后端在接受请求的时候确定响应后会在Response Headers中加入一个熟悉：Access-Control-Allow-Origin，value就是发起请求的源地址 <a href="http://127.0.0.1:8080，浏览器得到响应会继续判断Access-Control—Allow—Origin的值是否和当前的地址相同，只有匹配成功后才进行响应处理" target="_blank" rel="noopener">http://127.0.0.1:8080，浏览器得到响应会继续判断Access-Control—Allow—Origin的值是否和当前的地址相同，只有匹配成功后才进行响应处理</a></p>
-<pre><code>var http = require(&apos;http&apos;)
-var fs = require(&apos;fs&apos;)
-var path = require(&apos;path&apos;)
-var url = require(&apos;url&apos;)
-http.createServer(function(req,res){
-    var pathObj = url.parse(req.url,true)
-    switch(pathObj.pathname){
-        case &apos;/getWeather&apos;:
-        var  weather =[
-            &quot;beijing&quot;:&quot;sunny&quot;,
-            &quot;shanghai&quot;:&quot;cloudy&quot;
-        ]
-        res.setHeader(&apos;Access-Control-Allow-Origin&apos;,http://localhost:8080)
-        res.end(JSON.stringify(weather))
-        break;
-        default:
-        fs.readFile(parse.join(__dirname,pathObj.pathname),function(e,data){
-            if(e){
-                res.writeHead(404, &apos;not found&apos;)
-                res.end(&apos;&lt;h1&gt;404 not found&lt;/h1&gt;&apos;)
-            }else{
-                res.end(data)
-            }
-        })
-    }
-}).listen(8080)
-
-
- $(&apos;.change&apos;).addEventListener(&apos;click&apos;, function () {
-    var xhr = new XMLHttpRequest();
-    xhr.open(&apos;get&apos;, &apos;http://localhost:8080/getWeather&apos;, true);
-    xhr.send();
-    xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
-        appendHtml(JSON.parse(xhr.responseText))
-    }
-    };
-});
-</code></pre><h5 id="2、window-postMessage-message-targetOrigin"><a href="#2、window-postMessage-message-targetOrigin" class="headerlink" title="2、window.postMessage(message,targetOrigin)"></a>2、window.postMessage(message,targetOrigin)</h5><p>方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。这种方法不能和服务端交换数据，只能在两个窗口（iframe）之间交换数据 </p>
+        <h3 id="1-块级元素和行内元素分别有哪些？"><a href="#1-块级元素和行内元素分别有哪些？" class="headerlink" title="1.块级元素和行内元素分别有哪些？"></a>1.块级元素和行内元素分别有哪些？</h3><p>块级元素：div，h1~h6，table，form，header， footer，nav，ul，li，ol，dl。。。。。<br>行内元素：a，input，span，i，img，strong， select。。。。。</p>
+<h3 id="2-动手测试并列出4条以上的特性区别。"><a href="#2-动手测试并列出4条以上的特性区别。" class="headerlink" title="2.动手测试并列出4条以上的特性区别。"></a>2.动手测试并列出4条以上的特性区别。</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>块级元素</th>
+<th>行内元素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>没有设置宽度的情况下，默认占据一整行</td>
+<td>内容有多宽，我就有多宽</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>可以随便设置宽高</td>
+<td>不可以</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>随便设置padding，margin</td>
+<td>padding和margin只可以设置左右</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>可以包裹块级元素，行内元素</td>
+<td>我只能包裹文本，和行内元素</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-什么是-CSS-继承-哪些属性能继承，哪些不能？"><a href="#3-什么是-CSS-继承-哪些属性能继承，哪些不能？" class="headerlink" title="3.什么是 CSS 继承? 哪些属性能继承，哪些不能？"></a>3.什么是 CSS 继承? 哪些属性能继承，哪些不能？</h3><p>CSS继承，就是子元素继承了父元素的属性。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>能继承</th>
+<th>不能继承</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>letter-spacing</td>
+<td>height</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>word-spacing</td>
+<td>min-height</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>white-space</td>
+<td>max-height</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>line-height</td>
+<td>width</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>color</td>
+<td>min-width</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>font</td>
+<td>max-width</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>font-style</td>
+<td>float</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>font-family</td>
+<td>position</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>text-align</td>
+<td>overflow</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>text-indent</td>
+<td>vertical-align</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>font-weight</td>
+<td>clear</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>等等等等</td>
+<td>等等等等</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-如何让块级元素水平居中？如何让行内元素水平居中"><a href="#4-如何让块级元素水平居中？如何让行内元素水平居中" class="headerlink" title="4.如何让块级元素水平居中？如何让行内元素水平居中?"></a>4.如何让块级元素水平居中？如何让行内元素水平居中?</h3><p>块级元素水平居中：margin：0 auto；<br>行内元素水平居中：text-align：center；</p>
+<h3 id="5-单行文本溢出加……-如何实现？"><a href="#5-单行文本溢出加……-如何实现？" class="headerlink" title="5.单行文本溢出加…….如何实现？"></a>5.单行文本溢出加…….如何实现？</h3><p>E{<br>white-space:nowrap;<br>overflow:hidden;<br>text-overflow;<br>}</p>
+<h3 id="6-px-em-rem-有什么区别"><a href="#6-px-em-rem-有什么区别" class="headerlink" title="6.px, em, rem 有什么区别"></a>6.px, em, rem 有什么区别</h3><ul>
+<li>px：固定尺寸；</li>
+<li>em： 相对于当前对象内文本的字体尺寸</li>
+<li>rem： 相对于HTML的相对大小</li>
+</ul>
+<h3 id="7-解释下面代码的作用-为什么要加引号-字体里-5b8b-4f53代表什么"><a href="#7-解释下面代码的作用-为什么要加引号-字体里-5b8b-4f53代表什么" class="headerlink" title="7.解释下面代码的作用?为什么要加引号? 字体里\5b8b\4f53代表什么?"></a>7.解释下面代码的作用?为什么要加引号? 字体里\5b8b\4f53代表什么?</h3><p>body{<br>  font: 12px/1.5 tahoma,arial,’Hiragino Sans GB’,’\5b8b\4f53’,sans-serif;<br>}</p>
+<p>1.设置body字体大小为12px，行高是字体1.5倍的像素值，后面则是第一到第五字体，用逗号隔开，如果第一个你电脑没有，则运行第二个。<br>2.加引号是因为，字体间有空格，这样会识别为不同的两个单词，所以加空格。<br>3.字体那些代码代表“宋体”</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/8126350-cfd4c8f3ff1fa676.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"><br>ps:在浏览器console里输入escape（”你想要的字体编码”），就能出现像想要的代码<br>记住将%u改成/。</p>
 
       
     </div>
@@ -414,18 +497,14 @@ http.createServer(function(req,res){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/15/cookie&session&localStorage/" rel="next" title="cookie&session&localStorage">
-                <i class="fa fa-chevron-left"></i> cookie&session&localStorage
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/26/动画队列/" rel="prev" title="动画队列">
-                动画队列 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/27/介绍浏览器的渲染机制/" rel="prev" title="浏览器的渲染机制">
+                浏览器的渲染机制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -549,7 +628,7 @@ http.createServer(function(req,res){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#cors"><span class="nav-number">1.</span> <span class="nav-text">cors</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要跨域？"><span class="nav-number">1.1.</span> <span class="nav-text">为什么要跨域？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域的实现的几种方式"><span class="nav-number">1.2.</span> <span class="nav-text">跨域的实现的几种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、Jsonp"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、Jsonp</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、CORS"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、CORS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、window-postMessage-message-targetOrigin"><span class="nav-number">1.2.3.</span> <span class="nav-text">2、window.postMessage(message,targetOrigin)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-块级元素和行内元素分别有哪些？"><span class="nav-number">1.</span> <span class="nav-text">1.块级元素和行内元素分别有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-动手测试并列出4条以上的特性区别。"><span class="nav-number">2.</span> <span class="nav-text">2.动手测试并列出4条以上的特性区别。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-什么是-CSS-继承-哪些属性能继承，哪些不能？"><span class="nav-number">3.</span> <span class="nav-text">3.什么是 CSS 继承? 哪些属性能继承，哪些不能？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-如何让块级元素水平居中？如何让行内元素水平居中"><span class="nav-number">4.</span> <span class="nav-text">4.如何让块级元素水平居中？如何让行内元素水平居中?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-单行文本溢出加……-如何实现？"><span class="nav-number">5.</span> <span class="nav-text">5.单行文本溢出加…….如何实现？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-px-em-rem-有什么区别"><span class="nav-number">6.</span> <span class="nav-text">6.px, em, rem 有什么区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-解释下面代码的作用-为什么要加引号-字体里-5b8b-4f53代表什么"><span class="nav-number">7.</span> <span class="nav-text">7.解释下面代码的作用?为什么要加引号? 字体里\5b8b\4f53代表什么?</span></a></li></ol></div>
             
 
           </div>
