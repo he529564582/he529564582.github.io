@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="第一种: function copy(obj){ var newObject={}; for (var key in obj) {     if(typeof obj[key] === &amp;apos;number&amp;apos;||typeof obj[key] === &amp;apos;boolean&amp;apos;||typeof obj[key] === &amp;apos;string&amp;apos;||obj[ke">
+<meta name="description" content="第一种:function copy(obj){ var newObject={}; for (var key in obj) {     if(typeof obj[key] === &amp;apos;number&amp;apos;||typeof obj[key] === &amp;apos;boolean&amp;apos;||typeof obj[key] === &amp;apos;string&amp;apos;||obj[key">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深拷贝函数">
 <meta property="og:url" content="http://www.hefang.site/2019/05/29/深拷贝函数/index.html">
 <meta property="og:site_name" content="he&#39;blog">
-<meta property="og:description" content="第一种: function copy(obj){ var newObject={}; for (var key in obj) {     if(typeof obj[key] === &amp;apos;number&amp;apos;||typeof obj[key] === &amp;apos;boolean&amp;apos;||typeof obj[key] === &amp;apos;string&amp;apos;||obj[ke">
+<meta property="og:description" content="第一种:function copy(obj){ var newObject={}; for (var key in obj) {     if(typeof obj[key] === &amp;apos;number&amp;apos;||typeof obj[key] === &amp;apos;boolean&amp;apos;||typeof obj[key] === &amp;apos;string&amp;apos;||obj[key">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-29T13:44:37.676Z">
+<meta property="og:updated_time" content="2019-05-29T13:44:59.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深拷贝函数">
-<meta name="twitter:description" content="第一种: function copy(obj){ var newObject={}; for (var key in obj) {     if(typeof obj[key] === &amp;apos;number&amp;apos;||typeof obj[key] === &amp;apos;boolean&amp;apos;||typeof obj[key] === &amp;apos;string&amp;apos;||obj[ke">
+<meta name="twitter:description" content="第一种:function copy(obj){ var newObject={}; for (var key in obj) {     if(typeof obj[key] === &amp;apos;number&amp;apos;||typeof obj[key] === &amp;apos;boolean&amp;apos;||typeof obj[key] === &amp;apos;string&amp;apos;||obj[key">
 
 
 
@@ -341,8 +341,7 @@
       
 
       
-        <p>第一种:</p>
-<pre><code>function copy(obj){
+        <h4 id="第一种"><a href="#第一种" class="headerlink" title="第一种:"></a>第一种:</h4><pre><code>function copy(obj){
 var newObject={};
 for (var key in obj) {
     if(typeof obj[key] === &apos;number&apos;||typeof obj[key] === &apos;boolean&apos;||typeof obj[key] === &apos;string&apos;||obj[key] ===undefined||obj[key] === null){
@@ -353,8 +352,7 @@ for (var key in obj) {
 }
 return newObject;
 }
-</code></pre><p>第二种:</p>
-<pre><code>var cloneObj = JSON.parse(JSON.stringify(obj));
+</code></pre><h4 id="第二种"><a href="#第二种" class="headerlink" title="第二种:"></a>第二种:</h4><pre><code>var cloneObj = JSON.parse(JSON.stringify(obj));
 </code></pre>
       
     </div>
@@ -439,8 +437,17 @@ return newObject;
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -491,6 +498,22 @@ return newObject;
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种"><span class="nav-number">1.</span> <span class="nav-text">第一种:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种"><span class="nav-number">2.</span> <span class="nav-text">第二种:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
