@@ -342,10 +342,7 @@
       
         
           
-            <h3 id="解析白屏和FOUC"><a href="#解析白屏和FOUC" class="headerlink" title="解析白屏和FOUC"></a>解析白屏和FOUC</h3><ul>
-<li>白屏：</li>
-<li><p>1.css导致</p>
-<ul>
+            <h3 id="解析白屏和FOUC"><a href="#解析白屏和FOUC" class="headerlink" title="解析白屏和FOUC"></a>解析白屏和FOUC</h3><h4 id="白屏："><a href="#白屏：" class="headerlink" title="白屏："></a>白屏：</h4><h5 id="1-css导致"><a href="#1-css导致" class="headerlink" title="1.css导致"></a>1.css导致</h5><ul>
 <li><p>如果把样式放在底部，对于IE浏览器，某些场景下（打开新的窗口，刷新页面）时会出现白屏，而不是逐步展现内容；</p>
 </li>
 <li><p>如果使用@import标签，即使CSS放在头部，用link引入，也有可能出现白屏。</p>
@@ -353,22 +350,16 @@
 <li><p>白屏产生的原因和浏览器的渲染机制有关，在painting之前的步骤上有时间的延迟，主要是CSS加载的延迟。</p>
 </li>
 </ul>
-</li>
-<li><p>2.js导致：</p>
-<ul>
+<h5 id="2-js导致："><a href="#2-js导致：" class="headerlink" title="2.js导致："></a>2.js导致：</h5><ul>
 <li>把JS放在顶部可能会导致白屏。</li>
 <li>对于图片和CSS，在加载时会并发加载（如同个域名下同时加载两个文件），但在加载JS时，会禁用并发（脚本会阻塞后面内容的呈现几后面组件的加载），所以把JS放在页面顶部会导致白屏现象。</li>
 </ul>
-</li>
-<li><p>FOUC：</p>
-<ul>
+<h4 id="FOUC："><a href="#FOUC：" class="headerlink" title="FOUC："></a>FOUC：</h4><ul>
 <li><p>FOUC（Flash Of Unstyled Content，文档样式闪烁）;</p>
 </li>
 <li><p>产生的原因：如果把css放在底部，对于IE浏览器，对于某些场景，就会出现FOUC现象，对于firfox会一直表现FOUC，</p>
 </li>
-<li><p>解决办法：把link放在头部。 把@import换成link引入。</p>
-</li>
-</ul>
+<li><p>解决办法：把link放在头部。 把@import换成link引入</p>
 </li>
 </ul>
 

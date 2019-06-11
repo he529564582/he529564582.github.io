@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="解析白屏和FOUC 白屏： 1.css导致  如果把样式放在底部，对于IE浏览器，某些场景下（打开新的窗口，刷新页面）时会出现白屏，而不是逐步展现内容；  如果使用@import标签，即使CSS放在头部，用link引入，也有可能出现白屏。  白屏产生的原因和浏览器的渲染机制有关，在painting之前的步骤上有时间的延迟，主要是CSS加载的延迟。    2.js导致：  把JS放在顶部可能会导致白">
+<meta name="description" content="解析白屏和FOUC白屏：1.css导致 如果把样式放在底部，对于IE浏览器，某些场景下（打开新的窗口，刷新页面）时会出现白屏，而不是逐步展现内容；  如果使用@import标签，即使CSS放在头部，用link引入，也有可能出现白屏。  白屏产生的原因和浏览器的渲染机制有关，在painting之前的步骤上有时间的延迟，主要是CSS加载的延迟。   2.js导致： 把JS放在顶部可能会导致白屏。 对于">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css常见样式">
 <meta property="og:url" content="http://www.hefang.site/2019/06/11/解析白屏和FOUC/index.html">
 <meta property="og:site_name" content="he&#39;blog">
-<meta property="og:description" content="解析白屏和FOUC 白屏： 1.css导致  如果把样式放在底部，对于IE浏览器，某些场景下（打开新的窗口，刷新页面）时会出现白屏，而不是逐步展现内容；  如果使用@import标签，即使CSS放在头部，用link引入，也有可能出现白屏。  白屏产生的原因和浏览器的渲染机制有关，在painting之前的步骤上有时间的延迟，主要是CSS加载的延迟。    2.js导致：  把JS放在顶部可能会导致白">
+<meta property="og:description" content="解析白屏和FOUC白屏：1.css导致 如果把样式放在底部，对于IE浏览器，某些场景下（打开新的窗口，刷新页面）时会出现白屏，而不是逐步展现内容；  如果使用@import标签，即使CSS放在头部，用link引入，也有可能出现白屏。  白屏产生的原因和浏览器的渲染机制有关，在painting之前的步骤上有时间的延迟，主要是CSS加载的延迟。   2.js导致： 把JS放在顶部可能会导致白屏。 对于">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-11T13:50:53.757Z">
+<meta property="og:updated_time" content="2019-06-11T14:12:41.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css常见样式">
-<meta name="twitter:description" content="解析白屏和FOUC 白屏： 1.css导致  如果把样式放在底部，对于IE浏览器，某些场景下（打开新的窗口，刷新页面）时会出现白屏，而不是逐步展现内容；  如果使用@import标签，即使CSS放在头部，用link引入，也有可能出现白屏。  白屏产生的原因和浏览器的渲染机制有关，在painting之前的步骤上有时间的延迟，主要是CSS加载的延迟。    2.js导致：  把JS放在顶部可能会导致白">
+<meta name="twitter:description" content="解析白屏和FOUC白屏：1.css导致 如果把样式放在底部，对于IE浏览器，某些场景下（打开新的窗口，刷新页面）时会出现白屏，而不是逐步展现内容；  如果使用@import标签，即使CSS放在头部，用link引入，也有可能出现白屏。  白屏产生的原因和浏览器的渲染机制有关，在painting之前的步骤上有时间的延迟，主要是CSS加载的延迟。   2.js导致： 把JS放在顶部可能会导致白屏。 对于">
 
 
 
@@ -341,10 +341,7 @@
       
 
       
-        <h3 id="解析白屏和FOUC"><a href="#解析白屏和FOUC" class="headerlink" title="解析白屏和FOUC"></a>解析白屏和FOUC</h3><ul>
-<li>白屏：</li>
-<li><p>1.css导致</p>
-<ul>
+        <h3 id="解析白屏和FOUC"><a href="#解析白屏和FOUC" class="headerlink" title="解析白屏和FOUC"></a>解析白屏和FOUC</h3><h4 id="白屏："><a href="#白屏：" class="headerlink" title="白屏："></a>白屏：</h4><h5 id="1-css导致"><a href="#1-css导致" class="headerlink" title="1.css导致"></a>1.css导致</h5><ul>
 <li><p>如果把样式放在底部，对于IE浏览器，某些场景下（打开新的窗口，刷新页面）时会出现白屏，而不是逐步展现内容；</p>
 </li>
 <li><p>如果使用@import标签，即使CSS放在头部，用link引入，也有可能出现白屏。</p>
@@ -352,22 +349,16 @@
 <li><p>白屏产生的原因和浏览器的渲染机制有关，在painting之前的步骤上有时间的延迟，主要是CSS加载的延迟。</p>
 </li>
 </ul>
-</li>
-<li><p>2.js导致：</p>
-<ul>
+<h5 id="2-js导致："><a href="#2-js导致：" class="headerlink" title="2.js导致："></a>2.js导致：</h5><ul>
 <li>把JS放在顶部可能会导致白屏。</li>
 <li>对于图片和CSS，在加载时会并发加载（如同个域名下同时加载两个文件），但在加载JS时，会禁用并发（脚本会阻塞后面内容的呈现几后面组件的加载），所以把JS放在页面顶部会导致白屏现象。</li>
 </ul>
-</li>
-<li><p>FOUC：</p>
-<ul>
+<h4 id="FOUC："><a href="#FOUC：" class="headerlink" title="FOUC："></a>FOUC：</h4><ul>
 <li><p>FOUC（Flash Of Unstyled Content，文档样式闪烁）;</p>
 </li>
 <li><p>产生的原因：如果把css放在底部，对于IE浏览器，对于某些场景，就会出现FOUC现象，对于firfox会一直表现FOUC，</p>
 </li>
-<li><p>解决办法：把link放在头部。 把@import换成link引入。</p>
-</li>
-</ul>
+<li><p>解决办法：把link放在头部。 把@import换成link引入</p>
 </li>
 </ul>
 
@@ -525,7 +516,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#解析白屏和FOUC"><span class="nav-number">1.</span> <span class="nav-text">解析白屏和FOUC</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#解析白屏和FOUC"><span class="nav-number">1.</span> <span class="nav-text">解析白屏和FOUC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#白屏："><span class="nav-number">1.1.</span> <span class="nav-text">白屏：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-css导致"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.css导致</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-js导致："><span class="nav-number">1.1.2.</span> <span class="nav-text">2.js导致：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FOUC："><span class="nav-number">1.2.</span> <span class="nav-text">FOUC：</span></a></li></ol></li></ol></div>
             
 
           </div>
