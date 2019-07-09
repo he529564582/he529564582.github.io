@@ -249,7 +249,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/01/vue01/">
+    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/01/vue日记01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="何方">
@@ -268,7 +268,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/01/vue01/" itemprop="url">vue日记01</a></h1>
+                <a class="post-title-link" href="/2019/07/01/vue日记01/" itemprop="url">vue日记01</a></h1>
         
 
         <div class="post-meta">
@@ -342,7 +342,7 @@
       
         
           
-            <h2 id="vue日记"><a href="#vue日记" class="headerlink" title="vue日记"></a>vue日记</h2><h3 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h3><p><code>v-if</code>控制切换一个元素是否显<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-if=isActive&gt;&lt;/div&gt;</span><br><span class="line">&lt;div v-else&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">    isActive:true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <h2 id="vue日记01"><a href="#vue日记01" class="headerlink" title="vue日记01"></a>vue日记01</h2><h3 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h3><p><code>v-if</code>控制切换一个元素是否显<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-if=isActive&gt;&lt;/div&gt;</span><br><span class="line">&lt;div v-else&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">data:&#123;</span><br><span class="line">    isActive:true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="数据与方法"><a href="#数据与方法" class="headerlink" title="数据与方法"></a>数据与方法</h3><p>当一个Vue实例被创建的时候，它的data里面所有的数据都会被加入到Vue相应系统中，如果data里面的值发生改变，视图也会产生相应的改变，将值更新为最新的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var data = &#123;a:1&#125;</span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    data:data</span><br><span class="line">&#125;)</span><br><span class="line">data.a = vm.a</span><br></pre></td></tr></table></figure></p>
 <p>设置a的值也会影响到原始数据（data），反之也是一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vm.a = 2</span><br><span class="line">data.a = 2</span><br></pre></td></tr></table></figure></p>
 <p>所以当数据发生改变的时候，视图会进行重新渲染，只有在实例在被创建时data中存在的属性才是响应式的，比如说添加一个新的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.b = 10</span><br></pre></td></tr></table></figure></p>
