@@ -249,6 +249,327 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/04/vue日记08/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何方">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="he'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/04/vue日记08/" itemprop="url">vue日记08</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-04T20:27:29+08:00">
+                2019-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="vue日记08"><a href="#vue日记08" class="headerlink" title="vue日记08"></a>vue日记08</h2><h3 id="表单输入绑定"><a href="#表单输入绑定" class="headerlink" title="表单输入绑定"></a>表单输入绑定</h3><h4 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h4><p>用 v-model 指令在表单<code>input</code>、<code>textarea</code> 及 <code>select</code> 元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。尽管有些神奇，但 v-model 本质上不过是语法糖。它负责监听用户的输入事件以更新数据，并对一些极端场景进行一些特殊处理</p>
+<p>v-model 在内部为不同的输入元素使用不同的属性并抛出不同的事件:</p>
+<ul>
+<li>text 和 textarea 元素使用 value 属性和<code>input</code> 事件</li>
+<li>checkbox 和 radio 使用 checked 属性和<code>change</code> 事件</li>
+<li>select 字段将 value 作为 prop 并将<code>change</code> 作为事件</li>
+</ul>
+<h4 id="文本-text"><a href="#文本-text" class="headerlink" title="文本 text"></a>文本 text</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model=&quot;message&quot; placeholder=&quot;edit me&quot;&gt;</span><br><span class="line">&lt;p&gt;Message is: &#123;&#123; message &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="多行文本-textarea"><a href="#多行文本-textarea" class="headerlink" title="多行文本 textarea"></a>多行文本 textarea</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;Multiline message is:&lt;/span&gt;</span><br><span class="line">&lt;p style=&quot;white-space: pre-line;&quot;&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;textarea v-model=&quot;message&quot; placeholder=&quot;add multiple lines&quot;&gt;&lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h4><p>单个复选框，绑定到布尔值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot; v-model=&quot;checked&quot;&gt;</span><br><span class="line">&lt;label for=&quot;checkbox&quot;&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;</span><br></pre></td></tr></table></figure></p>
+<p>多个复选框，绑定到同一个数组：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&apos;example-3&apos;&gt;</span><br><span class="line">  &lt;input type=&quot;checkbox&quot; id=&quot;jack&quot; value=&quot;Jack&quot; v-model=&quot;checkedNames&quot;&gt;</span><br><span class="line">  &lt;label for=&quot;jack&quot;&gt;Jack&lt;/label&gt;</span><br><span class="line">  &lt;input type=&quot;checkbox&quot; id=&quot;john&quot; value=&quot;John&quot; v-model=&quot;checkedNames&quot;&gt;</span><br><span class="line">  &lt;label for=&quot;john&quot;&gt;John&lt;/label&gt;</span><br><span class="line">  &lt;input type=&quot;checkbox&quot; id=&quot;mike&quot; value=&quot;Mike&quot; v-model=&quot;checkedNames&quot;&gt;</span><br><span class="line">  &lt;label for=&quot;mike&quot;&gt;Mike&lt;/label&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &lt;span&gt;Checked names: &#123;&#123; checkedNames &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#example-3&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    checkedNames: []</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="单选按钮"><a href="#单选按钮" class="headerlink" title="单选按钮"></a>单选按钮</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;example-4&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;radio&quot; id=&quot;one&quot; value=&quot;One&quot; v-model=&quot;picked&quot;&gt;</span><br><span class="line">  &lt;label for=&quot;one&quot;&gt;One&lt;/label&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &lt;input type=&quot;radio&quot; id=&quot;two&quot; value=&quot;Two&quot; v-model=&quot;picked&quot;&gt;</span><br><span class="line">  &lt;label for=&quot;two&quot;&gt;Two&lt;/label&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &lt;span&gt;Picked: &#123;&#123; picked &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#example-4&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    picked: &apos;&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="选择框"><a href="#选择框" class="headerlink" title="选择框"></a>选择框</h4><p>单选时:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;example-5&quot;&gt;</span><br><span class="line">  &lt;select v-model=&quot;selected&quot;&gt;</span><br><span class="line">    &lt;option disabled value=&quot;&quot;&gt;请选择&lt;/option&gt;</span><br><span class="line">    &lt;option&gt;A&lt;/option&gt;</span><br><span class="line">    &lt;option&gt;B&lt;/option&gt;</span><br><span class="line">    &lt;option&gt;C&lt;/option&gt;</span><br><span class="line">  &lt;/select&gt;</span><br><span class="line">  &lt;span&gt;Selected: &#123;&#123; selected &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;...&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    selected: &apos;&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>多选时 (绑定到一个数组)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;example-6&quot;&gt;</span><br><span class="line">  &lt;select v-model=&quot;selected&quot; multiple style=&quot;width: 50px;&quot;&gt;</span><br><span class="line">    &lt;option&gt;A&lt;/option&gt;</span><br><span class="line">    &lt;option&gt;B&lt;/option&gt;</span><br><span class="line">    &lt;option&gt;C&lt;/option&gt;</span><br><span class="line">  &lt;/select&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &lt;span&gt;Selected: &#123;&#123; selected &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#example-6&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    selected: []</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="用-v-for-渲染的动态选项："><a href="#用-v-for-渲染的动态选项：" class="headerlink" title="用 v-for 渲染的动态选项："></a>用 v-for 渲染的动态选项：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;select v-model=&quot;selected&quot;&gt;</span><br><span class="line">  &lt;option v-for=&quot;option in options&quot; v-bind:value=&quot;option.value&quot;&gt;</span><br><span class="line">    &#123;&#123; option.text &#125;&#125;</span><br><span class="line">  &lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;span&gt;Selected: &#123;&#123; selected &#125;&#125;&lt;/span&gt;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;...&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    selected: &apos;A&apos;,</span><br><span class="line">    options: [</span><br><span class="line">      &#123; text: &apos;One&apos;, value: &apos;A&apos; &#125;,</span><br><span class="line">      &#123; text: &apos;Two&apos;, value: &apos;B&apos; &#125;,</span><br><span class="line">      &#123; text: &apos;Three&apos;, value: &apos;C&apos; &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="值绑定"><a href="#值绑定" class="headerlink" title="值绑定"></a>值绑定</h4><p>对于单选按钮，复选框及选择框的选项，v-model 绑定的值通常是静态字符串 (对于复选框也可以是布尔值)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 当选中时，`picked` 为字符串 &quot;a&quot; --&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; v-model=&quot;picked&quot; value=&quot;a&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- `toggle` 为 true 或 false --&gt;</span><br><span class="line">&lt;input type=&quot;checkbox&quot; v-model=&quot;toggle&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 当选中第一个选项时，`selected` 为字符串 &quot;abc&quot; --&gt;</span><br><span class="line">&lt;select v-model=&quot;selected&quot;&gt;</span><br><span class="line">  &lt;option value=&quot;abc&quot;&gt;ABC&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
+<p>但是有时我们可能想把值绑定到 Vue 实例的一个动态属性上，这时可以用 v-bind 实现，并且这个属性的值可以不是字符串</p>
+<h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><p>.lazy 在默认情况下，v-model 在每次 input 事件触发后将输入框的值与数据进行同步 (除了上述输入法组合文字时)。你可以添加 lazy 修饰符，从而转变为使用 change 事件进行同步：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在“change”时而非“input”时更新 --&gt;</span><br><span class="line">&lt;input v-model.lazy=&quot;msg&quot; &gt;</span><br></pre></td></tr></table></figure></p>
+<p>.number<br>如果想自动将用户的输入值转为数值类型，可以给 v-model 添加 number 修饰符：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model.number=&quot;age&quot; type=&quot;number&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>.trim 如果要自动过滤用户输入的首尾空白字符，可以给 v-model 添加 trim 修饰符：</p>
+<input v-model.trim="msg">
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/03/vue日记11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何方">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="he'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/03/vue日记11/" itemprop="url">vue日记11</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-03T22:29:29+08:00">
+                2019-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="vue日记11"><a href="#vue日记11" class="headerlink" title="vue日记11"></a>vue日记11</h2><h3 id="Prop"><a href="#Prop" class="headerlink" title="Prop"></a>Prop</h3><h4 id="Prop-的大小写-camelCase-vs-kebab-case"><a href="#Prop-的大小写-camelCase-vs-kebab-case" class="headerlink" title="Prop 的大小写 (camelCase vs kebab-case)"></a>Prop 的大小写 (camelCase vs kebab-case)</h4><p>HTML 中的特性名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。这意味着当你使用 DOM 中的模板时，camelCase (驼峰命名法) 的 prop 名需要使用其等价的 kebab-case (短横线分隔命名) 命名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;blog-post&apos;, &#123;</span><br><span class="line">  // 在 JavaScript 中是 camelCase 的</span><br><span class="line">  props: [&apos;postTitle&apos;],</span><br><span class="line">  template: &apos;&lt;h3&gt;&#123;&#123; postTitle &#125;&#125;&lt;/h3&gt;&apos;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;!-- 在 HTML 中是 kebab-case 的 --&gt;</span><br><span class="line">&lt;blog-post post-title=&quot;hello!&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：如果你使用字符串模板，那么这个限制就不存在了</strong></p>
+<h4 id="Prop-类型"><a href="#Prop-类型" class="headerlink" title="Prop 类型"></a>Prop 类型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">  title: String,</span><br><span class="line">  likes: Number,</span><br><span class="line">  isPublished: Boolean,</span><br><span class="line">  commentIds: Array,</span><br><span class="line">  author: Object,</span><br><span class="line">  callback: Function,</span><br><span class="line">  contactsPromise: Promise // or any other constructor</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="传递静态或动态-Prop"><a href="#传递静态或动态-Prop" class="headerlink" title="传递静态或动态 Prop"></a>传递静态或动态 Prop</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post title=&quot;My journey with Vue&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure>
+<p>你也知道 prop 可以通过 v-bind 动态赋值，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 动态赋予一个变量的值 --&gt;</span><br><span class="line">&lt;blog-post v-bind:title=&quot;post.title&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 动态赋予一个复杂表达式的值 --&gt;</span><br><span class="line">&lt;blog-post</span><br><span class="line">  v-bind:title=&quot;post.title + &apos; by &apos; + post.author.name&quot;</span><br><span class="line">&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在上述两个示例中，我们传入的值都是字符串类型的，但实际上任何类型的值都可以传给一个 prop</p>
+<h4 id="传入一个数字"><a href="#传入一个数字" class="headerlink" title="传入一个数字"></a>传入一个数字</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 即便 `42` 是静态的，我们仍然需要 `v-bind` 来告诉 Vue --&gt;</span><br><span class="line">&lt;!-- 这是一个 JavaScript 表达式而不是一个字符串。--&gt;</span><br><span class="line">&lt;blog-post v-bind:likes=&quot;42&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 用一个变量进行动态赋值。--&gt;</span><br><span class="line">&lt;blog-post v-bind:likes=&quot;post.likes&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="传入一个布尔值"><a href="#传入一个布尔值" class="headerlink" title="传入一个布尔值"></a>传入一个布尔值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 包含该 prop 没有值的情况在内，都意味着 `true`。--&gt;</span><br><span class="line">&lt;blog-post is-published&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 即便 `false` 是静态的，我们仍然需要 `v-bind` 来告诉 Vue --&gt;</span><br><span class="line">&lt;!-- 这是一个 JavaScript 表达式而不是一个字符串。--&gt;</span><br><span class="line">&lt;blog-post v-bind:is-published=&quot;false&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 用一个变量进行动态赋值。--&gt;</span><br><span class="line">&lt;blog-post v-bind:is-published=&quot;post.isPublished&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="传入一个数组"><a href="#传入一个数组" class="headerlink" title="传入一个数组"></a>传入一个数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 即便数组是静态的，我们仍然需要 `v-bind` 来告诉 Vue --&gt;</span><br><span class="line">&lt;!-- 这是一个 JavaScript 表达式而不是一个字符串。--&gt;</span><br><span class="line">&lt;blog-post v-bind:comment-ids=&quot;[234, 266, 273]&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 用一个变量进行动态赋值。--&gt;</span><br><span class="line">&lt;blog-post v-bind:comment-ids=&quot;post.commentIds&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="传入一个对象"><a href="#传入一个对象" class="headerlink" title="传入一个对象"></a>传入一个对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 即便对象是静态的，我们仍然需要 `v-bind` 来告诉 Vue --&gt;</span><br><span class="line">&lt;!-- 这是一个 JavaScript 表达式而不是一个字符串。--&gt;</span><br><span class="line">&lt;blog-post</span><br><span class="line">  v-bind:author=&quot;&#123;</span><br><span class="line">    name: &apos;Veronica&apos;,</span><br><span class="line">    company: &apos;Veridian Dynamics&apos;</span><br><span class="line">  &#125;&quot;</span><br><span class="line">&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 用一个变量进行动态赋值。--&gt;</span><br><span class="line">&lt;blog-post v-bind:author=&quot;post.author&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="传入一个对象的所有属性"><a href="#传入一个对象的所有属性" class="headerlink" title="传入一个对象的所有属性"></a>传入一个对象的所有属性</h4><p>将一个对象的所有属性都作为 prop 传入，你可以使用不带参数的 v-bind (取代 v-bind:prop-name)。例如，对于一个给定的对象 post：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">post: &#123;</span><br><span class="line">  id: 1,</span><br><span class="line">  title: &apos;My Journey with Vue&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;blog-post v-bind=&quot;post&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure></p>
+<p>等价于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post</span><br><span class="line">  v-bind:id=&quot;post.id&quot;</span><br><span class="line">  v-bind:title=&quot;post.title&quot;</span><br><span class="line">&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h3><p><strong>两种常见的试图改变一个 prop 的情形</strong><br>1.这个 prop 用来传递一个初始值；这个子组件接下来希望将其作为一个本地的 prop 数据来使用。在这种情况下，最好定义一个本地的 data 属性并将这个 prop 用作其初始值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props: [&apos;initialCounter&apos;],</span><br><span class="line">data: function () &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    counter: this.initialCounter</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2.这个 prop 以一种原始的值传入且需要进行转换。在这种情况下，最好使用这个 prop 的值来定义一个计算属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props: [&apos;size&apos;],</span><br><span class="line">computed: &#123;</span><br><span class="line">  normalizedSize: function () &#123;</span><br><span class="line">    return this.size.trim().toLowerCase()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="Prop-验证"><a href="#Prop-验证" class="headerlink" title="Prop 验证"></a>Prop 验证</h5><p>为了定制 prop 的验证方式，你可以为 props 中的值提供一个带有验证需求的对象，而不是一个字符串数组。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-component&apos;, &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    // 基础的类型检查 (`null` 和 `undefined` 会通过任何类型验证)</span><br><span class="line">    propA: Number,</span><br><span class="line">    // 多个可能的类型</span><br><span class="line">    propB: [String, Number],</span><br><span class="line">    // 必填的字符串</span><br><span class="line">    propC: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      required: true</span><br><span class="line">    &#125;,</span><br><span class="line">    // 带有默认值的数字</span><br><span class="line">    propD: &#123;</span><br><span class="line">      type: Number,</span><br><span class="line">      default: 100</span><br><span class="line">    &#125;,</span><br><span class="line">    // 带有默认值的对象</span><br><span class="line">    propE: &#123;</span><br><span class="line">      type: Object,</span><br><span class="line">      // 对象或数组默认值必须从一个工厂函数获取</span><br><span class="line">      default: function () &#123;</span><br><span class="line">        return &#123; message: &apos;hello&apos; &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 自定义验证函数</span><br><span class="line">    propF: &#123;</span><br><span class="line">      validator: function (value) &#123;</span><br><span class="line">        // 这个值必须匹配下列字符串中的一个</span><br><span class="line">        return [&apos;success&apos;, &apos;warning&apos;, &apos;danger&apos;].indexOf(value) !== -1</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="类型检查"><a href="#类型检查" class="headerlink" title="类型检查"></a>类型检查</h4><p>type 可以是下列原生构造函数中的一个：</p>
+<p>String<br>Number<br>Boolean<br>Array<br>Object<br>Date<br>Function<br>Symbol</p>
+<h4 id="非-Prop-的特性"><a href="#非-Prop-的特性" class="headerlink" title="非 Prop 的特性"></a>非 Prop 的特性</h4><p>一个非 prop 特性是指传向一个组件，但是该组件并没有相应 prop 定义的特性<br>因为显式定义的 prop 适用于向一个子组件传入信息，然而组件库的作者并不总能预见组件会被用于怎样的场景。这也是为什么组件可以接受任意的特性，而这些特性会被添加到这个组件的根元素上</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/03/vue日记07/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -382,165 +703,6 @@
 <li>.right</li>
 <li>.middle</li>
 </ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/03/vue日记11/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何方">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="he'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/03/vue日记11/" itemprop="url">vue日记11</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-03T22:27:29+08:00">
-                2019-07-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="vue日记11"><a href="#vue日记11" class="headerlink" title="vue日记11"></a>vue日记11</h2><h3 id="Prop"><a href="#Prop" class="headerlink" title="Prop"></a>Prop</h3><h4 id="Prop-的大小写-camelCase-vs-kebab-case"><a href="#Prop-的大小写-camelCase-vs-kebab-case" class="headerlink" title="Prop 的大小写 (camelCase vs kebab-case)"></a>Prop 的大小写 (camelCase vs kebab-case)</h4><p>HTML 中的特性名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。这意味着当你使用 DOM 中的模板时，camelCase (驼峰命名法) 的 prop 名需要使用其等价的 kebab-case (短横线分隔命名) 命名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;blog-post&apos;, &#123;</span><br><span class="line">  // 在 JavaScript 中是 camelCase 的</span><br><span class="line">  props: [&apos;postTitle&apos;],</span><br><span class="line">  template: &apos;&lt;h3&gt;&#123;&#123; postTitle &#125;&#125;&lt;/h3&gt;&apos;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;!-- 在 HTML 中是 kebab-case 的 --&gt;</span><br><span class="line">&lt;blog-post post-title=&quot;hello!&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure></p>
-<p><strong>注意：如果你使用字符串模板，那么这个限制就不存在了</strong></p>
-<h4 id="Prop-类型"><a href="#Prop-类型" class="headerlink" title="Prop 类型"></a>Prop 类型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">  title: String,</span><br><span class="line">  likes: Number,</span><br><span class="line">  isPublished: Boolean,</span><br><span class="line">  commentIds: Array,</span><br><span class="line">  author: Object,</span><br><span class="line">  callback: Function,</span><br><span class="line">  contactsPromise: Promise // or any other constructor</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="传递静态或动态-Prop"><a href="#传递静态或动态-Prop" class="headerlink" title="传递静态或动态 Prop"></a>传递静态或动态 Prop</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post title=&quot;My journey with Vue&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure>
-<p>你也知道 prop 可以通过 v-bind 动态赋值，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 动态赋予一个变量的值 --&gt;</span><br><span class="line">&lt;blog-post v-bind:title=&quot;post.title&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 动态赋予一个复杂表达式的值 --&gt;</span><br><span class="line">&lt;blog-post</span><br><span class="line">  v-bind:title=&quot;post.title + &apos; by &apos; + post.author.name&quot;</span><br><span class="line">&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure></p>
-<p>在上述两个示例中，我们传入的值都是字符串类型的，但实际上任何类型的值都可以传给一个 prop</p>
-<h4 id="传入一个数字"><a href="#传入一个数字" class="headerlink" title="传入一个数字"></a>传入一个数字</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 即便 `42` 是静态的，我们仍然需要 `v-bind` 来告诉 Vue --&gt;</span><br><span class="line">&lt;!-- 这是一个 JavaScript 表达式而不是一个字符串。--&gt;</span><br><span class="line">&lt;blog-post v-bind:likes=&quot;42&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 用一个变量进行动态赋值。--&gt;</span><br><span class="line">&lt;blog-post v-bind:likes=&quot;post.likes&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="传入一个布尔值"><a href="#传入一个布尔值" class="headerlink" title="传入一个布尔值"></a>传入一个布尔值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 包含该 prop 没有值的情况在内，都意味着 `true`。--&gt;</span><br><span class="line">&lt;blog-post is-published&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 即便 `false` 是静态的，我们仍然需要 `v-bind` 来告诉 Vue --&gt;</span><br><span class="line">&lt;!-- 这是一个 JavaScript 表达式而不是一个字符串。--&gt;</span><br><span class="line">&lt;blog-post v-bind:is-published=&quot;false&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 用一个变量进行动态赋值。--&gt;</span><br><span class="line">&lt;blog-post v-bind:is-published=&quot;post.isPublished&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="传入一个数组"><a href="#传入一个数组" class="headerlink" title="传入一个数组"></a>传入一个数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 即便数组是静态的，我们仍然需要 `v-bind` 来告诉 Vue --&gt;</span><br><span class="line">&lt;!-- 这是一个 JavaScript 表达式而不是一个字符串。--&gt;</span><br><span class="line">&lt;blog-post v-bind:comment-ids=&quot;[234, 266, 273]&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 用一个变量进行动态赋值。--&gt;</span><br><span class="line">&lt;blog-post v-bind:comment-ids=&quot;post.commentIds&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="传入一个对象"><a href="#传入一个对象" class="headerlink" title="传入一个对象"></a>传入一个对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 即便对象是静态的，我们仍然需要 `v-bind` 来告诉 Vue --&gt;</span><br><span class="line">&lt;!-- 这是一个 JavaScript 表达式而不是一个字符串。--&gt;</span><br><span class="line">&lt;blog-post</span><br><span class="line">  v-bind:author=&quot;&#123;</span><br><span class="line">    name: &apos;Veronica&apos;,</span><br><span class="line">    company: &apos;Veridian Dynamics&apos;</span><br><span class="line">  &#125;&quot;</span><br><span class="line">&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 用一个变量进行动态赋值。--&gt;</span><br><span class="line">&lt;blog-post v-bind:author=&quot;post.author&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="传入一个对象的所有属性"><a href="#传入一个对象的所有属性" class="headerlink" title="传入一个对象的所有属性"></a>传入一个对象的所有属性</h4><p>将一个对象的所有属性都作为 prop 传入，你可以使用不带参数的 v-bind (取代 v-bind:prop-name)。例如，对于一个给定的对象 post：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">post: &#123;</span><br><span class="line">  id: 1,</span><br><span class="line">  title: &apos;My Journey with Vue&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;blog-post v-bind=&quot;post&quot;&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure></p>
-<p>等价于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post</span><br><span class="line">  v-bind:id=&quot;post.id&quot;</span><br><span class="line">  v-bind:title=&quot;post.title&quot;</span><br><span class="line">&gt;&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h3><p><strong>两种常见的试图改变一个 prop 的情形</strong><br>1.这个 prop 用来传递一个初始值；这个子组件接下来希望将其作为一个本地的 prop 数据来使用。在这种情况下，最好定义一个本地的 data 属性并将这个 prop 用作其初始值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props: [&apos;initialCounter&apos;],</span><br><span class="line">data: function () &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    counter: this.initialCounter</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>2.这个 prop 以一种原始的值传入且需要进行转换。在这种情况下，最好使用这个 prop 的值来定义一个计算属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props: [&apos;size&apos;],</span><br><span class="line">computed: &#123;</span><br><span class="line">  normalizedSize: function () &#123;</span><br><span class="line">    return this.size.trim().toLowerCase()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h5 id="Prop-验证"><a href="#Prop-验证" class="headerlink" title="Prop 验证"></a>Prop 验证</h5><p>为了定制 prop 的验证方式，你可以为 props 中的值提供一个带有验证需求的对象，而不是一个字符串数组。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-component&apos;, &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    // 基础的类型检查 (`null` 和 `undefined` 会通过任何类型验证)</span><br><span class="line">    propA: Number,</span><br><span class="line">    // 多个可能的类型</span><br><span class="line">    propB: [String, Number],</span><br><span class="line">    // 必填的字符串</span><br><span class="line">    propC: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      required: true</span><br><span class="line">    &#125;,</span><br><span class="line">    // 带有默认值的数字</span><br><span class="line">    propD: &#123;</span><br><span class="line">      type: Number,</span><br><span class="line">      default: 100</span><br><span class="line">    &#125;,</span><br><span class="line">    // 带有默认值的对象</span><br><span class="line">    propE: &#123;</span><br><span class="line">      type: Object,</span><br><span class="line">      // 对象或数组默认值必须从一个工厂函数获取</span><br><span class="line">      default: function () &#123;</span><br><span class="line">        return &#123; message: &apos;hello&apos; &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 自定义验证函数</span><br><span class="line">    propF: &#123;</span><br><span class="line">      validator: function (value) &#123;</span><br><span class="line">        // 这个值必须匹配下列字符串中的一个</span><br><span class="line">        return [&apos;success&apos;, &apos;warning&apos;, &apos;danger&apos;].indexOf(value) !== -1</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h4 id="类型检查"><a href="#类型检查" class="headerlink" title="类型检查"></a>类型检查</h4><p>type 可以是下列原生构造函数中的一个：</p>
-<p>String<br>Number<br>Boolean<br>Array<br>Object<br>Date<br>Function<br>Symbol</p>
-<h4 id="非-Prop-的特性"><a href="#非-Prop-的特性" class="headerlink" title="非 Prop 的特性"></a>非 Prop 的特性</h4><p>一个非 prop 特性是指传向一个组件，但是该组件并没有相应 prop 定义的特性<br>因为显式定义的 prop 适用于向一个子组件传入信息，然而组件库的作者并不总能预见组件会被用于怎样的场景。这也是为什么组件可以接受任意的特性，而这些特性会被添加到这个组件的根元素上</p>
 
           
         
@@ -738,340 +900,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/03/vue日记09/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何方">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="he'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/03/vue日记09/" itemprop="url">vue日记09</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-03T22:27:29+08:00">
-                2019-07-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="vue日记09"><a href="#vue日记09" class="headerlink" title="vue日记09"></a>vue日记09</h2><h3 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h3><h4 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 定义一个名为 button-counter 的新组件</span><br><span class="line">Vue.component(&apos;button-counter&apos;, &#123;</span><br><span class="line">  data: function () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      count: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  template: &apos;&lt;button v-on:click=&quot;count++&quot;&gt;You clicked me &#123;&#123; count &#125;&#125; times.&lt;/button&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>组件是可复用的 Vue 实例，且带有一个名字：在这个例子中是 <button-counter>。我们可以在一个通过 new Vue 创建的 Vue 根实例中，把这个组件作为自定义元素来使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;components-demo&quot;&gt;</span><br><span class="line">  &lt;button-counter&gt;&lt;/button-counter&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">new Vue(&#123; el: &apos;#components-demo&apos; &#125;)</span><br></pre></td></tr></table></figure></button-counter></p>
-<p>因为组件是可复用的 Vue 实例，所以它们与 new Vue 接收相同的选项，例如 data、computed、watch、methods 以及生命周期钩子等。仅有的例外是像 el 这样根实例特有的选项</p>
-<h4 id="组件的复用"><a href="#组件的复用" class="headerlink" title="组件的复用"></a>组件的复用</h4><p>你可以将组件进行任意次数的复用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;components-demo&quot;&gt;</span><br><span class="line">  &lt;button-counter&gt;&lt;/button-counter&gt;</span><br><span class="line">  &lt;button-counter&gt;&lt;/button-counter&gt;</span><br><span class="line">  &lt;button-counter&gt;&lt;/button-counter&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>注意当点击按钮时，每个组件都会各自独立维护它的 count。因为你每用一次组件，就会有一个它的新实例被创建</p>
-<h4 id="data-必须是一个函数"><a href="#data-必须是一个函数" class="headerlink" title="data 必须是一个函数"></a>data 必须是一个函数</h4><p>当我们定义这个 <code>&lt;button-counter&gt;</code> 组件时，你可能会发现它的 data 并不是像这样直接提供一个对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  count: 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>取而代之的是，一个组件的 data 选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data: function () &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    count: 0</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="组件的注册"><a href="#组件的注册" class="headerlink" title="组件的注册"></a>组件的注册</h4><p>全局注册:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-component-name&apos;, &#123;</span><br><span class="line">  // ... options ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>局部注册:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var app = new vue(&#123;</span><br><span class="line">    el:&quot;#app&quot;,</span><br><span class="line">    data:&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;,</span><br><span class="line">    components:&#123;</span><br><span class="line">      &apos;component-a&apos;: ComponentA,  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h4 id="通过-Prop-向子组件传递数据"><a href="#通过-Prop-向子组件传递数据" class="headerlink" title="通过 Prop 向子组件传递数据"></a>通过 Prop 向子组件传递数据</h4><p>Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;blog-post&apos;, &#123;</span><br><span class="line">  props: [&apos;title&apos;],</span><br><span class="line">  template: &apos;&lt;h3&gt;&#123;&#123; title &#125;&#125;&lt;/h3&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>然而在一个典型的应用中，你可能在 data 里有一个博文的数组：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#blog-post-demo&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    posts: [</span><br><span class="line">      &#123; id: 1, title: &apos;My journey with Vue&apos; &#125;,</span><br><span class="line">      &#123; id: 2, title: &apos;Blogging with Vue&apos; &#125;,</span><br><span class="line">      &#123; id: 3, title: &apos;Why Vue is so fun&apos; &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>并想要为每篇博文渲染一个组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post</span><br><span class="line">  v-for=&quot;post in posts&quot;</span><br><span class="line">  v-bind:key=&quot;post.id&quot;</span><br><span class="line">  v-bind:title=&quot;post.title&quot;&gt;</span><br><span class="line">&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="单个根元素"><a href="#单个根元素" class="headerlink" title="单个根元素"></a>单个根元素</h4><p>将模板的内容包裹在一个父元素内<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post</span><br><span class="line">  v-for=&quot;post in posts&quot;</span><br><span class="line">  v-bind:key=&quot;post.id&quot;</span><br><span class="line">  v-bind:post=&quot;post&quot;</span><br><span class="line">&gt;&lt;/blog-post&gt;</span><br><span class="line">Vue.component(&apos;blog-post&apos;, &#123;</span><br><span class="line">  props: [&apos;post&apos;],</span><br><span class="line">  template: `</span><br><span class="line">    &lt;div class=&quot;blog-post&quot;&gt;</span><br><span class="line">      &lt;h3&gt;&#123;&#123; post.title &#125;&#125;&lt;/h3&gt;</span><br><span class="line">      &lt;div v-html=&quot;post.content&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  `</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h4 id="监听子组件事件"><a href="#监听子组件事件" class="headerlink" title="监听子组件事件"></a>监听子组件事件</h4><p>父级组件可以像处理 native DOM 事件一样通过 v-on 监听子组件实例的任意事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post</span><br><span class="line">  ...</span><br><span class="line">  v-on:enlarge-text=&quot;postFontSize += 0.1&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">    methods:&#123;</span><br><span class="line">        onEnlargeText(value)&#123;</span><br><span class="line">           this.value = value</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>子组件可以通过调用内建的 $emit 方法 并传入事件名称来触发一个事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button v-on:click=&quot;$emit(&apos;enlarge-text&apos;,value)&quot;&gt;</span><br><span class="line">  Enlarge text</span><br><span class="line">&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="在组件上使用-v-model"><a href="#在组件上使用-v-model" class="headerlink" title="在组件上使用 v-model"></a>在组件上使用 v-model</h4><p>自定义事件也可以用于创建支持 v-model 的自定义输入组件。记住：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model=&quot;searchText&quot;&gt;</span><br></pre></td></tr></table></figure></p>
-<p>等价于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input</span><br><span class="line">v-bind:value=&quot;searchText&quot;</span><br><span class="line">v-on:input=&quot;searchText = $event.target.value&quot;&gt;</span><br></pre></td></tr></table></figure></p>
-<p>当用在组件上时，v-model 则会这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;custom-input</span><br><span class="line">  v-bind:value=&quot;searchText&quot;</span><br><span class="line">  v-on:input=&quot;searchText = $event&quot;</span><br><span class="line">&lt;/custom-input&gt;</span><br></pre></td></tr></table></figure></p>
-<p>为了让它正常工作，这个组件内的 <code>&lt;input&gt;</code> 必须：</p>
-<ul>
-<li>将其 value 特性绑定到一个名叫 value 的 prop 上</li>
-<li>在其 input 事件被触发时，将新的值通过自定义的 input 事件抛出</li>
-</ul>
-<p>写成代码之后是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Vue.components(&apos;custom-input&apos;,&#123;</span><br><span class="line">    props：[&apos;value&apos;],</span><br><span class="line">    template:`</span><br><span class="line">    &lt;input :value=&quot;value&quot; @input=&quot;$emit(&apos;input&apos;,$event.target.value)&quot;</span><br><span class="line">    &gt;</span><br><span class="line">    `</span><br><span class="line">&#125;)</span><br><span class="line">渲染之后：&lt;custom-input v-model=&quot;searchText&quot;&gt;&lt;/custom-input&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="通过插槽分发内容"><a href="#通过插槽分发内容" class="headerlink" title="通过插槽分发内容"></a>通过插槽分发内容</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;alert-box&gt;</span><br><span class="line">  Something bad happened.</span><br><span class="line">&lt;/alert-box&gt;</span><br><span class="line"></span><br><span class="line">Vue.component(&apos;alert-box&apos;, &#123;</span><br><span class="line">  template: `</span><br><span class="line">    &lt;div class=&quot;demo-alert-box&quot;&gt;</span><br><span class="line">      &lt;strong&gt;Error!&lt;/strong&gt;</span><br><span class="line">      &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  `</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h4><p>通过 Vue 的 <component> 元素加一个特殊的 is 特性来实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 组件会在 `currentTabComponent` 改变时改变 --&gt;</span><br><span class="line">&lt;component v-bind:is=&quot;currentTabComponent&quot;&gt;&lt;/component&gt;</span><br></pre></td></tr></table></figure></component></p>
-<p>currentTabComponent 可以包括</p>
-<ul>
-<li>已注册组件的名字，或</li>
-<li>一个组件的选项对象</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/03/vue日记08/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何方">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="he'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/03/vue日记08/" itemprop="url">vue日记08</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-03T22:27:29+08:00">
-                2019-07-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="vue日记08"><a href="#vue日记08" class="headerlink" title="vue日记08"></a>vue日记08</h2><h3 id="表单输入绑定"><a href="#表单输入绑定" class="headerlink" title="表单输入绑定"></a>表单输入绑定</h3><h4 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h4><p>用 v-model 指令在表单<code>input</code>、<code>textarea</code> 及 <code>select</code> 元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。尽管有些神奇，但 v-model 本质上不过是语法糖。它负责监听用户的输入事件以更新数据，并对一些极端场景进行一些特殊处理</p>
-<p>v-model 在内部为不同的输入元素使用不同的属性并抛出不同的事件:</p>
-<ul>
-<li>text 和 textarea 元素使用 value 属性和<code>input</code> 事件</li>
-<li>checkbox 和 radio 使用 checked 属性和<code>change</code> 事件</li>
-<li>select 字段将 value 作为 prop 并将<code>change</code> 作为事件</li>
-</ul>
-<h4 id="文本-text"><a href="#文本-text" class="headerlink" title="文本 text"></a>文本 text</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model=&quot;message&quot; placeholder=&quot;edit me&quot;&gt;</span><br><span class="line">&lt;p&gt;Message is: &#123;&#123; message &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="多行文本-textarea"><a href="#多行文本-textarea" class="headerlink" title="多行文本 textarea"></a>多行文本 textarea</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;Multiline message is:&lt;/span&gt;</span><br><span class="line">&lt;p style=&quot;white-space: pre-line;&quot;&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;textarea v-model=&quot;message&quot; placeholder=&quot;add multiple lines&quot;&gt;&lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h4><p>单个复选框，绑定到布尔值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot; v-model=&quot;checked&quot;&gt;</span><br><span class="line">&lt;label for=&quot;checkbox&quot;&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;</span><br></pre></td></tr></table></figure></p>
-<p>多个复选框，绑定到同一个数组：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&apos;example-3&apos;&gt;</span><br><span class="line">  &lt;input type=&quot;checkbox&quot; id=&quot;jack&quot; value=&quot;Jack&quot; v-model=&quot;checkedNames&quot;&gt;</span><br><span class="line">  &lt;label for=&quot;jack&quot;&gt;Jack&lt;/label&gt;</span><br><span class="line">  &lt;input type=&quot;checkbox&quot; id=&quot;john&quot; value=&quot;John&quot; v-model=&quot;checkedNames&quot;&gt;</span><br><span class="line">  &lt;label for=&quot;john&quot;&gt;John&lt;/label&gt;</span><br><span class="line">  &lt;input type=&quot;checkbox&quot; id=&quot;mike&quot; value=&quot;Mike&quot; v-model=&quot;checkedNames&quot;&gt;</span><br><span class="line">  &lt;label for=&quot;mike&quot;&gt;Mike&lt;/label&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &lt;span&gt;Checked names: &#123;&#123; checkedNames &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#example-3&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    checkedNames: []</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h4 id="单选按钮"><a href="#单选按钮" class="headerlink" title="单选按钮"></a>单选按钮</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;example-4&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;radio&quot; id=&quot;one&quot; value=&quot;One&quot; v-model=&quot;picked&quot;&gt;</span><br><span class="line">  &lt;label for=&quot;one&quot;&gt;One&lt;/label&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &lt;input type=&quot;radio&quot; id=&quot;two&quot; value=&quot;Two&quot; v-model=&quot;picked&quot;&gt;</span><br><span class="line">  &lt;label for=&quot;two&quot;&gt;Two&lt;/label&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &lt;span&gt;Picked: &#123;&#123; picked &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#example-4&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    picked: &apos;&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="选择框"><a href="#选择框" class="headerlink" title="选择框"></a>选择框</h4><p>单选时:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;example-5&quot;&gt;</span><br><span class="line">  &lt;select v-model=&quot;selected&quot;&gt;</span><br><span class="line">    &lt;option disabled value=&quot;&quot;&gt;请选择&lt;/option&gt;</span><br><span class="line">    &lt;option&gt;A&lt;/option&gt;</span><br><span class="line">    &lt;option&gt;B&lt;/option&gt;</span><br><span class="line">    &lt;option&gt;C&lt;/option&gt;</span><br><span class="line">  &lt;/select&gt;</span><br><span class="line">  &lt;span&gt;Selected: &#123;&#123; selected &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;...&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    selected: &apos;&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>多选时 (绑定到一个数组)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;example-6&quot;&gt;</span><br><span class="line">  &lt;select v-model=&quot;selected&quot; multiple style=&quot;width: 50px;&quot;&gt;</span><br><span class="line">    &lt;option&gt;A&lt;/option&gt;</span><br><span class="line">    &lt;option&gt;B&lt;/option&gt;</span><br><span class="line">    &lt;option&gt;C&lt;/option&gt;</span><br><span class="line">  &lt;/select&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &lt;span&gt;Selected: &#123;&#123; selected &#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#example-6&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    selected: []</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="用-v-for-渲染的动态选项："><a href="#用-v-for-渲染的动态选项：" class="headerlink" title="用 v-for 渲染的动态选项："></a>用 v-for 渲染的动态选项：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;select v-model=&quot;selected&quot;&gt;</span><br><span class="line">  &lt;option v-for=&quot;option in options&quot; v-bind:value=&quot;option.value&quot;&gt;</span><br><span class="line">    &#123;&#123; option.text &#125;&#125;</span><br><span class="line">  &lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;span&gt;Selected: &#123;&#123; selected &#125;&#125;&lt;/span&gt;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;...&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    selected: &apos;A&apos;,</span><br><span class="line">    options: [</span><br><span class="line">      &#123; text: &apos;One&apos;, value: &apos;A&apos; &#125;,</span><br><span class="line">      &#123; text: &apos;Two&apos;, value: &apos;B&apos; &#125;,</span><br><span class="line">      &#123; text: &apos;Three&apos;, value: &apos;C&apos; &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="值绑定"><a href="#值绑定" class="headerlink" title="值绑定"></a>值绑定</h4><p>对于单选按钮，复选框及选择框的选项，v-model 绑定的值通常是静态字符串 (对于复选框也可以是布尔值)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 当选中时，`picked` 为字符串 &quot;a&quot; --&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; v-model=&quot;picked&quot; value=&quot;a&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- `toggle` 为 true 或 false --&gt;</span><br><span class="line">&lt;input type=&quot;checkbox&quot; v-model=&quot;toggle&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 当选中第一个选项时，`selected` 为字符串 &quot;abc&quot; --&gt;</span><br><span class="line">&lt;select v-model=&quot;selected&quot;&gt;</span><br><span class="line">  &lt;option value=&quot;abc&quot;&gt;ABC&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
-<p>但是有时我们可能想把值绑定到 Vue 实例的一个动态属性上，这时可以用 v-bind 实现，并且这个属性的值可以不是字符串</p>
-<h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><p>.lazy 在默认情况下，v-model 在每次 input 事件触发后将输入框的值与数据进行同步 (除了上述输入法组合文字时)。你可以添加 lazy 修饰符，从而转变为使用 change 事件进行同步：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在“change”时而非“input”时更新 --&gt;</span><br><span class="line">&lt;input v-model.lazy=&quot;msg&quot; &gt;</span><br></pre></td></tr></table></figure></p>
-<p>.number<br>如果想自动将用户的输入值转为数值类型，可以给 v-model 添加 number 修饰符：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model.number=&quot;age&quot; type=&quot;number&quot;&gt;</span><br></pre></td></tr></table></figure></p>
-<p>.trim 如果要自动过滤用户输入的首尾空白字符，可以给 v-model 添加 trim 修饰符：</p>
-<input v-model.trim="msg">
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/03/vue日记06/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1187,6 +1015,178 @@
 <p>而如果你的目的是有条件地跳过循环的执行，那么可以将 v-if 置于外层元素 (或 <template>)上。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul v-if=&quot;todos.length&quot;&gt;</span><br><span class="line">  &lt;li v-for=&quot;todo in todos&quot;&gt;</span><br><span class="line">    &#123;&#123; todo &#125;&#125;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;p v-else&gt;No todos left!&lt;/p&gt;</span><br></pre></td></tr></table></figure></template></p>
 <h4 id="在组件上使用-v-for"><a href="#在组件上使用-v-for" class="headerlink" title="在组件上使用 v-for"></a>在组件上使用 v-for</h4><p>在自定义组件上，你可以像在任何普通元素上一样使用 v-for 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-component v-for=&quot;item in items&quot; :key=&quot;item.id&quot;&gt;&lt;/my-component&gt;</span><br></pre></td></tr></table></figure></p>
 <p><strong>2.2.0+ 的版本里，当在组件上使用 v-for 时，key 现在是必须的。</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/03/vue日记09/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何方">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="he'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/03/vue日记09/" itemprop="url">vue日记09</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-03T21:27:29+08:00">
+                2019-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="vue日记09"><a href="#vue日记09" class="headerlink" title="vue日记09"></a>vue日记09</h2><h3 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h3><h4 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 定义一个名为 button-counter 的新组件</span><br><span class="line">Vue.component(&apos;button-counter&apos;, &#123;</span><br><span class="line">  data: function () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      count: 0</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  template: &apos;&lt;button v-on:click=&quot;count++&quot;&gt;You clicked me &#123;&#123; count &#125;&#125; times.&lt;/button&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>组件是可复用的 Vue 实例，且带有一个名字：在这个例子中是 <button-counter>。我们可以在一个通过 new Vue 创建的 Vue 根实例中，把这个组件作为自定义元素来使用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;components-demo&quot;&gt;</span><br><span class="line">  &lt;button-counter&gt;&lt;/button-counter&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">new Vue(&#123; el: &apos;#components-demo&apos; &#125;)</span><br></pre></td></tr></table></figure></button-counter></p>
+<p>因为组件是可复用的 Vue 实例，所以它们与 new Vue 接收相同的选项，例如 data、computed、watch、methods 以及生命周期钩子等。仅有的例外是像 el 这样根实例特有的选项</p>
+<h4 id="组件的复用"><a href="#组件的复用" class="headerlink" title="组件的复用"></a>组件的复用</h4><p>你可以将组件进行任意次数的复用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;components-demo&quot;&gt;</span><br><span class="line">  &lt;button-counter&gt;&lt;/button-counter&gt;</span><br><span class="line">  &lt;button-counter&gt;&lt;/button-counter&gt;</span><br><span class="line">  &lt;button-counter&gt;&lt;/button-counter&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>注意当点击按钮时，每个组件都会各自独立维护它的 count。因为你每用一次组件，就会有一个它的新实例被创建</p>
+<h4 id="data-必须是一个函数"><a href="#data-必须是一个函数" class="headerlink" title="data 必须是一个函数"></a>data 必须是一个函数</h4><p>当我们定义这个 <code>&lt;button-counter&gt;</code> 组件时，你可能会发现它的 data 并不是像这样直接提供一个对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">  count: 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>取而代之的是，一个组件的 data 选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data: function () &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    count: 0</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="组件的注册"><a href="#组件的注册" class="headerlink" title="组件的注册"></a>组件的注册</h4><p>全局注册:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-component-name&apos;, &#123;</span><br><span class="line">  // ... options ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>局部注册:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var app = new vue(&#123;</span><br><span class="line">    el:&quot;#app&quot;,</span><br><span class="line">    data:&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;,</span><br><span class="line">    components:&#123;</span><br><span class="line">      &apos;component-a&apos;: ComponentA,  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="通过-Prop-向子组件传递数据"><a href="#通过-Prop-向子组件传递数据" class="headerlink" title="通过 Prop 向子组件传递数据"></a>通过 Prop 向子组件传递数据</h4><p>Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;blog-post&apos;, &#123;</span><br><span class="line">  props: [&apos;title&apos;],</span><br><span class="line">  template: &apos;&lt;h3&gt;&#123;&#123; title &#125;&#125;&lt;/h3&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>然而在一个典型的应用中，你可能在 data 里有一个博文的数组：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#blog-post-demo&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    posts: [</span><br><span class="line">      &#123; id: 1, title: &apos;My journey with Vue&apos; &#125;,</span><br><span class="line">      &#123; id: 2, title: &apos;Blogging with Vue&apos; &#125;,</span><br><span class="line">      &#123; id: 3, title: &apos;Why Vue is so fun&apos; &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>并想要为每篇博文渲染一个组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post</span><br><span class="line">  v-for=&quot;post in posts&quot;</span><br><span class="line">  v-bind:key=&quot;post.id&quot;</span><br><span class="line">  v-bind:title=&quot;post.title&quot;&gt;</span><br><span class="line">&lt;/blog-post&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="单个根元素"><a href="#单个根元素" class="headerlink" title="单个根元素"></a>单个根元素</h4><p>将模板的内容包裹在一个父元素内<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post</span><br><span class="line">  v-for=&quot;post in posts&quot;</span><br><span class="line">  v-bind:key=&quot;post.id&quot;</span><br><span class="line">  v-bind:post=&quot;post&quot;</span><br><span class="line">&gt;&lt;/blog-post&gt;</span><br><span class="line">Vue.component(&apos;blog-post&apos;, &#123;</span><br><span class="line">  props: [&apos;post&apos;],</span><br><span class="line">  template: `</span><br><span class="line">    &lt;div class=&quot;blog-post&quot;&gt;</span><br><span class="line">      &lt;h3&gt;&#123;&#123; post.title &#125;&#125;&lt;/h3&gt;</span><br><span class="line">      &lt;div v-html=&quot;post.content&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  `</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="监听子组件事件"><a href="#监听子组件事件" class="headerlink" title="监听子组件事件"></a>监听子组件事件</h4><p>父级组件可以像处理 native DOM 事件一样通过 v-on 监听子组件实例的任意事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;blog-post</span><br><span class="line">  ...</span><br><span class="line">  v-on:enlarge-text=&quot;postFontSize += 0.1&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">    methods:&#123;</span><br><span class="line">        onEnlargeText(value)&#123;</span><br><span class="line">           this.value = value</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>子组件可以通过调用内建的 $emit 方法 并传入事件名称来触发一个事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button v-on:click=&quot;$emit(&apos;enlarge-text&apos;,value)&quot;&gt;</span><br><span class="line">  Enlarge text</span><br><span class="line">&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="在组件上使用-v-model"><a href="#在组件上使用-v-model" class="headerlink" title="在组件上使用 v-model"></a>在组件上使用 v-model</h4><p>自定义事件也可以用于创建支持 v-model 的自定义输入组件。记住：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model=&quot;searchText&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>等价于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input</span><br><span class="line">v-bind:value=&quot;searchText&quot;</span><br><span class="line">v-on:input=&quot;searchText = $event.target.value&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>当用在组件上时，v-model 则会这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;custom-input</span><br><span class="line">  v-bind:value=&quot;searchText&quot;</span><br><span class="line">  v-on:input=&quot;searchText = $event&quot;</span><br><span class="line">&lt;/custom-input&gt;</span><br></pre></td></tr></table></figure></p>
+<p>为了让它正常工作，这个组件内的 <code>&lt;input&gt;</code> 必须：</p>
+<ul>
+<li>将其 value 特性绑定到一个名叫 value 的 prop 上</li>
+<li>在其 input 事件被触发时，将新的值通过自定义的 input 事件抛出</li>
+</ul>
+<p>写成代码之后是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Vue.components(&apos;custom-input&apos;,&#123;</span><br><span class="line">    props：[&apos;value&apos;],</span><br><span class="line">    template:`</span><br><span class="line">    &lt;input :value=&quot;value&quot; @input=&quot;$emit(&apos;input&apos;,$event.target.value)&quot;</span><br><span class="line">    &gt;</span><br><span class="line">    `</span><br><span class="line">&#125;)</span><br><span class="line">渲染之后：&lt;custom-input v-model=&quot;searchText&quot;&gt;&lt;/custom-input&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="通过插槽分发内容"><a href="#通过插槽分发内容" class="headerlink" title="通过插槽分发内容"></a>通过插槽分发内容</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;alert-box&gt;</span><br><span class="line">  Something bad happened.</span><br><span class="line">&lt;/alert-box&gt;</span><br><span class="line"></span><br><span class="line">Vue.component(&apos;alert-box&apos;, &#123;</span><br><span class="line">  template: `</span><br><span class="line">    &lt;div class=&quot;demo-alert-box&quot;&gt;</span><br><span class="line">      &lt;strong&gt;Error!&lt;/strong&gt;</span><br><span class="line">      &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  `</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h4><p>通过 Vue 的 <component> 元素加一个特殊的 is 特性来实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 组件会在 `currentTabComponent` 改变时改变 --&gt;</span><br><span class="line">&lt;component v-bind:is=&quot;currentTabComponent&quot;&gt;&lt;/component&gt;</span><br></pre></td></tr></table></figure></component></p>
+<p>currentTabComponent 可以包括</p>
+<ul>
+<li>已注册组件的名字，或</li>
+<li>一个组件的选项对象</li>
+</ul>
 
           
         
