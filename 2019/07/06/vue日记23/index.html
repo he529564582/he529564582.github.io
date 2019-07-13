@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="vue日记22过滤器 Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化。过滤器可以用在两个地方：双花括号插值和 v-bind 表达式 (后者从 2.1.0+ 开始支持)。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符号指示12345&amp;lt;!-- 在双花括号中 --&amp;gt;&amp;#123;&amp;#123; message | capitalize &amp;#125;&amp;#125">
+<meta name="description" content="vue日记23单文件组件介绍 在很多 Vue 项目中，我们使用 Vue.component 来定义全局组件，紧接着用 new Vue({ el: ‘#container ‘}) 在每个页面内指定一个容器元素。 这种方式在很多中小规模的项目中运作的很好，在这些项目里 JavaScript 只被用来加强特定的视图。但当在更复杂的项目中，或者你的前端完全由 JavaScript 驱动的时候，下面这些缺点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue日记23">
 <meta property="og:url" content="http://www.hefang.site/2019/07/06/vue日记23/index.html">
 <meta property="og:site_name" content="he&#39;blog">
-<meta property="og:description" content="vue日记22过滤器 Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化。过滤器可以用在两个地方：双花括号插值和 v-bind 表达式 (后者从 2.1.0+ 开始支持)。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符号指示12345&amp;lt;!-- 在双花括号中 --&amp;gt;&amp;#123;&amp;#123; message | capitalize &amp;#125;&amp;#125">
+<meta property="og:description" content="vue日记23单文件组件介绍 在很多 Vue 项目中，我们使用 Vue.component 来定义全局组件，紧接着用 new Vue({ el: ‘#container ‘}) 在每个页面内指定一个容器元素。 这种方式在很多中小规模的项目中运作的很好，在这些项目里 JavaScript 只被用来加强特定的视图。但当在更复杂的项目中，或者你的前端完全由 JavaScript 驱动的时候，下面这些缺点">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-13T13:34:43.804Z">
+<meta property="og:image" content="https://cn.vuejs.org/images/vue-component.png">
+<meta property="og:image" content="https://cn.vuejs.org/images/vue-component-with-preprocessors.png">
+<meta property="og:updated_time" content="2019-07-13T13:36:27.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue日记23">
-<meta name="twitter:description" content="vue日记22过滤器 Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化。过滤器可以用在两个地方：双花括号插值和 v-bind 表达式 (后者从 2.1.0+ 开始支持)。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符号指示12345&amp;lt;!-- 在双花括号中 --&amp;gt;&amp;#123;&amp;#123; message | capitalize &amp;#125;&amp;#125">
+<meta name="twitter:description" content="vue日记23单文件组件介绍 在很多 Vue 项目中，我们使用 Vue.component 来定义全局组件，紧接着用 new Vue({ el: ‘#container ‘}) 在每个页面内指定一个容器元素。 这种方式在很多中小规模的项目中运作的很好，在这些项目里 JavaScript 只被用来加强特定的视图。但当在更复杂的项目中，或者你的前端完全由 JavaScript 驱动的时候，下面这些缺点">
+<meta name="twitter:image" content="https://cn.vuejs.org/images/vue-component.png">
 
 
 
@@ -341,16 +344,32 @@
       
 
       
-        <h2 id="vue日记22"><a href="#vue日记22" class="headerlink" title="vue日记22"></a>vue日记22</h2><h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><hr>
-<p>Vue.js 允许你自定义过滤器，可被用于一些常见的文本格式化。过滤器可以用在两个地方：双花括号插值和 v-bind 表达式 (后者从 2.1.0+ 开始支持)。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符号指示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在双花括号中 --&gt;</span><br><span class="line">&#123;&#123; message | capitalize &#125;&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 在 `v-bind` 中 --&gt;</span><br><span class="line">&lt;div v-bind:id=&quot;rawId | formatId&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>你可以在一个组件的选项中定义本地的过滤器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">filters: &#123;</span><br><span class="line">  capitalize: function (value) &#123;</span><br><span class="line">    if (!value) return &apos;&apos;</span><br><span class="line">    value = value.toString()</span><br><span class="line">    return value.charAt(0).toUpperCase() + value.slice(1)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>或者在创建 Vue 实例之前全局定义过滤器：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Vue.filter(&apos;capitalize&apos;, function (value) &#123;</span><br><span class="line">  if (!value) return &apos;&apos;</span><br><span class="line">  value = value.toString()</span><br><span class="line">  return value.charAt(0).toUpperCase() + value.slice(1)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  // ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>当全局过滤器和局部过滤器重名时，会采用局部过滤器。</p>
-<p>过滤器函数总接收表达式的值 (之前的操作链的结果) 作为第一个参数。在上述例子中，capitalize 过滤器函数将会收到 message 的值作为第一个参数</p>
-<p>过滤器可以串联：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; message | filterA | filterB &#125;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在这个例子中，filterA 被定义为接收单个参数的过滤器函数，表达式 message 的值将作为参数传入到函数中。然后继续调用同样被定义为接收单个参数的过滤器函数 filterB，将 filterA 的结果传递到 filterB 中</p>
-<p>过滤器是 JavaScript 函数，因此可以接收参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; message | filterA(&apos;arg1&apos;, arg2) &#125;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这里，filterA 被定义为接收三个参数的过滤器函数。其中 message 的值作为第一个参数，普通字符串 ‘arg1’ 作为第二个参数，表达式 arg2 的值作为第三个参数。</p>
+        <h2 id="vue日记23"><a href="#vue日记23" class="headerlink" title="vue日记23"></a>vue日记23</h2><h4 id="单文件组件"><a href="#单文件组件" class="headerlink" title="单文件组件"></a>单文件组件</h4><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><hr>
+<p>在很多 Vue 项目中，我们使用 Vue.component 来定义全局组件，紧接着用 new Vue({ el: ‘#container ‘}) 在每个页面内指定一个容器元素。</p>
+<p>这种方式在很多中小规模的项目中运作的很好，在这些项目里 JavaScript 只被用来加强特定的视图。但当在更复杂的项目中，或者你的前端完全由 JavaScript 驱动的时候，下面这些缺点将变得非常明显：</p>
+<ol>
+<li>全局定义 (Global definitions) 强制要求每个 component 中的命名不得重复</li>
+<li>字符串模板 (String templates) 缺乏语法高亮，在 HTML 有多行的时候，需要用到丑陋的 \</li>
+<li>不支持 CSS (No CSS support) 意味着当 HTML 和 JavaScript 组件化时，CSS 明显被遗漏</li>
+<li>没有构建步骤 (No build step) 限制只能使用 HTML 和 ES5 JavaScript, 而不能使用预处理器，如 Pug (formerly Jade) 和 Babel</li>
+</ol>
+<p>文件扩展名为 .vue 的 single-file components(单文件组件) 为以上所有问题提供了解决方法，并且还可以使用 webpack 或 Browserify 等构建工具</p>
+<p>这是一个文件名为 Hello.vue 的简单实例：<br><img src="https://cn.vuejs.org/images/vue-component.png" alt="Hello.vue"></p>
+<p>现在我们获得：</p>
+<ul>
+<li>完整语法高亮</li>
+<li>CommonJS 模块</li>
+<li>组件作用域的 CSS</li>
+</ul>
+<p>正如我们说过的，我们可以使用预处理器来构建简洁和功能更丰富的组件，比如 Pug，Babel (with ES2015 modules)，和 Stylus<br><img src="https://cn.vuejs.org/images/vue-component-with-preprocessors.png" alt="preprocessors.png"><br>这些特定的语言只是例子，你可以只是简单地使用 Babel，TypeScript，SCSS，PostCSS - 或者其他任何能够帮助你提高生产力的预处理器。如果搭配 vue-loader 使用 webpack，它也能为 CSS Modules 提供头等支持</p>
+<h4 id="怎么看待关注点分离？"><a href="#怎么看待关注点分离？" class="headerlink" title="怎么看待关注点分离？"></a>怎么看待关注点分离？</h4><p>一个重要的事情值得注意，关注点分离不等于文件类型分离。在现代 UI 开发中，我们已经发现相比于把代码库分离成三个大的层次并将其相互交织起来，把它们划分为松散耦合的组件再将其组合起来更合理一些。在一个组件里，其模板、逻辑和样式是内部耦合的，并且把他们搭配在一起实际上使得组件更加内聚且更可维护</p>
+<p>即便你不喜欢单文件组件，你仍然可以把 JavaScript、CSS 分离成独立的文件然后做到热重载和预编译。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- my-component.vue --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;This will be pre-compiled&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script src=&quot;./my-component.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;style src=&quot;./my-component.css&quot;&gt;&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="针对刚接触-JavaScript-模块开发系统的用户"><a href="#针对刚接触-JavaScript-模块开发系统的用户" class="headerlink" title="针对刚接触 JavaScript 模块开发系统的用户"></a>针对刚接触 JavaScript 模块开发系统的用户</h4><p>有了 .vue 组件，我们就进入了高级 JavaScript 应用领域。如果你没有准备好的话，意味着还需要学会使用一些附加的工具：</p>
+<ol>
+<li>Node Package Manager (NPM)：阅读 Getting Started guide 直到 10: Uninstalling global packages章节。</li>
+<li>Modern JavaScript with ES2015/16：阅读 Babel 的 Learn ES2015 guide。你不需要立刻记住每一个方法，但是你可以保留这个页面以便后期参考</li>
+</ol>
+<h4 id="针对高级用户"><a href="#针对高级用户" class="headerlink" title="针对高级用户"></a>针对高级用户</h4><p>CLI 会为你搞定大多数工具的配置问题，同时也支持细粒度自定义配置项。</p>
 
       
     </div>
@@ -506,7 +525,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue日记22"><span class="nav-number">1.</span> <span class="nav-text">vue日记22</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤器"><span class="nav-number">1.1.</span> <span class="nav-text">过滤器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue日记23"><span class="nav-number">1.</span> <span class="nav-text">vue日记23</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单文件组件"><span class="nav-number">1.0.1.</span> <span class="nav-text">单文件组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍"><span class="nav-number">1.0.2.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么看待关注点分离？"><span class="nav-number">1.0.3.</span> <span class="nav-text">怎么看待关注点分离？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#针对刚接触-JavaScript-模块开发系统的用户"><span class="nav-number">1.0.4.</span> <span class="nav-text">针对刚接触 JavaScript 模块开发系统的用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#针对高级用户"><span class="nav-number">1.0.5.</span> <span class="nav-text">针对高级用户</span></a></li></ol></li></ol></div>
             
 
           </div>
