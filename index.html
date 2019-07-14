@@ -375,7 +375,7 @@
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 当 count 渲染在页面上，并且更新的时候导致页面的重新渲染，这时 getFullname 方法也会再次执行，但是计算属性的 fullname 因为有缓存，只有用到的数据更新了才会更新</span><br><span class="line">data: &#123;</span><br><span class="line">	this.firstname: &apos;san&apos;,</span><br><span class="line">	this.lastname: &apos;zhang&apos;,</span><br><span class="line">	this.count: 0,</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">	getFullname: function()&#123;</span><br><span class="line">		return this.firstname + this.lastname</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">	fullname: function()&#123;</span><br><span class="line">		return this.firstname + this.lastname</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="chap4-v-bind-绑定-class"><a href="#chap4-v-bind-绑定-class" class="headerlink" title="chap4 v-bind 绑定 class"></a>chap4 v-bind 绑定 class</h2><ol start="0">
+<h3 id="chap4-v-bind-绑定-class"><a href="#chap4-v-bind-绑定-class" class="headerlink" title="chap4 v-bind 绑定 class"></a>chap4 v-bind 绑定 class</h3><ol start="0">
 <li><p>变量语法</p>
 <p> <code>v-bind:class=&#39;classVariable&#39;</code><br> <code>data:{ classVariable: &#39;some-class-name&#39;}</code></p>
 </li>
@@ -391,7 +391,7 @@
 <p> <code>v-bind:class=[{&#39;active&#39;: isActive} ,&#39;error&#39;]</code></p>
 </li>
 </ol>
-<h2 id="chap4-v-bind-绑定-style，内联样式"><a href="#chap4-v-bind-绑定-style，内联样式" class="headerlink" title="chap4 v-bind 绑定 style，内联样式"></a>chap4 v-bind 绑定 style，内联样式</h2><ol>
+<h3 id="chap4-v-bind-绑定-style，内联样式"><a href="#chap4-v-bind-绑定-style，内联样式" class="headerlink" title="chap4 v-bind 绑定 style，内联样式"></a>chap4 v-bind 绑定 style，内联样式</h3><ol>
 <li><p>对象语法</p>
 <p> <code>v-bind:style=&quot;{&#39;color&#39;: color, &#39;fontSize&#39;: fontSize+&#39;px&#39;}&quot;</code></p>
 <p> 属性要用驼峰命名</p>
