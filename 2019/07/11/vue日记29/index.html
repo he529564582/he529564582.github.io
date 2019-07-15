@@ -79,14 +79,17 @@
 
 
 
+<meta name="description" content="JS笔记标识符 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9  下面这些都是合法的标识符:1234arg0_tmp$elemπ 下面这些则是不合法的标识符:123451a  // 第一个字符不能是数字23  // 同上***  // 标识符不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js笔记">
 <meta property="og:url" content="http://www.hefang.site/2019/07/11/vue日记29/index.html">
 <meta property="og:site_name" content="he&#39;blog">
+<meta property="og:description" content="JS笔记标识符 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9  下面这些都是合法的标识符:1234arg0_tmp$elemπ 下面这些则是不合法的标识符:123451a  // 第一个字符不能是数字23  // 同上***  // 标识符不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-15T12:00:23.281Z">
+<meta property="og:updated_time" content="2019-07-15T12:00:50.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js笔记">
+<meta name="twitter:description" content="JS笔记标识符 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9  下面这些都是合法的标识符:1234arg0_tmp$elemπ 下面这些则是不合法的标识符:123451a  // 第一个字符不能是数字23  // 同上***  // 标识符不">
 
 
 
@@ -338,7 +341,98 @@
       
 
       
-        
+        <h2 id="JS笔记"><a href="#JS笔记" class="headerlink" title="JS笔记"></a>JS笔记</h2><h4 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h4><ol>
+<li>第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。</li>
+<li>第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9</li>
+</ol>
+<p>下面这些都是合法的标识符:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">arg0</span><br><span class="line">_tmp</span><br><span class="line">$elem</span><br><span class="line">π</span><br></pre></td></tr></table></figure></p>
+<p>下面这些则是不合法的标识符:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1a  // 第一个字符不能是数字</span><br><span class="line">23  // 同上</span><br><span class="line">***  // 标识符不能包含星号</span><br><span class="line">a+b  // 标识符不能包含加号</span><br><span class="line">-d  // 标识符不能包含减号或连词线</span><br></pre></td></tr></table></figure></p>
+<p>中文是合法的标识符，可以用作变量名</p>
+<h4 id="数据类型-（ES6-又新增了第七种-Symbol-类型的值"><a href="#数据类型-（ES6-又新增了第七种-Symbol-类型的值" class="headerlink" title="数据类型 ==（ES6 又新增了第七种 Symbol 类型的值)=="></a>数据类型 ==（ES6 又新增了第七种 Symbol 类型的值)==</h4><ol>
+<li>数值（number）：整数和小数（比如1和3.14）</li>
+<li>字符串（string）：文本（比如Hello World）。</li>
+<li>布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假）</li>
+<li>undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值</li>
+<li>null：表示空值，即此处的值为空。</li>
+<li>对象（object）：各种值组成的集合。</li>
+</ol>
+<p>数值、字符串、布尔值这三种类型，合称为原始类型（primitive type）的值</p>
+<p>undefined和null，一般将它们看成两个特殊值</p>
+<p>对象是最复杂的数据类型，又可以分成三个子类型。</p>
+<ol>
+<li>狭义的对象（object）</li>
+<li>数组（array）</li>
+<li>函数（function）</li>
+</ol>
+<h4 id="typeof-运算符"><a href="#typeof-运算符" class="headerlink" title="typeof 运算符"></a>typeof 运算符</h4><p>JavaScript 有三种方法，可以确定一个值到底是什么类型。</p>
+<ol>
+<li>typeof运算符</li>
+<li>instanceof运算符</li>
+<li>Object.prototype.toString方法</li>
+</ol>
+<p>typeof运算符可以返回一个值的数据类型<br>数值、字符串、布尔值分别返回number、string、boolean</p>
+<h4 id="null-undefined"><a href="#null-undefined" class="headerlink" title="null, undefined"></a>null, undefined</h4><p>null表示空值，即该处的值现在为空。调用函数时，某个参数未设置任何值，这时就可以传入null，表示该参数为空。比如，某个函数接受引擎抛出的错误作为参数，如果运行过程中未出错，那么这个参数就会传入null，表示未发生错误。</p>
+<p>undefined表示“未定义”，下面是返回undefined的典型场景</p>
+<p>转换规则是除了下面六个值被转为false，其他值都视为true。</p>
+<ul>
+<li>undefined</li>
+<li>null</li>
+<li>false</li>
+<li>0</li>
+<li>NaN</li>
+<li>“”或’’（空字符串）</li>
+</ul>
+<h4 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h4><p>NaN是 JavaScript 的特殊值，表示“非数字”（Not a Number），主要出现在将字符串解析成数字出错的场合</p>
+<h4 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN()"></a>isNaN()</h4><p>isNaN方法可以用来判断一个值是否为NaN。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">isNaN(NaN) // true</span><br><span class="line">isNaN(123) // false</span><br></pre></td></tr></table></figure></p>
+<p>但是，isNaN只对数值有效，如果传入其他值，会被先转成数值。比如，传入字符串的时候，字符串会被先转成NaN，所以最后返回true，这一点要特别引起注意。也就是说，isNaN为true的值，有可能不是NaN，而是一个字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">isNaN(&apos;Hello&apos;) // true</span><br><span class="line">// 相当于</span><br><span class="line">isNaN(Number(&apos;Hello&apos;)) // true****</span><br></pre></td></tr></table></figure></p>
+<h4 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h4><p>反斜杠（\）在字符串内有特殊含义，用来表示一些特殊字符，所以又称为转义符。</p>
+<p>需要用反斜杠转义的特殊字符，主要有下面这些。</p>
+<ul>
+<li>\0 ：null（\u0000）</li>
+<li>\b ：后退键（\u0008）</li>
+<li>\f ：换页符（\u000C）</li>
+<li>\n ：换行符（\u000A）</li>
+<li>\r ：回车键（\u000D）</li>
+<li>\t ：制表符（\u0009）</li>
+<li>\v ：垂直制表符（\u000B）</li>
+<li>\’ ：单引号（\u0027）</li>
+<li>\” ：双引号（\u0022）</li>
+<li>\ ：反斜杠（\u005C）</li>
+</ul>
+<h4 id="属性是否存在：in-运算符"><a href="#属性是否存在：in-运算符" class="headerlink" title="属性是否存在：in 运算符"></a>属性是否存在：in 运算符</h4><p>in运算符用于检查对象是否包含某个属性（注意，检查的是键名，不是键值），如果包含就返回true，否则返回false。它的左边是一个字符串，表示属性名，右边是一个对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; p: 1 &#125;;</span><br><span class="line">&apos;p&apos; in obj // true</span><br><span class="line">&apos;toString&apos; in obj // true</span><br></pre></td></tr></table></figure></p>
+<p>in运算符的一个问题是，它不能识别哪些属性是对象自身的，哪些属性是继承的。就像上面代码中，对象obj本身并没有toString属性，但是in运算符会返回true，因为这个属性是继承的。</p>
+<p>这时，可以使用对象的==hasOwnProperty==方法判断一下，是否为对象自身的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">if (&apos;toString&apos; in obj) &#123;</span><br><span class="line">  console.log(obj.hasOwnProperty(&apos;toString&apos;)) // false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h4><p>作用域（scope）指的是变量存在的范围。在 ES5 的规范中，JavaScript 只有两种作用域：一种是全局作用域，变量在整个程序中一直存在，所有地方都可以读取；另一种是函数作用域，变量只在函数内部存在。ES6 又新增了块级作用域</p>
+<p>对于顶层函数来说，函数外部声明的变量就是全局变量（global variable），它可以在函数内部读取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var v = 1;</span><br><span class="line"></span><br><span class="line">function f() &#123;</span><br><span class="line">  console.log(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f()</span><br><span class="line">// 1</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码表明，函数f内部可以读取全局变量v。</p>
+<p>在函数内部定义的变量，外部无法读取，称为“局部变量”（local variable）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function f()&#123;</span><br><span class="line">  var v = 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">v // ReferenceError: v is not defined</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，变量v在函数内部定义，所以是一个局部变量，函数之外就无法读取。</p>
+<p>函数内部定义的变量，会在该作用域内覆盖同名全局变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var v = 1;</span><br><span class="line"></span><br><span class="line">function f()&#123;</span><br><span class="line">  var v = 2;</span><br><span class="line">  console.log(v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // 2</span><br><span class="line">v // 1</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，变量v同时在函数的外部和内部有定义。结果，在函数内部定义，局部变量v覆盖了全局变量v</p>
+<p>==注意，对于var命令来说，局部变量只能在函数内部声明，在其他区块中声明，一律都是全局变量==<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">  var x = 5;</span><br><span class="line">&#125;</span><br><span class="line">console.log(x);  // 5</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，变量x在条件判断区块之中声明，结果就是一个全局变量，可以在区块之外读取。</p>
+<h4 id="函数本身的作用域"><a href="#函数本身的作用域" class="headerlink" title="函数本身的作用域"></a>函数本身的作用域</h4><p>函数本身也是一个值，也有自己的作用域。它的作用域与变量一样，就是其声明时所在的作用域，与其运行时所在的作用域无关<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">var x = function () &#123;</span><br><span class="line">  console.log(a);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function f() &#123;</span><br><span class="line">  var a = 2;</span><br><span class="line">  x();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // 1</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，函数x是在函数f的外部声明的，所以它的作用域绑定外层，内部变量a不会到函数f体内取值，所以输出1，而不是2</p>
+<p>==总之，函数执行时所在的作用域，是定义时的作用域，而不是调用时所在的作用域==</p>
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function f1() &#123;</span><br><span class="line">  var n = 999;</span><br><span class="line">  function f2() &#123;</span><br><span class="line">    console.log(n);</span><br><span class="line">  &#125;</span><br><span class="line">  return f2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var result = f1();</span><br><span class="line">result(); // 999</span><br></pre></td></tr></table></figure>
+<p>闭包就是函数f2，即能够读取其他函数内部变量的函数。由于在 JavaScript 语言中，只有函数内部的子函数才能读取内部变量，因此可以把闭包简单理解成“定义在一个函数内部的函数”。闭包最大的特点，就是它可以“记住”诞生的环境，比如f2记住了它诞生的环境f1，所以从f2可以得到f1的内部变量。在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁</p>
+<p>==闭包的最大用处有两个，一个是可以读取函数内部的变量，另一个就是让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在==</p>
+<h4 id="立即调用的函数表达式"><a href="#立即调用的函数表达式" class="headerlink" title="立即调用的函数表达式"></a>立即调用的函数表达式</h4><p>通常情况下，只对匿名函数使用这种“立即执行的函数表达式”。它的目的有两个：一是不必为函数命名，避免了污染全局变量；二是 IIFE 内部形成了一个单独的作用域，可以封装一些外部无法读取的私有变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 写法一</span><br><span class="line">var tmp = newData;</span><br><span class="line">processData(tmp);</span><br><span class="line">storeData(tmp);</span><br><span class="line"></span><br><span class="line">// 写法二</span><br><span class="line">(function () &#123;</span><br><span class="line">  var tmp = newData;</span><br><span class="line">  processData(tmp);</span><br><span class="line">  storeData(tmp);</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure></p>
+<h4 id="类似数组的对象"><a href="#类似数组的对象" class="headerlink" title="类似数组的对象"></a>类似数组的对象</h4><p>==数组的slice方法可以将“类似数组的对象”变成真正的数组==。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = Array.prototype.slice.call(arrayLike);</span><br></pre></td></tr></table></figure></p>
+<p>除了转为真正的数组，“类似数组的对象”还有一个办法可以使用数组的方法，==就是通过call()把数组的方法放到对象上面==<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function print(value, index) &#123;</span><br><span class="line">  console.log(index + &apos; : &apos; + value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Array.prototype.forEach.call(arrayLike, print);</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，arrayLike代表一个类似数组的对象，本来是不可以使用数组的forEach()方法的，但是通过call()，可以把forEach()嫁接到arrayLike上面调用。</p>
+<h4 id="取反运算符"><a href="#取反运算符" class="headerlink" title="取反运算符"></a>取反运算符</h4><p>取反运算符是一个感叹号，用于将布尔值变为相反值，即true变成f<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alse，false变成true。å</span><br><span class="line">!true // false</span><br><span class="line">!false // true</span><br></pre></td></tr></table></figure></p>
+<p>对于非布尔值，取反运算符会将其转为布尔值。可以这样记忆，以下六个值取反后为true，其他值都为false。</p>
+<ul>
+<li>undefined</li>
+<li>null</li>
+<li>false</li>
+<li>0</li>
+<li>NaN</li>
+<li>空字符串（’’）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">!undefined // true</span><br><span class="line">!null // true</span><br><span class="line">!0 // true</span><br><span class="line">!NaN // true</span><br><span class="line">!&quot;&quot; // true</span><br><span class="line"></span><br><span class="line">!54 // false</span><br><span class="line">!&apos;hello&apos; // false</span><br><span class="line">![] // false</span><br><span class="line">!&#123;&#125; // false</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -422,8 +516,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -474,6 +577,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS笔记"><span class="nav-number">1.</span> <span class="nav-text">JS笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标识符"><span class="nav-number">1.0.1.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型-（ES6-又新增了第七种-Symbol-类型的值"><span class="nav-number">1.0.2.</span> <span class="nav-text">数据类型 ==（ES6 又新增了第七种 Symbol 类型的值)==</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof-运算符"><span class="nav-number">1.0.3.</span> <span class="nav-text">typeof 运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null-undefined"><span class="nav-number">1.0.4.</span> <span class="nav-text">null, undefined</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NaN"><span class="nav-number">1.0.5.</span> <span class="nav-text">NaN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isNaN"><span class="nav-number">1.0.6.</span> <span class="nav-text">isNaN()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转义"><span class="nav-number">1.0.7.</span> <span class="nav-text">转义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性是否存在：in-运算符"><span class="nav-number">1.0.8.</span> <span class="nav-text">属性是否存在：in 运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数作用域"><span class="nav-number">1.0.9.</span> <span class="nav-text">函数作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数本身的作用域"><span class="nav-number">1.0.10.</span> <span class="nav-text">函数本身的作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闭包"><span class="nav-number">1.0.11.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#立即调用的函数表达式"><span class="nav-number">1.0.12.</span> <span class="nav-text">立即调用的函数表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类似数组的对象"><span class="nav-number">1.0.13.</span> <span class="nav-text">类似数组的对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#取反运算符"><span class="nav-number">1.0.14.</span> <span class="nav-text">取反运算符</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
