@@ -489,7 +489,17 @@
 <p>function print(i) {<br>  console.log(i);<br>}</p>
 <p>a.forEach(print)<br>// a<br>// b</p>
 <p>Array.apply(null, a).forEach(print)<br>// a<br>// undefined<br>// b<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">==（3）转换类似数组的对象==</span><br><span class="line">，利用数组对象的slice方法，可以将一个类似数组的对象（比如arguments对象）转为真正的数组。</span><br></pre></td></tr></table></figure></p>
-<p>Array.prototype.slice.apply({0: 1, length: 1}) // [1]<br>Array.prototype.slice.apply({0: 1}) // []<br>Array.prototype.slice.apply({0: 1, length: 2}) // [1, undefined]<br>Array.prototype.slice.apply({length: 1}) // [undefined]<br><code>`</code><br>上面代码的apply方法的参数都是对象，但是返回结果都是数组，这就起到了将对象转成数组的目的。从上面代码可以看到，这个方法起作用的前提是，==被处理的对象必须有length属性，以及相对应的数字键==</p>
+<p>Array.prototype.slice.apply({0: 1, length: 1}) // [1]<br>Array.prototype.slice.apply({0: 1}) // []<br>Array.prototype.slice.apply({0: 1, length: 2}) // [1, undefined]<br>Array.prototype.slice.apply({length: 1}) // [undefined]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">上面代码的apply方法的参数都是对象，但是返回结果都是数组，这就起到了将对象转成数组的目的。从上面代码可以看到，这个方法起作用的前提是，==被处理的对象必须有length属性，以及相对应的数字键==</span><br><span class="line"></span><br><span class="line">（4）绑定回调函数的对象</span><br></pre></td></tr></table></figure></p>
+<p>var o = new Object();</p>
+<p>o.f = function () {<br>  console.log(this === o);<br>}</p>
+<p>var f = function (){<br>  o.f.apply(o);<br>  // 或者 o.f.call(o);<br>};</p>
+<p>// jQuery 的写法<br>$(‘#button’).on(‘click’, f);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">上面代码中，点击按钮以后，控制台将会显示true。由于apply方法（或者call方法）不仅绑定函数执行时所在的对象，还会立即执行函数，因此不得不把绑定语句写在一个函数体内。更简洁的写法是采用下面介绍的bind方法</span><br><span class="line">#### Function.prototype.bind()</span><br><span class="line">bind方法用于将函数体内的this绑定到某个对象，然后返回一个新函数。</span><br></pre></td></tr></table></figure></p>
+<p>var d = new Date();<br>d.getTime() // 1481869925657</p>
+<p>var print = d.getTime;<br>print() //<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">上面代码中，我们将d.getTime方法赋给变量print，然后调用print就报错了。这是因为getTime方法内部的this，绑定Date对象的实例，赋给变量print以后，内部的this已经不指向Date对象的实例了</span><br><span class="line">bind方法可以解决这个问题</span><br></pre></td></tr></table></figure></p>
+<p>var print = d.getTime.bind(d);<br>print()<br><code>`</code><br>上面代码中，bind方法将getTime方法内部的this绑定到d对象，这时就可以安全地将这个方法赋值给其他变量了</p>
+<p>bind方法的参数就是所要绑定this的对象，下面是一个更清晰的例子。</p>
+<p>var counter = {<br>  count: 0,<br>  inc: function () {<br>    this.count++;<br>  }<br>};</p>
+<p>var func = counter.inc.bind(counter);<br>func();<br>counter.count // 1</p>
 
           
         
