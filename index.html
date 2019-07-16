@@ -506,7 +506,9 @@
 <p>obj.print = function () {<br>  this.times.forEach(function (n) {<br>    console.log(this === window);<br>  });<br>};</p>
 <p>obj.print()<br>// true<br>// true<br>// true<br>解决这个问题，也是通过bind方法绑定this。</p>
 <p>obj.print = function () {<br>  this.times.forEach(function (n) {<br>    console.log(this.name);<br>  }.bind(this));<br>};</p>
-<p>obj.print()<br>// 张三<br>// 张三<br>// 张三<br><code>`</code></p>
+<p>obj.print()<br>// 张三<br>// 张三<br>// 张三<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（3）结合call方法使用</span><br><span class="line">利用bind方法，可以改写一些 JavaScript 原生方法的使用形式，以数组的slice方法为例</span><br></pre></td></tr></table></figure></p>
+<p>[1, 2, 3].slice(0, 1) // [1]<br>// 等同于<br>Array.prototype.slice.call([1, 2, 3], 0, 1) // [1]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">call方法实质上是调用Function.prototype.call方法，因此上面的表达式可以用bind方法改写</span><br></pre></td></tr></table></figure></p>
+<p>var slice = Function.prototype.call.bind(Array.prototype.slice);<br>slice([1, 2, 3], 0, 1) // [1]<br><code>`</code><br>上面代码的含义就是，将Array.prototype.slice变成Function.prototype.call方法所在的对象，调用时就变成了Array.prototype.slice.call。类似的写法还可以用于其他数组方法</p>
 
           
         

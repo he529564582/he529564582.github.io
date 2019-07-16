@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="JS笔记标识符 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9  下面这些都是合法的标识符:1234arg0_tmp$elemπ 下面这些则是不合法的标识符:123451a  // 第一个字符不能是数字23  // 同上***  // 标识符不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-16T15:39:25.928Z">
+<meta property="og:updated_time" content="2019-07-16T15:42:39.280Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js笔记">
 <meta name="twitter:description" content="JS笔记标识符 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9  下面这些都是合法的标识符:1234arg0_tmp$elemπ 下面这些则是不合法的标识符:123451a  // 第一个字符不能是数字23  // 同上***  // 标识符不">
@@ -505,7 +505,9 @@
 <p>obj.print = function () {<br>  this.times.forEach(function (n) {<br>    console.log(this === window);<br>  });<br>};</p>
 <p>obj.print()<br>// true<br>// true<br>// true<br>解决这个问题，也是通过bind方法绑定this。</p>
 <p>obj.print = function () {<br>  this.times.forEach(function (n) {<br>    console.log(this.name);<br>  }.bind(this));<br>};</p>
-<p>obj.print()<br>// 张三<br>// 张三<br>// 张三<br><code>`</code></p>
+<p>obj.print()<br>// 张三<br>// 张三<br>// 张三<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（3）结合call方法使用</span><br><span class="line">利用bind方法，可以改写一些 JavaScript 原生方法的使用形式，以数组的slice方法为例</span><br></pre></td></tr></table></figure></p>
+<p>[1, 2, 3].slice(0, 1) // [1]<br>// 等同于<br>Array.prototype.slice.call([1, 2, 3], 0, 1) // [1]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">call方法实质上是调用Function.prototype.call方法，因此上面的表达式可以用bind方法改写</span><br></pre></td></tr></table></figure></p>
+<p>var slice = Function.prototype.call.bind(Array.prototype.slice);<br>slice([1, 2, 3], 0, 1) // [1]<br><code>`</code><br>上面代码的含义就是，将Array.prototype.slice变成Function.prototype.call方法所在的对象，调用时就变成了Array.prototype.slice.call。类似的写法还可以用于其他数组方法</p>
 
       
     </div>
