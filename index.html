@@ -476,10 +476,13 @@
 <p>函数实例的call方法，可以指定函数内部this的指向（即函数执行时所在的作用域），然后在所指定的作用域中，调用该函数。</p>
 <p>var obj = {};</p>
 <p>var f = function () {<br>  return this;<br>};</p>
-<p>f() === window // true<br>f.call(obj) === obj // true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">call方法的一个应用是调用对象的原生方法</span><br></pre></td></tr></table></figure></p>
+<p>f() === window // true<br>f.call(obj) === obj // true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">==call方法的一个应用是调用对象的原生方法==</span><br></pre></td></tr></table></figure></p>
 <p>var obj = {};<br>obj.hasOwnProperty(‘toString’) // false</p>
 <p>// 覆盖掉继承的 hasOwnProperty 方法<br>obj.hasOwnProperty = function () {<br>  return true;<br>};<br>obj.hasOwnProperty(‘toString’) // true</p>
-<p>Object.prototype.hasOwnProperty.call(obj, ‘toString’) // false<br><code>`</code><br>上面代码中，hasOwnProperty是obj对象继承的方法，如果这个方法一旦被覆盖，就不会得到正确结果。call方法可以解决这个问题，它将hasOwnProperty方法的原始定义放到obj对象上执行，这样无论obj上有没有同名方法，都不会影响结果</p>
+<p>Object.prototype.hasOwnProperty.call(obj, ‘toString’) // false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">上面代码中，hasOwnProperty是obj对象继承的方法，如果这个方法一旦被覆盖，就不会得到正确结果。call方法可以解决这个问题，它将hasOwnProperty方法的原始定义放到obj对象上执行，这样无论obj上有没有同名方法，都不会影响结果</span><br><span class="line">#### Function.prototype.apply()</span><br><span class="line">apply方法的作用与call方法类似，也是改变this指向，然后再调用该函数。唯一的区别就是，它接收一个数组作为函数执行时的参数，使用格式如下。</span><br></pre></td></tr></table></figure></p>
+<p>func.apply(thisValue, [arg1, arg2, …])<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply方法的第一个参数也是this所要指向的那个对象，如果设为null或undefined，则等同于指定全局对象。第二个参数则是一个数组，该数组的所有成员依次作为参数，传入原函数。原函数的参数，在call方法中必须一个个添加，但是在apply方法中，必须以数组形式添加。</span><br></pre></td></tr></table></figure></p>
+<p>function f(x, y){<br>  console.log(x + y);<br>}</p>
+<p>f.call(null, 1, 1) // 2<br>f.apply(null, [1, 1]) // 2<br><code>`</code><br>上面代码中，f函数本来接受两个参数，使用apply方法以后，就变成可以接受一个数组作为参数</p>
 
           
         
