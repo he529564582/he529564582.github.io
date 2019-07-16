@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="JS笔记标识符 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9  下面这些都是合法的标识符:1234arg0_tmp$elemπ 下面这些则是不合法的标识符:123451a  // 第一个字符不能是数字23  // 同上***  // 标识符不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-16T15:12:24.215Z">
+<meta property="og:updated_time" content="2019-07-16T15:16:06.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js笔记">
 <meta name="twitter:description" content="JS笔记标识符 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9  下面这些都是合法的标识符:1234arg0_tmp$elemπ 下面这些则是不合法的标识符:123451a  // 第一个字符不能是数字23  // 同上***  // 标识符不">
@@ -481,7 +481,14 @@
 <p>Object.prototype.hasOwnProperty.call(obj, ‘toString’) // false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">上面代码中，hasOwnProperty是obj对象继承的方法，如果这个方法一旦被覆盖，就不会得到正确结果。call方法可以解决这个问题，它将hasOwnProperty方法的原始定义放到obj对象上执行，这样无论obj上有没有同名方法，都不会影响结果</span><br><span class="line">#### Function.prototype.apply()</span><br><span class="line">apply方法的作用与call方法类似，也是改变this指向，然后再调用该函数。唯一的区别就是，它接收一个数组作为函数执行时的参数，使用格式如下。</span><br></pre></td></tr></table></figure></p>
 <p>func.apply(thisValue, [arg1, arg2, …])<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply方法的第一个参数也是this所要指向的那个对象，如果设为null或undefined，则等同于指定全局对象。第二个参数则是一个数组，该数组的所有成员依次作为参数，传入原函数。原函数的参数，在call方法中必须一个个添加，但是在apply方法中，必须以数组形式添加。</span><br></pre></td></tr></table></figure></p>
 <p>function f(x, y){<br>  console.log(x + y);<br>}</p>
-<p>f.call(null, 1, 1) // 2<br>f.apply(null, [1, 1]) // 2<br><code>`</code><br>上面代码中，f函数本来接受两个参数，使用apply方法以后，就变成可以接受一个数组作为参数</p>
+<p>f.call(null, 1, 1) // 2<br>f.apply(null, [1, 1]) // 2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">上面代码中，f函数本来接受两个参数，使用apply方法以后，就变成可以接受一个数组作为参数</span><br><span class="line"></span><br><span class="line">（1）找出数组最大元素</span><br><span class="line">JavaScript 不提供找出数组最大元素的函数。结合使用apply方法和Math.max方法，就可以返回数组的最大元素。</span><br></pre></td></tr></table></figure></p>
+<p>var a = [10, 2, 4, 15, 9];<br>Math.max.apply(null, a) // 15<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">（2）将数组的空元素变为undefined</span><br><span class="line"></span><br><span class="line">通过apply方法，利用Array构造函数将数组的空元素变成undefined。</span><br></pre></td></tr></table></figure></p>
+<p>Array.apply(null, [‘a’, ,’b’])<br>// [ ‘a’, undefined, ‘b’ ]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">空元素与undefined的差别在于，数组的forEach方法会跳过空元素，但是不会跳过undefined。因此，遍历内部元素的时候，会得到不同的结果。</span><br></pre></td></tr></table></figure></p>
+<p>var a = [‘a’, , ‘b’];</p>
+<p>function print(i) {<br>  console.log(i);<br>}</p>
+<p>a.forEach(print)<br>// a<br>// b</p>
+<p>Array.apply(null, a).forEach(print)<br>// a<br>// undefined<br>// b<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">==（3）转换类似数组的对象==</span><br><span class="line">，利用数组对象的slice方法，可以将一个类似数组的对象（比如arguments对象）转为真正的数组。</span><br></pre></td></tr></table></figure></p>
+<p>Array.prototype.slice.apply({0: 1, length: 1}) // [1]<br>Array.prototype.slice.apply({0: 1}) // []<br>Array.prototype.slice.apply({0: 1, length: 2}) // [1, undefined]<br>Array.prototype.slice.apply({length: 1}) // [undefined]<br><code>`</code><br>上面代码的apply方法的参数都是对象，但是返回结果都是数组，这就起到了将对象转成数组的目的。从上面代码可以看到，这个方法起作用的前提是，==被处理的对象必须有length属性，以及相对应的数字键==</p>
 
       
     </div>
