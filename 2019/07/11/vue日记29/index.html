@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="JS笔记标识符 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9  下面这些都是合法的标识符:1234arg0_tmp$elemπ 下面这些则是不合法的标识符:123451a  // 第一个字符不能是数字23  // 同上***  // 标识符不">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-17T15:38:47.605Z">
+<meta property="og:updated_time" content="2019-07-17T15:39:40.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js笔记">
 <meta name="twitter:description" content="JS笔记标识符 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9  下面这些都是合法的标识符:1234arg0_tmp$elemπ 下面这些则是不合法的标识符:123451a  // 第一个字符不能是数字23  // 同上***  // 标识符不">
@@ -516,6 +516,14 @@
 <h4 id="Event-preventDefault"><a href="#Event-preventDefault" class="headerlink" title="Event.preventDefault()"></a>Event.preventDefault()</h4><h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><p>Cookie 是服务器保存在浏览器的一小段文本信息，每个 Cookie 的大小一般不能超过4KB。浏览器每次向服务器发出请求，就会自动附上这段信息</p>
 <p>Cookie 主要用来分辨两个请求是否来自同一个浏览器，以及用来保存一些状态信息。它的常用场合有以下一些。</p>
 <p>对话（session）管理：保存登录、购物车等需要记录的信息。<br>个性化：保存用户的偏好，比如网页的字体大小、背景色等等。<br>追踪：记录和分析用户行为</p>
+<p>Cookie 包含以下几方面的信息。</p>
+<ul>
+<li>Cookie 的名字</li>
+<li>Cookie 的值（真正的数据写在这里面）</li>
+<li>到期时间</li>
+<li>所属域名（默认是当前域名）</li>
+<li>生效的路径（默认是当前网址）</li>
+</ul>
 
       
     </div>
