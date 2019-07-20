@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="ES6笔记####let 命令所声明的变量，只在let命令所在的代码块内有不存在变量提升暂时性死区不允许重复声明 ####const 命令const声明一个只读的常量。一旦声明，常量的值就不能改变。const的作用域与let命令相同：只在声明所在的块级作用域内有效。暂时性死区 ES6 声明变量的六种方法var  function let const import class ####globalT">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-20T15:40:39.379Z">
+<meta property="og:updated_time" content="2019-07-20T15:53:24.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js笔记">
 <meta name="twitter:description" content="ES6笔记####let 命令所声明的变量，只在let命令所在的代码块内有不存在变量提升暂时性死区不允许重复声明 ####const 命令const声明一个只读的常量。一旦声明，常量的值就不能改变。const的作用域与let命令相同：只在声明所在的块级作用域内有效。暂时性死区 ES6 声明变量的六种方法var  function let const import class ####globalT">
@@ -544,7 +544,8 @@
 </ul>
 <p>Reflect.ownKeys返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举</p>
 <p>以上的 5 种方法遍历对象的键名，都遵守同样的属性遍历的次序规则。</p>
-<p>==首先遍历所有数值键，按照数值升序排列。<br>其次遍历所有字符串键，按照加入时间升序排列。<br>最后遍历所有 Symbol 键，按照加入时间升序排列==</p>
+<p>==首先遍历所有数值键，按照数值升序排列。<br>其次遍历所有字符串键，按照加入时间升序排列。<br>最后遍历所有 Symbol 键，按照加入时间升序排列==<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Reflect.ownKeys(&#123; [Symbol()]:0, b:0, 10:0, 2:0, a:0 &#125;)</span><br><span class="line">// [&apos;2&apos;, &apos;10&apos;, &apos;b&apos;, &apos;a&apos;, Symbol()]</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中，Reflect.ownKeys方法返回一个数组，包含了参数对象的所有属性。这个数组的属性次序是这样的，首先是数值属性2和10，其次是字符串属性b和a，最后是 Symbol 属性</p>
 
       
     </div>
