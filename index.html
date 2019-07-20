@@ -425,7 +425,8 @@
 <li>end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示从末尾开始计算。</li>
 </ul>
 <p>这三个参数都应该是数值，如果不是，会自动转为数值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4, 5].copyWithin(0, 3)</span><br><span class="line">// [4, 5, 3, 4, 5]</span><br></pre></td></tr></table></figure></p>
-
+<h4 id="数组实例的-find-和-findIndex"><a href="#数组实例的-find-和-findIndex" class="headerlink" title="数组实例的 find() 和 findIndex()"></a>数组实例的 find() 和 findIndex()</h4><p>数组实例的find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined。</p>
+<h4 id="数组实例的-fill"><a href="#数组实例的-fill" class="headerlink" title="数组实例的 fill()"></a>数组实例的 fill()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;].fill(7)</span><br><span class="line">// [7, 7, 7]</span><br><span class="line"></span><br><span class="line">new Array(3).fill(7)</span><br><span class="line">// [7, 7, 7]</span><br></pre></td></tr></table></figure>
           
         
       
