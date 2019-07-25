@@ -249,6 +249,198 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/06/vue日记20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何方">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="he'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/06/vue日记20/" itemprop="url">vue日记20</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-06T20:33:29+08:00">
+                2019-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="vue日记20"><a href="#vue日记20" class="headerlink" title="vue日记20"></a>vue日记20</h2><h3 id="渲染函数-amp-JSX"><a href="#渲染函数-amp-JSX" class="headerlink" title="渲染函数 &amp; JSX"></a>渲染函数 &amp; JSX</h3><h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><p>使用 render 函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;anchored-heading&apos;, &#123;</span><br><span class="line">  render: function (createElement) &#123;</span><br><span class="line">    return createElement(</span><br><span class="line">      &apos;h&apos; + this.level,   // 标签名称</span><br><span class="line">      this.$slots.default // 子节点数组</span><br><span class="line">    )</span><br><span class="line">  &#125;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    level: &#123;</span><br><span class="line">      type: Number,</span><br><span class="line">      required: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="节点、树以及虚拟-DOM"><a href="#节点、树以及虚拟-DOM" class="headerlink" title="节点、树以及虚拟 DOM"></a>节点、树以及虚拟 DOM</h4><p>当浏览器读到这些代码时，它会建立一个“DOM 节点”树来保持追踪所有内容，如同你会画一张家谱树来追踪家庭成员的发展一样。</p>
+<p>上述 HTML 对应的 DOM 节点树如下图所示：<br><img src="https://cn.vuejs.org/images/dom-tree.png" alt="dom-tree"><br>每个元素都是一个节点。每段文字也是一个节点。甚至注释也都是节点。一个节点就是页面的一个部分。就像家谱树一样，每个节点都可以有孩子节点 (也就是说每个部分可以包含其它的一些部分)。</p>
+<p>高效地更新所有这些节点会是比较困难的，不过所幸你不必手动完成这个工作。你只需要告诉 Vue 你希望页面上的 HTML 是什么，这可以是在一个模板里：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&#123;&#123; blogTitle &#125;&#125;&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<p>或者一个渲染函数里：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">render: function (createElement) &#123;</span><br><span class="line">  return createElement(&apos;h1&apos;, this.blogTitle)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在这两种情况下，Vue 都会自动保持页面的更新，即便 blogTitle 发生了改变。</p>
+<h4 id="虚拟-DOM"><a href="#虚拟-DOM" class="headerlink" title="虚拟 DOM"></a>虚拟 DOM</h4><p>Vue 通过建立一个虚拟 DOM 来追踪自己要如何改变真实 DOM。请仔细看这行代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return createElement(&apos;h1&apos;, this.blogTitle)</span><br></pre></td></tr></table></figure></p>
+<p><code>createElement</code> 到底会返回什么呢？其实不是一个实际的 DOM 元素。它更准确的名字可能是 <code>createNodeDescription</code>，因为它所包含的信息会告诉 Vue 页面上需要渲染什么样的节点，包括及其子节点的描述信息。我们把这样的节点描述为“虚拟节点 (virtual node)”，也常简写它为“VNode”。“虚拟 DOM”是我们对由 Vue 组件树建立起来的整个 VNode 树的称呼</p>
+<h4 id="createElement-参数"><a href="#createElement-参数" class="headerlink" title="createElement 参数"></a>createElement 参数</h4><p>接下来你需要熟悉的是如何在 <code>createElement</code> 函数中使用模板中的那些功能。这里是 <code>createElement</code> 接受的参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// @returns &#123;VNode&#125;</span><br><span class="line">createElement(</span><br><span class="line">  // &#123;String | Object | Function&#125;</span><br><span class="line">  // 一个 HTML 标签名、组件选项对象，或者</span><br><span class="line">  // resolve 了上述任何一种的一个 async 函数。必填项。</span><br><span class="line">  &apos;div&apos;,</span><br><span class="line"></span><br><span class="line">  // &#123;Object&#125;</span><br><span class="line">  // 一个与模板中属性对应的数据对象。可选。</span><br><span class="line">  &#123;</span><br><span class="line">    // (详情见下一节)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // &#123;String | Array&#125;</span><br><span class="line">  // 子级虚拟节点 (VNodes)，由 `createElement()` 构建而成，</span><br><span class="line">  // 也可以使用字符串来生成“文本虚拟节点”。可选。</span><br><span class="line">  [</span><br><span class="line">    &apos;先写一些文字&apos;,</span><br><span class="line">    createElement(&apos;h1&apos;, &apos;一则头条&apos;),</span><br><span class="line">    createElement(MyComponent, &#123;</span><br><span class="line">      props: &#123;</span><br><span class="line">        someProp: &apos;foobar&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<h4 id="深入数据对象"><a href="#深入数据对象" class="headerlink" title="深入数据对象"></a>深入数据对象</h4><p>有一点要注意：正如 v-bind:class 和 v-bind:style 在模板语法中会被特别对待一样，它们在 VNode 数据对象中也有对应的顶层字段。该对象也允许你绑定普通的 HTML 特性，也允许绑定如 innerHTML 这样的 DOM 属性 (这会覆盖 v-html 指令)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  // 与 `v-bind:class` 的 API 相同，</span><br><span class="line">  // 接受一个字符串、对象或字符串和对象组成的数组</span><br><span class="line">  &apos;class&apos;: &#123;</span><br><span class="line">    foo: true,</span><br><span class="line">    bar: false</span><br><span class="line">  &#125;,</span><br><span class="line">  // 与 `v-bind:style` 的 API 相同，</span><br><span class="line">  // 接受一个字符串、对象，或对象组成的数组</span><br><span class="line">  style: &#123;</span><br><span class="line">    color: &apos;red&apos;,</span><br><span class="line">    fontSize: &apos;14px&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  // 普通的 HTML 特性</span><br><span class="line">  attrs: &#123;</span><br><span class="line">    id: &apos;foo&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  // 组件 prop</span><br><span class="line">  props: &#123;</span><br><span class="line">    myProp: &apos;bar&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  // DOM 属性</span><br><span class="line">  domProps: &#123;</span><br><span class="line">    innerHTML: &apos;baz&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  // 事件监听器在 `on` 属性内，</span><br><span class="line">  // 但不再支持如 `v-on:keyup.enter` 这样的修饰器。</span><br><span class="line">  // 需要在处理函数中手动检查 keyCode。</span><br><span class="line">  on: &#123;</span><br><span class="line">    click: this.clickHandler</span><br><span class="line">  &#125;,</span><br><span class="line">  // 仅用于组件，用于监听原生事件，而不是组件内部使用</span><br><span class="line">  // `vm.$emit` 触发的事件。</span><br><span class="line">  nativeOn: &#123;</span><br><span class="line">    click: this.nativeClickHandler</span><br><span class="line">  &#125;,</span><br><span class="line">  // 自定义指令。注意，你无法对 `binding` 中的 `oldValue`</span><br><span class="line">  // 赋值，因为 Vue 已经自动为你进行了同步。</span><br><span class="line">  directives: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: &apos;my-custom-directive&apos;,</span><br><span class="line">      value: &apos;2&apos;,</span><br><span class="line">      expression: &apos;1 + 1&apos;,</span><br><span class="line">      arg: &apos;foo&apos;,</span><br><span class="line">      modifiers: &#123;</span><br><span class="line">        bar: true</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  // 作用域插槽的格式为</span><br><span class="line">  // &#123; name: props =&gt; VNode | Array&lt;VNode&gt; &#125;</span><br><span class="line">  scopedSlots: &#123;</span><br><span class="line">    default: props =&gt; createElement(&apos;span&apos;, props.text)</span><br><span class="line">  &#125;,</span><br><span class="line">  // 如果组件是其它组件的子组件，需为插槽指定名称</span><br><span class="line">  slot: &apos;name-of-slot&apos;,</span><br><span class="line">  // 其它特殊顶层属性</span><br><span class="line">  key: &apos;myKey&apos;,</span><br><span class="line">  ref: &apos;myRef&apos;,</span><br><span class="line">  // 如果你在渲染函数中给多个元素都应用了相同的 ref 名，</span><br><span class="line">  // 那么 `$refs.myRef` 会变成一个数组。</span><br><span class="line">  refInFor: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">var getChildrenTextContent = function (children) &#123;</span><br><span class="line">  return children.map(function (node) &#123;</span><br><span class="line">    return node.children</span><br><span class="line">      ? getChildrenTextContent(node.children)</span><br><span class="line">      : node.text</span><br><span class="line">  &#125;).join(&apos;&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Vue.component(&apos;anchored-heading&apos;, &#123;</span><br><span class="line">  render: function (createElement) &#123;</span><br><span class="line">    // 创建 kebab-case 风格的 ID</span><br><span class="line">    var headingId = getChildrenTextContent(this.$slots.default)</span><br><span class="line">      .toLowerCase()</span><br><span class="line">      .replace(/\W+/g, &apos;-&apos;)</span><br><span class="line">      .replace(/(^-|-$)/g, &apos;&apos;)</span><br><span class="line"></span><br><span class="line">    return createElement(</span><br><span class="line">      &apos;h&apos; + this.level,</span><br><span class="line">      [</span><br><span class="line">        createElement(&apos;a&apos;, &#123;</span><br><span class="line">          attrs: &#123;</span><br><span class="line">            name: headingId,</span><br><span class="line">            href: &apos;#&apos; + headingId</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;, this.$slots.default)</span><br><span class="line">      ]</span><br><span class="line">    )</span><br><span class="line">  &#125;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    level: &#123;</span><br><span class="line">      type: Number,</span><br><span class="line">      required: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h4><p>VNode 必须唯一<br>组件树中的所有 VNode 必须是唯一的。这意味着，下面的渲染函数是不合法的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render: function (createElement) &#123;</span><br><span class="line">  var myParagraphVNode = createElement(&apos;p&apos;, &apos;hi&apos;)</span><br><span class="line">  return createElement(&apos;div&apos;, [</span><br><span class="line">    // 错误 - 重复的 VNode</span><br><span class="line">    myParagraphVNode, myParagraphVNode</span><br><span class="line">  ])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果你真的需要重复很多次的元素/组件，你可以使用工厂函数来实现。例如，下面这渲染函数用完全合法的方式渲染了 20 个相同的段落：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">render: function (createElement) &#123;</span><br><span class="line">  return createElement(&apos;div&apos;,</span><br><span class="line">    Array.apply(null, &#123; length: 20 &#125;).map(function () &#123;</span><br><span class="line">      return createElement(&apos;p&apos;, &apos;hi&apos;)</span><br><span class="line">    &#125;)</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="使用-JavaScript-代替模板功能"><a href="#使用-JavaScript-代替模板功能" class="headerlink" title="使用 JavaScript 代替模板功能"></a>使用 JavaScript 代替模板功能</h4><p><code>v-if</code> 和 <code>v-for</code><br>只要在原生的 JavaScript 中可以轻松完成的操作，Vue 的渲染函数就不会提供专有的替代方法。比如，在模板中使用的 v-if 和 v-for：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul v-if=&quot;items.length&quot;&gt;</span><br><span class="line">  &lt;li v-for=&quot;item in items&quot;&gt;&#123;&#123; item.name &#125;&#125;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;p v-else&gt;No items found.&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这些都可以在渲染函数中用 JavaScript 的 if/else 和 map 来重写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">props: [&apos;items&apos;],</span><br><span class="line">render: function (createElement) &#123;</span><br><span class="line">  if (this.items.length) &#123;</span><br><span class="line">    return createElement(&apos;ul&apos;, this.items.map(function (item) &#123;</span><br><span class="line">      return createElement(&apos;li&apos;, item.name)</span><br><span class="line">    &#125;))</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    return createElement(&apos;p&apos;, &apos;No items found.&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h4><p>渲染函数中没有与 v-model 的直接对应——你必须自己实现相应的逻辑：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">props: [&apos;value&apos;],</span><br><span class="line">render: function (createElement) &#123;</span><br><span class="line">  var self = this</span><br><span class="line">  return createElement(&apos;input&apos;, &#123;</span><br><span class="line">    domProps: &#123;</span><br><span class="line">      value: self.value</span><br><span class="line">    &#125;,</span><br><span class="line">    on: &#123;</span><br><span class="line">      input: function (event) &#123;</span><br><span class="line">        self.$emit(&apos;input&apos;, event.target.value)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="事件-amp-按键修饰符"><a href="#事件-amp-按键修饰符" class="headerlink" title="事件 &amp; 按键修饰符"></a>事件 &amp; 按键修饰符</h4><p>对于 .passive、.capture 和 .once 这些事件修饰符, Vue 提供了相应的前缀可以用于 on：</p>
+<p>修饰符                                      前缀<br>.passive                                   &amp;<br>.capture                                   !<br>.once                                      ~<br>.capture.once 或.once.capture           ~!<br>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">on: &#123;</span><br><span class="line">  &apos;!click&apos;: this.doThisInCapturingMode,</span><br><span class="line">  &apos;~keyup&apos;: this.doThisOnce,</span><br><span class="line">  &apos;~!mouseover&apos;: this.doThisOnceInCapturingMode</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对于所有其它的修饰符，私有前缀都不是必须的，因为你可以在事件处理函数中使用事件方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">on: &#123;</span><br><span class="line">  keyup: function (event) &#123;</span><br><span class="line">    // 如果触发事件的元素不是事件绑定的元素</span><br><span class="line">    // 则返回</span><br><span class="line">    if (event.target !== event.currentTarget) return</span><br><span class="line">    // 如果按下去的不是 enter 键或者</span><br><span class="line">    // 没有同时按下 shift 键</span><br><span class="line">    // 则返回</span><br><span class="line">    if (!event.shiftKey || event.keyCode !== 13) return</span><br><span class="line">    // 阻止 事件冒泡</span><br><span class="line">    event.stopPropagation()</span><br><span class="line">    // 阻止该元素默认的 keyup 事件</span><br><span class="line">    event.preventDefault()</span><br><span class="line">    // ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h4><p>你可以通过 this.$slots 访问静态插槽的内容，每个插槽都是一个 VNode 数组：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">render: function (createElement) &#123;</span><br><span class="line">  // `&lt;div&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/div&gt;`</span><br><span class="line">  return createElement(&apos;div&apos;, this.$slots.default)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也可以通过 this.$scopedSlots 访问作用域插槽，每个作用域插槽都是一个返回若干 VNode 的函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">props: [&apos;message&apos;],</span><br><span class="line">render: function (createElement) &#123;</span><br><span class="line">  // `&lt;div&gt;&lt;slot :text=&quot;message&quot;&gt;&lt;/slot&gt;&lt;/div&gt;`</span><br><span class="line">  return createElement(&apos;div&apos;, [</span><br><span class="line">    this.$scopedSlots.default(&#123;</span><br><span class="line">      text: this.message</span><br><span class="line">    &#125;)</span><br><span class="line">  ])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果要用渲染函数向子组件中传递作用域插槽，可以利用 VNode 数据对象中的 scopedSlots 字段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">render: function (createElement) &#123;</span><br><span class="line">  return createElement(&apos;div&apos;, [</span><br><span class="line">    createElement(&apos;child&apos;, &#123;</span><br><span class="line">      // 在数据对象中传递 `scopedSlots`</span><br><span class="line">      // 格式为 &#123; name: props =&gt; VNode | Array&lt;VNode&gt; &#125;</span><br><span class="line">      scopedSlots: &#123;</span><br><span class="line">        default: function (props) &#123;</span><br><span class="line">          return createElement(&apos;span&apos;, props.text)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  ])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h4><p>如果你写了很多 render 函数，可能会觉得下面这样的代码写起来很痛苦：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">createElement(</span><br><span class="line">  &apos;anchored-heading&apos;, &#123;</span><br><span class="line">    props: &#123;</span><br><span class="line">      level: 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, [</span><br><span class="line">    createElement(&apos;span&apos;, &apos;Hello&apos;),</span><br><span class="line">    &apos; world!&apos;</span><br><span class="line">  ]</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>特别是对应的模板如此简单的情况下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;anchored-heading :level=&quot;1&quot;&gt;</span><br><span class="line">  &lt;span&gt;Hello&lt;/span&gt; world!</span><br><span class="line">&lt;/anchored-heading&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这就是为什么会有一个 Babel 插件，用于在 Vue 中使用 JSX 语法，它可以让我们回到更接近于模板的语法上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import AnchoredHeading from &apos;./AnchoredHeading.vue&apos;</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#demo&apos;,</span><br><span class="line">  render: function (h) &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;AnchoredHeading level=&#123;1&#125;&gt;</span><br><span class="line">        &lt;span&gt;Hello&lt;/span&gt; world!</span><br><span class="line">      &lt;/AnchoredHeading&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>将 h 作为 createElement 的别名是 Vue 生态系统中的一个通用惯例，实际上也是 JSX 所要求的。从 Vue 的 Babel 插件的 3.4.0 版本开始，我们会在以 ES2015 语法声明的含有 JSX 的任何方法和 getter 中 (不是函数或箭头函数中) 自动注入 const h = this.$createElement，这样你就可以去掉 (h) 参数了。对于更早版本的插件，如果 h 在当前作用域中不可用，应用会抛错</p>
+<h4 id="函数式组件"><a href="#函数式组件" class="headerlink" title="函数式组件"></a>函数式组件</h4><p>之前创建的锚点标题组件是比较简单，没有管理任何状态，也没有监听任何传递给它的状态，也没有生命周期方法。实际上，它只是一个接受一些 prop 的函数。<br>在这样的场景下，我们可以将组件标记为 functional，这意味它无状态 (没有响应式数据)，也没有实例 (没有 this 上下文)。<br>一个函数式组件就像这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-component&apos;, &#123;</span><br><span class="line">  functional: true,</span><br><span class="line">  // Props 是可选的</span><br><span class="line">  props: &#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;,</span><br><span class="line">  // 为了弥补缺少的实例</span><br><span class="line">  // 提供第二个参数作为上下文</span><br><span class="line">  render: function (createElement, context) &#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>组件需要的一切都是通过 context 参数传递，它是一个包括如下字段的对象</p>
+<ul>
+<li>props：提供所有 prop 的对象</li>
+<li>children: VNode 子节点的数组</li>
+<li>slots: 一个函数，返回了包含所有插槽的对象</li>
+<li>scopedSlots: (2.6.0+) 一个暴露传入的作用域插槽的对象。也以函数形式暴露普通插槽。</li>
+<li>data：传递给组件的整个数据对象，作为 createElement 的第二个参数传入组件</li>
+<li>parent：对父组件的引用</li>
+<li>listeners: (2.3.0+) 一个包含了所有父组件为当前组件注册的事件监听器的对象。这是 data.on 的一个别名。</li>
+<li>injections: (2.3.0+) 如果使用了 inject 选项，则该对象包含了应当被注入的属性。</li>
+</ul>
+<p>在添加 functional: true 之后，需要更新我们的锚点标题组件的渲染函数，为其增加 context 参数，并将 this.$slots.default 更新为 context.children，然后将 this.level 更新为 context.props.level</p>
+<p>因为函数式组件只是函数，所以渲染开销也低很多。</p>
+<p>在作为包装组件时它们也同样非常有用。比如，当你需要做这些时：</p>
+<ul>
+<li>程序化地在多个组件中选择一个来代为渲染；</li>
+<li>在将 children、props、data 传递给子组件之前操作它们。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">var EmptyList = &#123; /* ... */ &#125;</span><br><span class="line">var TableList = &#123; /* ... */ &#125;</span><br><span class="line">var OrderedList = &#123; /* ... */ &#125;</span><br><span class="line">var UnorderedList = &#123; /* ... */ &#125;</span><br><span class="line"></span><br><span class="line">Vue.component(&apos;smart-list&apos;, &#123;</span><br><span class="line">  functional: true,</span><br><span class="line">  props: &#123;</span><br><span class="line">    items: &#123;</span><br><span class="line">      type: Array,</span><br><span class="line">      required: true</span><br><span class="line">    &#125;,</span><br><span class="line">    isOrdered: Boolean</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function (createElement, context) &#123;</span><br><span class="line">    function appropriateListComponent () &#123;</span><br><span class="line">      var items = context.props.items</span><br><span class="line"></span><br><span class="line">      if (items.length === 0)           return EmptyList</span><br><span class="line">      if (typeof items[0] === &apos;object&apos;) return TableList</span><br><span class="line">      if (context.props.isOrdered)      return OrderedList</span><br><span class="line"></span><br><span class="line">      return UnorderedList</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return createElement(</span><br><span class="line">      appropriateListComponent(),</span><br><span class="line">      context.data,</span><br><span class="line">      context.children</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="向子元素或子组件传递特性和事件"><a href="#向子元素或子组件传递特性和事件" class="headerlink" title="向子元素或子组件传递特性和事件"></a>向子元素或子组件传递特性和事件</h4><p>在普通组件中，没有被定义为 prop 的特性会自动添加到组件的根元素上，将已有的同名特性进行替换或与其进行智能合并<br>然而函数式组件要求你显式定义该行为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-functional-button&apos;, &#123;</span><br><span class="line">  functional: true,</span><br><span class="line">  render: function (createElement, context) &#123;</span><br><span class="line">    // 完全透传任何特性、事件监听器、子节点等。</span><br><span class="line">    return createElement(&apos;button&apos;, context.data, context.children)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>通过向 createElement 传入 context.data 作为第二个参数，我们就把 my-functional-button 上面所有的特性和事件监听器都传递下去了。事实上这是非常透明的，以至于那些事件甚至并不要求 .native 修饰符。</p>
+<p>如果你使用基于模板的函数式组件，那么你还需要手动添加特性和监听器。因为我们可以访问到其独立的上下文内容，所以我们可以使用 data.attrs 传递任何 HTML 特性，也可以使用 listeners (即 data.on 的别名) 传递任何事件监听器。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;template functional&gt;</span><br><span class="line">  &lt;button</span><br><span class="line">    class=&quot;btn btn-primary&quot;</span><br><span class="line">    v-bind=&quot;data.attrs&quot;</span><br><span class="line">    v-on=&quot;listeners&quot;</span><br><span class="line">  &gt;</span><br><span class="line">    &lt;slot/&gt;</span><br><span class="line">  &lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="slots-和-children-对比"><a href="#slots-和-children-对比" class="headerlink" title="slots() 和 children 对比"></a>slots() 和 children 对比</h4><p>你可能想知道为什么同时需要 slots() 和 children。slots().default 不是和 children 类似的吗？在一些场景中，是这样——但如果是如下的带有子节点的函数式组件呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-functional-component&gt;</span><br><span class="line">  &lt;p v-slot:foo&gt;</span><br><span class="line">    first</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">  &lt;p&gt;second&lt;/p&gt;</span><br><span class="line">&lt;/my-functional-component&gt;</span><br></pre></td></tr></table></figure></p>
+<p>对于这个组件，children 会给你两个段落标签，而 slots().default 只会传递第二个匿名段落标签，slots().foo 会传递第一个具名段落标签。同时拥有 children 和 slots()，因此你可以选择让组件感知某个插槽机制，还是简单地通过传递 children，移交给其它组件去处理。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/05/vue日记19/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1793,160 +1985,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/03/vue日记10/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何方">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="he'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/03/vue日记10/" itemprop="url">vue日记10</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-03T22:27:29+08:00">
-                2019-07-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="vue日记10"><a href="#vue日记10" class="headerlink" title="vue日记10"></a>vue日记10</h2><h3 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h3><h4 id="组件名大小写"><a href="#组件名大小写" class="headerlink" title="组件名大小写"></a>组件名大小写</h4><p>使用 kebab-case<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;my-component-name&apos;, &#123; /* ... */ &#125;)</span><br></pre></td></tr></table></figure></p>
-<p>当使用 kebab-case (短横线分隔命名) 定义一个组件时，你也必须在引用这个自定义元素时使用 kebab-case，例如<code>&lt;my-component-name&gt;</code></p>
-<p>使用 PascalCase<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;MyComponentName&apos;, &#123; /* ... */ &#125;)</span><br></pre></td></tr></table></figure></p>
-<p>当使用 PascalCase (首字母大写命名) 定义一个组件时，你在引用这个自定义元素时两种命名法都可以使用。也就是说<code>&lt;my-component-name&gt;</code> 和 <code>&lt;MyComponentName&gt;</code> 都是可接受的。注意，尽管如此，直接在 DOM (即非字符串的模板) 中使用时只有 kebab-case 是有效的。</p>
-<h4 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&apos;component-a&apos;, &#123; /* ... */ &#125;)</span><br><span class="line">Vue.component(&apos;component-b&apos;, &#123; /* ... */ &#125;)</span><br><span class="line">Vue.component(&apos;component-c&apos;, &#123; /* ... */ &#125;)</span><br><span class="line"></span><br><span class="line">new Vue(&#123; el: &apos;#app&apos; &#125;)</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;component-a&gt;&lt;/component-a&gt;</span><br><span class="line">  &lt;component-b&gt;&lt;/component-b&gt;</span><br><span class="line">  &lt;component-c&gt;&lt;/component-c&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  components: &#123;</span><br><span class="line">    &apos;component-a&apos;: ComponentA,</span><br><span class="line">    &apos;component-b&apos;: ComponentB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="在模块系统中局部注册"><a href="#在模块系统中局部注册" class="headerlink" title="在模块系统中局部注册"></a>在模块系统中局部注册</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import ComponentA from &apos;./ComponentA&apos;</span><br><span class="line">import ComponentC from &apos;./ComponentC&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    ComponentA,</span><br><span class="line">    ComponentC</span><br><span class="line">  &#125;,</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>现在 ComponentA 和 ComponentC 都可以在 ComponentB 的模板中使用了</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1992,7 +2035,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
