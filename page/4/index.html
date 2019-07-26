@@ -249,6 +249,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/02/vue日记02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何方">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="he'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/02/vue日记02/" itemprop="url">vue日记02</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-02T12:27:29+08:00">
+                2019-07-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="vue日记02"><a href="#vue日记02" class="headerlink" title="vue日记02"></a>vue日记02</h2><h3 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h3><p>数据绑定最常见的形式就是使用mustache语法的文本差值:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;&#123;&#123;message&#125;&#125;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="JavaScript-表达式"><a href="#JavaScript-表达式" class="headerlink" title="JavaScript 表达式"></a>JavaScript 表达式</h3><p>可以使用表达式进行简单的运算和三目运算等，Vue.js只支持单个表达式，不支持语句和流控制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;1 + 1 * 1&#125;&#125;</span><br><span class="line">可以进行简单的运算</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;1 &lt; 2 ? value :a&#125;&#125;</span><br><span class="line">可以使用三目运算符</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;if( a &gt; 3)&#123;&#125;&#125;&#125;</span><br><span class="line">文本插值的形式，其中不能书写表达式,支持单个表达式</span><br></pre></td></tr></table></figure>
+<h3 id="指令和事件"><a href="#指令和事件" class="headerlink" title="指令和事件"></a>指令和事件</h3><p>指令是Vue模板中最常见的一项功能，它带有前缀<code>v-</code>,能快速帮助我们完成DOM操作循环渲染，显示和隐藏<br><code>v-text</code> 解析文本和作用一样‘<br><code>v-html</code> 解析html<br><code>v-on</code> 用来绑定事件监听器<br><code>v-bind</code> 动态更新html上的元素属性</p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p><code>.prevent</code> 提交事件不再重载页面<br><code>.stop</code> 阻止单击事件冒泡<br><code>.self</code> 只当事件在该元素本身（不包括子元素）触发时触发回调<br><code>.capture</code> 添加事件监听器使用事件捕获模式<br><code>.once</code> 事件只能点击一次</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/01/vue日记01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2012,259 +2159,6 @@ return newObject;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/05/21/常见排序算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何方">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="he'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/21/常见排序算法/" itemprop="url">常见排序算法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-21T14:51:00+08:00">
-                2019-05-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index">
-                    <span itemprop="name">other</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="常见排序算法-冒泡排序-Bubble-Sort"><a href="#常见排序算法-冒泡排序-Bubble-Sort" class="headerlink" title="常见排序算法 - 冒泡排序 (Bubble Sort)"></a>常见排序算法 - 冒泡排序 (Bubble Sort)</h3><h4 id="冒泡排序算法的流程如下："><a href="#冒泡排序算法的流程如下：" class="headerlink" title="冒泡排序算法的流程如下："></a>冒泡排序算法的流程如下：</h4><p>1、比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。<br>3、针对所有的元素重复以上的步骤，除了最后一个。<br>4、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
-<h5 id="实例分析："><a href="#实例分析：" class="headerlink" title="实例分析："></a>实例分析：</h5><p>以数组 arr = [5, 1, 4, 2, 8] 为例说明，加粗的数字表示每次循环要比较的两个数字：<br>第一次外循环</p>
-<pre><code>( 5 1 4 2 8 ) → ( 1 5 4 2 8 )， 5 &gt; 1 交换位置
-( 1 5 4 2 8 ) → ( 1 4 5 2 8 )， 5 &gt; 4 交换位置
-( 1 4 5 2 8 ) → ( 1 4 2 5 8 )， 5 &gt; 2 交换位置
-( 1 4 2 5 8 ) → ( 1 4 2 5 8 )， 5 &lt; 8 位置不变
-</code></pre><p>第二次外循环（除开最后一个元素8，对剩余的序列）</p>
-<pre><code>( 1 4 2 5 8 ) → ( 1 4 2 5 8 )， 1 &lt; 4 位置不变
-( 1 4 2 5 8 ) → ( 1 2 4 5 8 )， 4 &gt; 2 交换位置
-( 1 2 4 5 8 ) → ( 1 2 4 5 8 )， 4 &lt; 5 位置不变
-</code></pre><p>第三次外循环（除开已经排序好的最后两个元素，可以注意到上面的数组其实已经排序完成，但是程序本身并不知道，所以还要进行后续的循环，直到剩余的序列为 1）</p>
-<pre><code>( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
-( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
-</code></pre><p>第四次外循环（最后一次）</p>
-<pre><code>( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
-</code></pre><h4 id="JavaScript-语言实现"><a href="#JavaScript-语言实现" class="headerlink" title="JavaScript 语言实现"></a>JavaScript 语言实现</h4><pre><code>function bubbleSort(array) {
-var length = array.length,
-i,
-j,
-temp;
-for (i = length - 1; 0 &lt; i; i--) {
-for (j = 0; j &lt; i; j++) {
-        if (array[j] &gt; array[j + 1]) {
-        temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
-        }
-}
-}
-return array;
-}
-</code></pre><h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><p><a href="https://www.processon.com/view/link/5ce3a2f1e4b0e03e4216ac80" target="_blank" rel="noopener">预览地址</a></p>
-<h3 id="常见排序算法-选择排序-Selection-Sort"><a href="#常见排序算法-选择排序-Selection-Sort" class="headerlink" title="常见排序算法 - 选择排序 (Selection Sort)"></a>常见排序算法 - 选择排序 (Selection Sort)</h3><h4 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h4><p>选择排序（Selection Sort）是一种简单直观的排序算法。它的工作原理如下，首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
-<p>选择排序的主要优点与数据移动有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对n个元素的序列进行排序总共进行至多n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。</p>
-<h5 id="实例分析：-1"><a href="#实例分析：-1" class="headerlink" title="实例分析："></a>实例分析：</h5><p>以数组 arr = [8, 5, 2, 6, 9, 3, 1, 4, 0, 7] 为例，先直观看一下每一步的变化，后面再介绍细节<br>第一次从数组 [8, 5, 2, 6, 9, 3, 1, 4, 0, 7] 中找到最小的数 0，放到数组的最前面（与第一个元素进行交换）：</p>
-<pre><code>                               min
-                                ↓
-8   5   2   6   9   3   1   4   0   7
-↑                               ↑
-└───────────────────────────────┘
-</code></pre><p>交换后：</p>
-<pre><code>0   5   2   6   9   3   1   4   8   7
-</code></pre><p>在剩余的序列中 [5, 2, 6, 9, 3, 1, 4, 8, 7] 中找到最小的数 1，与该序列的第一个个元素进行位置交换：</p>
-<pre><code>                       min
-                        ↓
-0   5   2   6   9   3   1   4   8   7
-↑                   ↑
-└───────────────────┘
-</code></pre><p>交换后：</p>
-<pre><code>0   1   2   6   9   3   5   4   8   7
-</code></pre><p>在剩余的序列中 [2, 6, 9, 3, 5, 4, 8, 7] 中找到最小的数 2，与该序列的第一个个元素进行位置交换（实际上不需要交换）：</p>
-<pre><code>       min
-        ↓
-0   1   2   6   9   3   5   4   8   7
-        ↑
-</code></pre><p> 重复上述过程，直到最后一个元素就完成了排序。</p>
-<pre><code>                   min
-                    ↓
-0   1   2   6   9   3   5   4   8   7
-            ↑       ↑
-            └───────┘
-                           min
-                            ↓
-0   1   2   3   9   6   5   4   8   7
-                ↑           ↑
-                └───────────┘
-                       min
-                        ↓
-0   1   2   3   4   6   5   9   8   7
-                    ↑   ↑
-                    └───┘
-                       min
-                        ↓
-0   1   2   3   4   5   6   9   8   7
-                        ↑   
-                                   min
-                                    ↓
-0   1   2   3   4   5   6   9   8   7
-                            ↑       ↑
-                            └───────┘  
-                               min
-                                ↓
-0   1   2   3   4   5   6   7   8   9
-                                ↑      
-                                   min
-                                    ↓
-0   1   2   3   4   5   6   7   8   9
-                                    ↑
-</code></pre><h4 id="JavaScript-语言实现-1"><a href="#JavaScript-语言实现-1" class="headerlink" title="JavaScript 语言实现"></a>JavaScript 语言实现</h4><pre><code>function selectionSort(array) {
-var length = array.length,
-i,
-j,
-minIndex,
-minValue,
-temp;
-for (i = 0; i &lt; length - 1; i++) {
-minIndex = i;
-minValue = array[minIndex];
-for (j = i + 1; j &lt; length; j++) {
-if (array[j] &lt; minValue) {
-        minIndex = j;
-        minValue = array[minIndex];
-}
-}
-// 交换位置
-temp = array[i];
-array[i] = minValue;
-array[minIndex] = temp;
-}
-return array
-}
-</code></pre><h4 id="流程图-1"><a href="#流程图-1" class="headerlink" title="流程图"></a>流程图</h4><p><a href="https://www.processon.com/view/link/5ce3b60de4b0f34230d661f4" target="_blank" rel="noopener">预览地址</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2315,7 +2209,7 @@ return array
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
