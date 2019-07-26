@@ -345,6 +345,7 @@
             <h2 id="对象的类型的运算符"><a href="#对象的类型的运算符" class="headerlink" title="对象的类型的运算符"></a>对象的类型的运算符</h2><p>==javascript中检测对象的类型的运算符有：typeof、constructor、instanceof==</p>
 <p>1.typeof:返回结果是一个说明运算数类型的字符串,一般被用于判断一个变量的类型<br>可以利用 typeof 来判断number, string, object, boolean, function, undefined, symbol这七种类型，<br>typeof 在判断一个 object的数据的时候只能告诉我们这个数据是 object, 而不能细致的具体到是哪一种 objec</p>
 <p>2.instanceof<br>instanceof 主要的作用就是判断一个实例是否属于某种类型<br>原理：判断右边的变量的prototype是否在左边变量的原型链上。<br>但是 instanceof 也可能判断不准确，比如一个数组，他可以被 instanceof 判断为 Object</p>
+<p>3.JavaScript中，每个对象都有一个constructor属性，它引用了初始化该对象的构造函数，常用于判断未知对象的类型</p>
 
           
         
