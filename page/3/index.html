@@ -249,6 +249,178 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/04/vue日记13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="何方">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="he'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/04/vue日记13/" itemprop="url">vue日记13</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-04T20:30:29+08:00">
+                2019-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="vue日记13"><a href="#vue日记13" class="headerlink" title="vue日记13"></a>vue日记13</h2><h3 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h3><h4 id="插槽内容"><a href="#插槽内容" class="headerlink" title="插槽内容"></a>插槽内容</h4><p>Vue 实现了一套内容分发的 API，将 <slot> 元素作为承载分发内容的出口</slot></p>
+<p>它允许你像这样合成组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;navigation-link url=&quot;/profile&quot;&gt;</span><br><span class="line">  Your Profile</span><br><span class="line">&lt;/navigation-link&gt;</span><br></pre></td></tr></table></figure></p>
+<p>然后你在 <navigation-link> 的模板中可能会写为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;a</span><br><span class="line">  v-bind:href=&quot;url&quot;</span><br><span class="line">  class=&quot;nav-link&quot;</span><br><span class="line">  &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">&lt;/a&gt;</span><br></pre></td></tr></table></figure></navigation-link></p>
+<p>当组件渲染的时候，<slot></slot> 将会被替换为“Your Profile”。插槽内可以包含任何模板代码，包括 HTML：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;navigation-link url=&quot;/profile&quot;&gt;</span><br><span class="line">  &lt;!-- 添加一个 Font Awesome 图标 --&gt;</span><br><span class="line">  &lt;span class=&quot;fa fa-user&quot;&gt;&lt;/span&gt;</span><br><span class="line">  Your Profile</span><br><span class="line">&lt;/navigation-link&gt;</span><br></pre></td></tr></table></figure></p>
+<p>甚至其它的组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;navigation-link url=&quot;/profile&quot;&gt;</span><br><span class="line">  &lt;!-- 添加一个图标的组件 --&gt;</span><br><span class="line">  &lt;font-awesome-icon name=&quot;user&quot;&gt;&lt;/font-awesome-icon&gt;</span><br><span class="line">  Your Profile</span><br><span class="line">&lt;/navigation-link&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果 <code>&lt;navigation-link&gt;</code> 没有包含一个 <code>&lt;slot&gt;</code> 元素，则该组件起始标签和结束标签之间的任何内容都会被抛弃</p>
+<h5 id="编译作用域"><a href="#编译作用域" class="headerlink" title="编译作用域"></a>编译作用域</h5><p>该插槽跟模板的其它地方一样可以访问相同的实例属性 (也就是相同的“作用域”)，而不能访问 <navigation-link> 的作用域。例如 url 是访问不到的：<br><figure class="highlight plain"><figcaption><span>url</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  Clicking here will send you to: &#123;&#123; url &#125;&#125;</span><br><span class="line">  &lt;!--</span><br><span class="line">  这里的 `url` 会是 undefined，因为 &quot;/profile&quot; 是</span><br><span class="line">  _传递给_ &lt;navigation-link&gt; 的而不是</span><br><span class="line">  在 &lt;navigation-link&gt; 组件*内部*定义的。</span><br><span class="line">  --&gt;</span><br><span class="line">&lt;/navigation-link&gt;</span><br></pre></td></tr></table></figure></navigation-link></p>
+<p><strong>注意：</strong><br>==父级模板里的所有内容都是在父级作用域中编译的；子模板里的所有内容都是在子作用域中编译的==</p>
+<h4 id="后备内容"><a href="#后备内容" class="headerlink" title="后备内容"></a>后备内容</h4><p>有时为一个插槽设置具体的后备 (也就是默认的) 内容是很有用的，它只会在没有提供内容的时候被渲染。例如在一个 <code>&lt;submit-button&gt;</code>组件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type=&quot;submit&quot;&gt;</span><br><span class="line">  &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>我们可能希望这个 <code>&lt;button&gt;</code> 内绝大多数情况下都渲染文本“Submit”。为了将“Submit”作为后备内容，我们可以将它放在<code>&lt;slot&gt;</code> 标签内：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type=&quot;submit&quot;&gt;</span><br><span class="line">  &lt;slot&gt;Submit&lt;/slot&gt;</span><br><span class="line">&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>现在当我在一个父级组件中使用 <code>&lt;submit-button&gt;</code> 并且不提供任何插槽内容时：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;submit-button&gt;&lt;/submit-button&gt;</span><br></pre></td></tr></table></figure>
+<p>后备内容“Submit”将会被渲染：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type=&quot;submit&quot;&gt;</span><br><span class="line">  Submit</span><br><span class="line">&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>但是如果我们提供内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;submit-button&gt;</span><br><span class="line">  Save</span><br><span class="line">&lt;/submit-button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>则这个提供的内容将会被渲染从而取代后备内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type=&quot;submit&quot;&gt;</span><br><span class="line">  Save</span><br><span class="line">&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h4><p>有时我们需要多个插槽。例如对于一个带有如下模板的 <base-layout> 组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">  &lt;header&gt;</span><br><span class="line">    &lt;!-- 我们希望把页头放这里 --&gt;</span><br><span class="line">  &lt;/header&gt;</span><br><span class="line">  &lt;main&gt;</span><br><span class="line">    &lt;!-- 我们希望把主要内容放这里 --&gt;</span><br><span class="line">  &lt;/main&gt;</span><br><span class="line">  &lt;footer&gt;</span><br><span class="line">    &lt;!-- 我们希望把页脚放这里 --&gt;</span><br><span class="line">  &lt;/footer&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></base-layout></p>
+<p>有时我们需要多个插槽。例如对于一个带有如下模板的 <base-layout> 组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">  &lt;header&gt;</span><br><span class="line">    &lt;!-- 我们希望把页头放这里 --&gt;</span><br><span class="line">  &lt;/header&gt;</span><br><span class="line">  &lt;main&gt;</span><br><span class="line">    &lt;!-- 我们希望把主要内容放这里 --&gt;</span><br><span class="line">  &lt;/main&gt;</span><br><span class="line">  &lt;footer&gt;</span><br><span class="line">    &lt;!-- 我们希望把页脚放这里 --&gt;</span><br><span class="line">  &lt;/footer&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></base-layout></p>
+<p><code>&lt;template&gt;</code> 元素中的所有内容都将会被传入相应的插槽。任何没有被包裹在带有 v-slot 的<code>&lt;template&gt;</code> 中的内容都会被视为默认插槽的内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;base-layout&gt;</span><br><span class="line">  &lt;template v-slot:header&gt;</span><br><span class="line">    &lt;h1&gt;Here might be a page title&lt;/h1&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">  &lt;template v-slot:default&gt;</span><br><span class="line">    &lt;p&gt;A paragraph for the main content.&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;And another one.&lt;/p&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">  &lt;template v-slot:footer&gt;</span><br><span class="line">    &lt;p&gt;Here&apos;s some contact info&lt;/p&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/base-layout&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h4><p><strong>==作用域插槽的关键之处就在于，父组件能接收来自子组件的slot传递过来的参数==</strong><br>有时让插槽内容能够访问子组件中才有的数据是很有用的。例如，设想一个带有如下模板的 <code>&lt;current-user&gt;</code> 组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;</span><br><span class="line">  &lt;slot&gt;&#123;&#123; user.lastName &#125;&#125;&lt;/slot&gt;</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<p>为了让 user 在父级的插槽内容可用，我们可以将 user 作为 <code>&lt;slot&gt;</code> 元素的一个特性绑定上去：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;</span><br><span class="line">  &lt;slot v-bind:user=&quot;user&quot;&gt;</span><br><span class="line">    &#123;&#123; user.lastName &#125;&#125;</span><br><span class="line">  &lt;/slot&gt;</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<p>绑定在 <code>&lt;slot&gt;</code> 元素上的特性被称为插槽 prop。现在在父级作用域中，我们可以给 v-slot 带一个值来定义我们提供的插槽 prop 的名字：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;current-user&gt;</span><br><span class="line">  &lt;template v-slot:default=&quot;slotProps&quot;&gt;</span><br><span class="line">    &#123;&#123; slotProps.user.firstName &#125;&#125;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/current-user&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="独占默认插槽的缩写语法"><a href="#独占默认插槽的缩写语法" class="headerlink" title="独占默认插槽的缩写语法"></a>独占默认插槽的缩写语法</h4><p>在上述情况下，当被提供的内容只有默认插槽时，组件的标签才可以被当作插槽的模板来使用。这样我们就可以把 v-slot 直接用在组件上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;current-user v-slot:default=&quot;slotProps&quot;&gt;</span><br><span class="line">  &#123;&#123; slotProps.user.firstName &#125;&#125;</span><br><span class="line">&lt;/current-user&gt;</span><br></pre></td></tr></table></figure></p>
+<p>或者：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;current-user v-slot=&quot;slotProps&quot;&gt;</span><br><span class="line">  &#123;&#123; slotProps.user.firstName &#125;&#125;</span><br><span class="line">&lt;/current-user&gt;</span><br></pre></td></tr></table></figure></p>
+<p>只要出现多个插槽，请始终为所有的插槽使用完整的基于 <code>&lt;template&gt;</code> 的语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;current-user&gt;</span><br><span class="line">  &lt;template v-slot:default=&quot;slotProps&quot;&gt;</span><br><span class="line">    &#123;&#123; slotProps.user.firstName &#125;&#125;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">  &lt;template v-slot:other=&quot;otherSlotProps&quot;&gt;</span><br><span class="line">    ...</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/current-user&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="解构插槽-Prop"><a href="#解构插槽-Prop" class="headerlink" title="解构插槽 Prop"></a>解构插槽 Prop</h4><p>作用域插槽的内部工作原理是将你的插槽内容包括在一个传入单个参数的函数里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function (slotProps) &#123;</span><br><span class="line">  // 插槽内容</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这意味着 <code>v-slot</code> 的值实际上可以是任何能够作为函数定义中的参数的 JavaScript 表达式。所以在支持的环境下 (单文件组件或现代浏览器)，你也可以使用 ES2015 解构来传入具体的插槽 prop，如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;current-user v-slot=&quot;&#123; user &#125;&quot;&gt;</span><br><span class="line">  &#123;&#123; user.firstName &#125;&#125;</span><br><span class="line">&lt;/current-user&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样可以使模板更简洁，尤其是在该插槽提供了多个 prop 的时候。它同样开启了 prop 重命名等其它可能，例如将 user 重命名为 person：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;current-user v-slot=&quot;&#123; user: person &#125;&quot;&gt;</span><br><span class="line">  &#123;&#123; person.firstName &#125;&#125;</span><br><span class="line">&lt;/current-user&gt;</span><br></pre></td></tr></table></figure></p>
+<p>你甚至可以定义后备内容，用于插槽 prop 是 undefined 的情形：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;current-user v-slot=&quot;&#123; user = &#123; firstName: &apos;Guest&apos; &#125; &#125;&quot;&gt;</span><br><span class="line">  &#123;&#123; user.firstName &#125;&#125;</span><br><span class="line">&lt;/current-user&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="动态插槽名"><a href="#动态插槽名" class="headerlink" title="动态插槽名"></a>动态插槽名</h4><p>动态指令参数也可以用在 v-slot 上，来定义动态的插槽名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;base-layout&gt;</span><br><span class="line">  &lt;template v-slot:[dynamicSlotName]&gt;</span><br><span class="line">    ...</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/base-layout&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="具名插槽的缩写"><a href="#具名插槽的缩写" class="headerlink" title="具名插槽的缩写"></a>具名插槽的缩写</h4><p>跟 v-on 和 v-bind 一样，v-slot 也有缩写，即把参数之前的所有内容 (v-slot:) 替换为字符 #。例如 v-slot:header 可以被重写为 #header<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;base-layout&gt;</span><br><span class="line">  &lt;template #header&gt;</span><br><span class="line">    &lt;h1&gt;Here might be a page title&lt;/h1&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">  &lt;p&gt;A paragraph for the main content.&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;And another one.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">  &lt;template #footer&gt;</span><br><span class="line">    &lt;p&gt;Here&apos;s some contact info&lt;/p&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/base-layout&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="其它示例"><a href="#其它示例" class="headerlink" title="其它示例"></a>其它示例</h4><p>插槽 prop 允许我们将插槽转换为可复用的模板，这些模板可以基于输入的 prop 渲染出不同的内容。这在设计封装数据逻辑同时允许父级组件自定义部分布局的可复用组件时是最有用的</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/04/vue日记12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1676,155 +1848,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.hefang.site/2019/07/02/vue日记03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="何方">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="he'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/02/vue日记03/" itemprop="url">vue日记03</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-02T18:27:29+08:00">
-                2019-07-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="vue日记03"><a href="#vue日记03" class="headerlink" title="vue日记03"></a>vue日记03</h2><h3 id="计算属性-methods-watch"><a href="#计算属性-methods-watch" class="headerlink" title="计算属性 - methods - watch"></a>计算属性 - methods - watch</h3><p><strong>example：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &#123;&#123;message.split(&apos;&apos;).reverse().join(&apos;&apos;)&#125;&#125;</span><br><span class="line">&lt;div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>对于任何复杂的逻辑，应使用计算属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">   &lt;p&gt;&#123;&#123;message&#125;&#125;&lt;/p&gt;</span><br><span class="line">   &lt;p&gt;&#123;&#123;reversedMessage1()&#125;&#125;&lt;/p&gt;</span><br><span class="line">   &lt;p&gt;&#123;&#123;reversedMessage2&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line"></span><br><span class="line">var app = new Vue(&#123;</span><br><span class="line">    el:&quot;#app&quot;,</span><br><span class="line">    data:&#123;</span><br><span class="line">        message:&apos;hello&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">       reversedMessage1 ()&#123;</span><br><span class="line">         return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    computed:&#123;</span><br><span class="line">      reversedMessage2()&#123;</span><br><span class="line">        return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</span><br><span class="line">      &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>以上计算属性和methods中定义的方法都可以得到结果，区别是：<br>计算属性是基于它们的响应式的依赖进行缓存的，只有在它们的响应式的依赖发生改变的时候它们才会去重新求值，也就是说data中message的值不发生改变，多次reversedMessage会立即返回之前的计算结果，而不会再次执行函数<br>对于methods，只要发生重新渲染，那么methods中的函数就会被调用</p>
-<p>侦听属性<br>Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据变动：侦听属性<br>Vue 实例将会在实例化时调用 $watch()，遍历 watch 对象的每一个属性。<br>以官网例子：</p>
-<p>使用watch：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;demo&quot;&gt;&#123;&#123; fullName &#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">  el: &apos;#demo&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    firstName: &apos;Foo&apos;,</span><br><span class="line">    lastName: &apos;Bar&apos;,</span><br><span class="line">    fullName: &apos;Foo Bar&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    firstName: function (val) &#123;</span><br><span class="line">      this.fullName = val + &apos; &apos; + this.lastName</span><br><span class="line">    &#125;,</span><br><span class="line">    lastName: function (val) &#123;</span><br><span class="line">      this.fullName = this.firstName + &apos; &apos; + val</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>使用computed：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;demo&quot;&gt;&#123;&#123; fullName &#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">var vm = new Vue(&#123;</span><br><span class="line">    el:&quot;#demo&quot;,</span><br><span class="line">    data:&#123;</span><br><span class="line">        firstName:&apos;Foo&apos;,</span><br><span class="line">        lastName:&apos;Bar&apos;,</span><br><span class="line">    &#125;</span><br><span class="line">    watch:&#123;</span><br><span class="line">        fullName()&#123;</span><br><span class="line">            return this.firstName + &apos;&apos; + this.lastName</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>相比较还是computed更合适</p>
-<h6 id="计算属性默认只有getter-不过在需要时你也可以提供一个setter"><a href="#计算属性默认只有getter-不过在需要时你也可以提供一个setter" class="headerlink" title="计算属性默认只有getter,不过在需要时你也可以提供一个setter"></a>计算属性默认只有getter,不过在需要时你也可以提供一个setter</h6><p>官网例子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">    fullName:&#123;</span><br><span class="line">        get()&#123; //getter</span><br><span class="line">            return this.firstName + &apos;&apos; + this.lastName</span><br><span class="line">        &#125;,</span><br><span class="line">        set(newValue)&#123; //setter</span><br><span class="line">            let names = newValue.split(&apos;&apos;)</span><br><span class="line">            this.firstName = names[0]</span><br><span class="line">            this.lastName = names[names.length -1]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1875,7 +1898,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
