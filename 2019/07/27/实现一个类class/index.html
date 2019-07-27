@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="实现一个类class实现一个类class一、构造函数法用构造函数模拟”类”，在其内部用this关键字指代实例对象1234567891011function Cat()&amp;#123;    this.name = &amp;apos;abc&amp;apos;&amp;#125;// 生成实例的时候，使用new关键字 var cat1 = new Cat()  // 类的属性和方法，还可以定义在构造函数的prototype对">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-27T15:46:24.669Z">
+<meta property="og:updated_time" content="2019-07-27T15:47:08.812Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实现一个flatten函数">
 <meta name="twitter:description" content="实现一个类class实现一个类class一、构造函数法用构造函数模拟”类”，在其内部用this关键字指代实例对象1234567891011function Cat()&amp;#123;    this.name = &amp;apos;abc&amp;apos;&amp;#125;// 生成实例的时候，使用new关键字 var cat1 = new Cat()  // 类的属性和方法，还可以定义在构造函数的prototype对">
@@ -342,6 +342,9 @@
 
       
         <h2 id="实现一个类class实现一个类class"><a href="#实现一个类class实现一个类class" class="headerlink" title="实现一个类class实现一个类class"></a>实现一个类class实现一个类class</h2><h4 id="一、构造函数法"><a href="#一、构造函数法" class="headerlink" title="一、构造函数法"></a>一、构造函数法</h4><p>用构造函数模拟”类”，在其内部用this关键字指代实例对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Cat()&#123;</span><br><span class="line">    this.name = &apos;abc&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 生成实例的时候，使用new关键字</span><br><span class="line"> var cat1 = new Cat()</span><br><span class="line"> </span><br><span class="line"> // 类的属性和方法，还可以定义在构造函数的prototype对象之上</span><br><span class="line"> Cat.prototype.makeSound = function()&#123;</span><br><span class="line">     alert(&quot;hello&quot;);</span><br><span class="line">　&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="二、Object-create-法"><a href="#二、Object-create-法" class="headerlink" title="二、Object.create()法"></a>二、Object.create()法</h4><p>为了解决”构造函数法”的缺点，更方便地生成对象,用这个方法，”类”就是一个对象，不是函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　var Cat = &#123;</span><br><span class="line">　　　　name: &quot;abc&quot;,</span><br><span class="line">　　　　makeSound: function()&#123; alert(&quot;hello&quot;); &#125;</span><br><span class="line">　　&#125;;</span><br><span class="line">　　</span><br><span class="line">　　//然后，直接用Object.create()生成实例，不需要用到new</span><br><span class="line">　　var cat1 = Object.create(Cat)</span><br></pre></td></tr></table></figure></p>
+<p>目前，各大浏览器的最新版本（包括IE9）都部署了这个方法。如果遇到老式浏览器，可以用下面的代码自行部署<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">　if (!Object.create) &#123;</span><br><span class="line">　　　　Object.create = function (o) &#123;</span><br><span class="line">　　　　　　 function F() &#123;&#125;</span><br><span class="line">　　　　　　F.prototype = o;</span><br><span class="line">　　　　　　return new F();</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure></p>
+<p>　　这种方法比”构造函数法”简单，但是不能实现私有属性和私有方法，实例对象之间也不能共享数据，对”类”的模拟不够全面</p>
 
       
     </div>
@@ -497,7 +500,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个类class实现一个类class"><span class="nav-number">1.</span> <span class="nav-text">实现一个类class实现一个类class</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、构造函数法"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、构造函数法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个类class实现一个类class"><span class="nav-number">1.</span> <span class="nav-text">实现一个类class实现一个类class</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、构造函数法"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、构造函数法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、Object-create-法"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、Object.create()法</span></a></li></ol></li></ol></div>
             
 
           </div>
