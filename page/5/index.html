@@ -1857,18 +1857,8 @@ console.log(a)
 }
 var ip = getRandIP()
 console.log(ip)
-</code></pre><h4 id="生成一个随机颜色字符串"><a href="#生成一个随机颜色字符串" class="headerlink" title="生成一个随机颜色字符串"></a>生成一个随机颜色字符串</h4><pre><code>function getRandColor(){
-    var color = &apos;#&apos;
-    var dict =&apos;0123456abcdef&apos;
-    for(i = 0; i &lt; 6; i++){
-        var index =Math.floor(Math.random()*dict.length)
-        color += dict[index]
-    }
-    return color
-}
-var color = getRandColor()
-console.log(color)
-</code></pre><h4 id="min到max之间的-随机整数"><a href="#min到max之间的-随机整数" class="headerlink" title="min到max之间的 随机整数"></a>min到max之间的 随机整数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function sum(min,max)&#123;</span><br><span class="line">    var sum =Math.floor(Math.random()*(max-min))+min</span><br><span class="line">    return sum</span><br><span class="line">&#125;</span><br><span class="line">console.log(sum(1,100))</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="生成一个随机颜色字符串"><a href="#生成一个随机颜色字符串" class="headerlink" title="生成一个随机颜色字符串"></a>生成一个随机颜色字符串</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function getRandColor()&#123;</span><br><span class="line">    var color = &apos;#&apos;</span><br><span class="line">    var dict =&apos;0123456abcdef&apos;</span><br><span class="line">    for(i = 0; i &lt; 6; i++)&#123;</span><br><span class="line">        var index =Math.floor(Math.random()*dict.length)</span><br><span class="line">        color += dict[index]</span><br><span class="line">    &#125;</span><br><span class="line">    return color</span><br><span class="line">&#125;</span><br><span class="line">var color = getRandColor()</span><br><span class="line">console.log(color)</span><br></pre></td></tr></table></figure>
+<h4 id="min到max之间的-随机整数"><a href="#min到max之间的-随机整数" class="headerlink" title="min到max之间的 随机整数"></a>min到max之间的 随机整数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function sum(min,max)&#123;</span><br><span class="line">    var sum =Math.floor(Math.random()*(max-min))+min</span><br><span class="line">    return sum</span><br><span class="line">&#125;</span><br><span class="line">console.log(sum(1,100))</span><br></pre></td></tr></table></figure>
           
         
       
