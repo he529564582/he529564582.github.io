@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://video.jirengu.com/xdml/image/996010fa-de82-489f-9b0a-20943cd224cf/2018-12-11-15-9-42.png">
 <meta property="og:image" content="https://pic1.zhimg.com/b6aa8d4260e78ce3618e0d85febc2bbc_r.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/c2891fbeeb0530ef61885c0e6414170a_r.jpg">
-<meta property="og:updated_time" content="2019-05-22T04:09:13.949Z">
+<meta property="og:updated_time" content="2019-07-31T15:58:22.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型与原型链">
 <meta name="twitter:description" content="例子1function Person(name){     this.name = name;     this.age = age; } Person.prototype.sayName = function(){     console.log(this.name); }  var p1 = new Person(&amp;apos;a&amp;apos;); var p2 = new Person(&amp;apo">
@@ -360,12 +360,8 @@ p1.sayName();
 p2.sayName();  
 </code></pre><p>1.new 一个函数本质上做了什么？<br>  1)创建了一个空的对象<br>  2)空对象的<strong>proto</strong>指向了类Modal()的prototype<br>  3)在执行函数的过程中，给this赋值，函数里的this代表了空对象，返回出去<br>  4)将this赋值给modal<br>2.通过函数定义了一个类Person，它自动获取了属性prototype，<br>每个类的实例也就是p1、p2内部都会有一个<strong>proto</strong>的属性，如下图:<br><img src="http://video.jirengu.com/xdml/image/996010fa-de82-489f-9b0a-20943cd224cf/2018-12-10-22-29-34.png" alt="image1"></p>
 <h3 id="例子2"><a href="#例子2" class="headerlink" title="例子2"></a>例子2</h3><p>当前的p1实例，查找toString()的方法先从p1的属性里找，<br>没有找到,再从 p1.<strong>proto</strong> 中找，没有找到,<br>再从 p1.<strong>proto</strong>.<strong>proto</strong> 中找，找到后返回<br><img src="http://video.jirengu.com/xdml/image/996010fa-de82-489f-9b0a-20943cd224cf/2018-12-11-15-9-42.png" alt="image2"></p>
-<h3 id="例子3"><a href="#例子3" class="headerlink" title="例子3"></a>例子3</h3><pre><code>function People(){}
-var p = new People()
-p.__proto__ === People.prototype 
-People.__proto__ === Function.prototype
-People.prototype.__proto__ === Object.prototype
-</code></pre><p><img src="https://pic1.zhimg.com/b6aa8d4260e78ce3618e0d85febc2bbc_r.jpg" alt="image3"><br>（1）People函数创建了对象 p，所以People.prototype === p.<strong>proto</strong>；<br>（2）Object函数创建了People.prototype对象，所以Object.prototype === People.prototype.<strong>proto</strong>；<br>（3）People 作为对象的角色被函数Function创建，所以 Function.prototype === People.<strong>proto</strong>;</p>
+<h3 id="例子3"><a href="#例子3" class="headerlink" title="例子3"></a>例子3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function People()&#123;&#125;</span><br><span class="line">    var p = new People()</span><br><span class="line">    p.__proto__ === People.prototype </span><br><span class="line">    People.__proto__ === Function.prototype</span><br><span class="line">    People.prototype.__proto__ === Object.prototype</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic1.zhimg.com/b6aa8d4260e78ce3618e0d85febc2bbc_r.jpg" alt="image3"><br>（1）People函数创建了对象 p，所以People.prototype === p.<strong>proto</strong>；<br>（2）Object函数创建了People.prototype对象，所以Object.prototype === People.prototype.<strong>proto</strong>；<br>（3）People 作为对象的角色被函数Function创建，所以 Function.prototype === People.<strong>proto</strong>;</p>
 <h3 id="例子4"><a href="#例子4" class="headerlink" title="例子4"></a>例子4</h3><p><img src="https://pic3.zhimg.com/c2891fbeeb0530ef61885c0e6414170a_r.jpg" alt="image4"><br>（1）任何函数都是 Function 创建，所以Function 创建了 Function，所以 Function.prototype === Function.<strong>proto</strong>；<br>（2）Object 也是函数。所以Function创建了Object，所以 Function.prototype === Object.<strong>proto</strong> ；<br>（3）Function.prototype 是普通对象，普通对象是由Object创建的，所以 Function.prototype.<strong>proto</strong> === Object.prototype</p>
 <h3 id="例子5"><a href="#例子5" class="headerlink" title="例子5"></a>例子5</h3><pre><code>Object instanceof Function
 Function instanceof Object
