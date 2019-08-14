@@ -1329,46 +1329,9 @@ return array
     console.log(ret);
     }
 &lt;/script&gt;
-</code></pre><h5 id="2、CORS"><a href="#2、CORS" class="headerlink" title="2、CORS"></a>2、CORS</h5><p>当使用XMLHttpRequest发送请求是，如果浏览器发现了违反了同源策略就会自动加上一个请求头：origin，后端在接受请求的时候确定响应后会在Response Headers中加入一个熟悉：Access-Control-Allow-Origin，value就是发起请求的源地址 <a href="http://127.0.0.1:8080，浏览器得到响应会继续判断Access-Control—Allow—Origin的值是否和当前的地址相同，只有匹配成功后才进行响应处理" target="_blank" rel="noopener">http://127.0.0.1:8080，浏览器得到响应会继续判断Access-Control—Allow—Origin的值是否和当前的地址相同，只有匹配成功后才进行响应处理</a></p>
-<pre><code>var http = require(&apos;http&apos;)
-var fs = require(&apos;fs&apos;)
-var path = require(&apos;path&apos;)
-var url = require(&apos;url&apos;)
-http.createServer(function(req,res){
-    var pathObj = url.parse(req.url,true)
-    switch(pathObj.pathname){
-        case &apos;/getWeather&apos;:
-        var  weather =[
-            &quot;beijing&quot;:&quot;sunny&quot;,
-            &quot;shanghai&quot;:&quot;cloudy&quot;
-        ]
-        res.setHeader(&apos;Access-Control-Allow-Origin&apos;,http://localhost:8080)
-        res.end(JSON.stringify(weather))
-        break;
-        default:
-        fs.readFile(parse.join(__dirname,pathObj.pathname),function(e,data){
-            if(e){
-                res.writeHead(404, &apos;not found&apos;)
-                res.end(&apos;&lt;h1&gt;404 not found&lt;/h1&gt;&apos;)
-            }else{
-                res.end(data)
-            }
-        })
-    }
-}).listen(8080)
-
-
- $(&apos;.change&apos;).addEventListener(&apos;click&apos;, function () {
-    var xhr = new XMLHttpRequest();
-    xhr.open(&apos;get&apos;, &apos;http://localhost:8080/getWeather&apos;, true);
-    xhr.send();
-    xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
-        appendHtml(JSON.parse(xhr.responseText))
-    }
-    };
-});
-</code></pre><h5 id="2、window-postMessage-message-targetOrigin"><a href="#2、window-postMessage-message-targetOrigin" class="headerlink" title="2、window.postMessage(message,targetOrigin)"></a>2、window.postMessage(message,targetOrigin)</h5><p>方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。这种方法不能和服务端交换数据，只能在两个窗口（iframe）之间交换数据 </p>
+</code></pre><h5 id="2、CORS"><a href="#2、CORS" class="headerlink" title="2、CORS"></a>2、CORS</h5><p>当使用XMLHttpRequest发送请求是，如果浏览器发现了违反了同源策略就会自动加上一个请求头：origin，后端在接受请求的时候确定响应后会在Response Headers中加入一个熟悉：Access-Control-Allow-Origin，value就是发起请求的源地址 <a href="http://127.0.0.1:8080，浏览器得到响应会继续判断Access-Control—Allow—Origin的值是否和当前的地址相同，只有匹配成功后才进行响应处理" target="_blank" rel="noopener">http://127.0.0.1:8080，浏览器得到响应会继续判断Access-Control—Allow—Origin的值是否和当前的地址相同，只有匹配成功后才进行响应处理</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;)</span><br><span class="line">var fs = require(&apos;fs&apos;)</span><br><span class="line">var path = require(&apos;path&apos;)</span><br><span class="line">var url = require(&apos;url&apos;)</span><br><span class="line">http.createServer(function(req,res)&#123;</span><br><span class="line">    var pathObj = url.parse(req.url,true)</span><br><span class="line">    switch(pathObj.pathname)&#123;</span><br><span class="line">        case &apos;/getWeather&apos;:</span><br><span class="line">        var  weather =[</span><br><span class="line">            &quot;beijing&quot;:&quot;sunny&quot;,</span><br><span class="line">            &quot;shanghai&quot;:&quot;cloudy&quot;</span><br><span class="line">        ]</span><br><span class="line">        res.setHeader(&apos;Access-Control-Allow-Origin&apos;,http://localhost:8080)</span><br><span class="line">        res.end(JSON.stringify(weather))</span><br><span class="line">        break;</span><br><span class="line">        default:</span><br><span class="line">        fs.readFile(parse.join(__dirname,pathObj.pathname),function(e,data)&#123;</span><br><span class="line">            if(e)&#123;</span><br><span class="line">                res.writeHead(404, &apos;not found&apos;)</span><br><span class="line">                res.end(&apos;&lt;h1&gt;404 not found&lt;/h1&gt;&apos;)</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                res.end(data)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).listen(8080)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    $(&apos;.change&apos;).addEventListener(&apos;click&apos;, function () &#123;</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.open(&apos;get&apos;, &apos;http://localhost:8080/getWeather&apos;, true);</span><br><span class="line">    xhr.send();</span><br><span class="line">    xhr.onreadystatechange = function () &#123;</span><br><span class="line">    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) &#123;</span><br><span class="line">        appendHtml(JSON.parse(xhr.responseText))</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="2、window-postMessage-message-targetOrigin"><a href="#2、window-postMessage-message-targetOrigin" class="headerlink" title="2、window.postMessage(message,targetOrigin)"></a>2、window.postMessage(message,targetOrigin)</h5><p>方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。这种方法不能和服务端交换数据，只能在两个窗口（iframe）之间交换数据 </p>
 
           
         
