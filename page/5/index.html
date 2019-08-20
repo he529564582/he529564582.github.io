@@ -1128,14 +1128,14 @@ return array
       
         
           
-            <h2 id="动画队列"><a href="#动画队列" class="headerlink" title="动画队列"></a>动画队列</h2><pre><code>jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。
-</code></pre><h3 id="stop-clearQueue-jumpToEnd-（添加版本1-2）"><a href="#stop-clearQueue-jumpToEnd-（添加版本1-2）" class="headerlink" title=".stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）"></a>.stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）</h3><pre><code>clearQueue
+            <h4 id="动画队列"><a href="#动画队列" class="headerlink" title="动画队列"></a>动画队列</h4><pre><code>jQuery中有个动画队列的机制。当我们对一个对象添加多次动画效果时后添加的动作就会被放入这个动画队列中，等前面的动画完成后再开始执行。可是用户的操作往往都比动画快，如果用户对一个对象频繁操作时不处理动画队列就会造成队列堆积，影响到效果。
+</code></pre><h4 id="stop-clearQueue-jumpToEnd-（添加版本1-2）"><a href="#stop-clearQueue-jumpToEnd-（添加版本1-2）" class="headerlink" title=".stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）"></a>.stop( [clearQueue ] [, jumpToEnd ] )（添加版本1.2）</h4><pre><code>clearQueue
 类型: Boolean
 一个布尔值，指示是否取消以列队动画。默认 false.
 jumpToEnd
 类型: Boolean
 一个布尔值指示是否当前动画立即完成。默认false.
-</code></pre><h3 id="stop-queue-clearQueue-jumpToEnd-（添加版本1-7）"><a href="#stop-queue-clearQueue-jumpToEnd-（添加版本1-7）" class="headerlink" title=".stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）"></a>.stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）</h3><pre><code>queue
+</code></pre><h4 id="stop-queue-clearQueue-jumpToEnd-（添加版本1-7）"><a href="#stop-queue-clearQueue-jumpToEnd-（添加版本1-7）" class="headerlink" title=".stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）"></a>.stop( [queue ] [, clearQueue ] [, jumpToEnd ] )（添加版本1.7）</h4><pre><code>queue
 类型: String
 停止动画队列的名称。
 clearQueue
@@ -1148,8 +1148,7 @@ jQuery中有stop这个方法可以停止当前执行的动画，并且它有两�
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clearQueue(default: false)</span><br><span class="line">jumpToEnd(default: false)</span><br></pre></td></tr></table></figure>
 
 第一个参数为true时会清空动画队列，第二个参数为true时会瞬间完成掉当前动画。所以，我们经常使用obj.stop(true,true)来停止动画。但是这还不够！正如jQuery文档中的说法，即使第二个参数为true，也仅仅是把当前在执行的动画跳转到完成状态。这时第一个参数如果也为true，后面的队列就会被清空。如果一个效果需要多个动画同时处理，我们仅完成其中的一个而把后面的队列丢弃了，这就会出现意料之外的结果。
-</code></pre><p>###<br>我们可以看到如下整理结果:</p>
-<table>
+</code></pre><h4 id="我们可以看到如下整理结果"><a href="#我们可以看到如下整理结果" class="headerlink" title="我们可以看到如下整理结果:"></a>我们可以看到如下整理结果:</h4><table>
 <thead>
 <tr>
 <th>方法</th>
