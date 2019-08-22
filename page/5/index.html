@@ -1627,15 +1627,14 @@ jQuery中有stop这个方法可以停止当前执行的动画，并且它有两�
       
         
           
-            <h3 id="HTMLCollection-和-NodeList"><a href="#HTMLCollection-和-NodeList" class="headerlink" title="HTMLCollection 和 NodeList"></a>HTMLCollection 和 NodeList</h3><p>节点都是单个对象，有时会需要一种数据结构，能够容纳多个节点。DOM提供两种集合对象，用于实现这种节点的集合：NodeList和HTMLCollection。<br>NodeList 对象代表一个有顺序的节点列表，HTMLCollection 是一个接口，表示 HTML 元素的集合，它提供了可以遍历列表的方法和属性<br>以下方法获取的为HTMLCollection对象</p>
-<pre><code>document.images //所有img元素
+            <h3 id="HTMLCollection-和-NodeList"><a href="#HTMLCollection-和-NodeList" class="headerlink" title="HTMLCollection 和 NodeList"></a>HTMLCollection 和 NodeList</h3><p>节点都是单个对象，有时会需要一种数据结构，能够容纳多个节点。DOM提供两种集合对象，用于实现这种节点的集合：NodeList和HTMLCollection。<br>NodeList 对象代表一个有顺序的节点列表，HTMLCollection 是一个接口，表示 HTML 元素的集合，它提供了可以遍历列表的方法和属性</p>
+<h4 id="以下方法获取的为HTMLCollection对象"><a href="#以下方法获取的为HTMLCollection对象" class="headerlink" title="以下方法获取的为HTMLCollection对象"></a>以下方法获取的为HTMLCollection对象</h4><pre><code>document.images //所有img元素
 document.links //所有带href属性的a元素和area元素
 document.forms //所有form元素
 document.scripts //所有script元素
 document.body.children
 document.getElementsByClassName(&quot;class1&quot;)
-</code></pre><p>以下方法获取的为NodeList对象</p>
-<pre><code>document.getElementsByName(&quot;name1&quot;)
+</code></pre><h4 id="以下方法获取的为NodeList对象"><a href="#以下方法获取的为NodeList对象" class="headerlink" title="以下方法获取的为NodeList对象"></a>以下方法获取的为NodeList对象</h4><pre><code>document.getElementsByName(&quot;name1&quot;)
 document.getElementsByTagName(&quot;a&quot;)
 document.querySelectorAll(&quot;a&quot;)
 document.body.childNodes
