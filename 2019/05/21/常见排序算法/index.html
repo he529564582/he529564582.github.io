@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="常见排序算法 - 冒泡排序 (Bubble Sort)冒泡排序算法的流程如下：1、比较相邻的元素。如果第一个比第二个大，就交换他们两个。2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。3、针对所有的元素重复以上的步骤，除了最后一个。4、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 实例分析：以数组 arr = [5,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-17T13:35:56.159Z">
+<meta property="og:updated_time" content="2019-08-23T14:15:17.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见排序算法">
 <meta name="twitter:description" content="常见排序算法 - 冒泡排序 (Bubble Sort)冒泡排序算法的流程如下：1、比较相邻的元素。如果第一个比第二个大，就交换他们两个。2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。3、针对所有的元素重复以上的步骤，除了最后一个。4、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 实例分析：以数组 arr = [5,">
@@ -356,23 +356,8 @@
 ( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
 </code></pre><p>第四次外循环（最后一次）</p>
 <pre><code>( 1 2 4 5 8 ) → ( 1 2 4 5 8 )
-</code></pre><h4 id="JavaScript-语言实现"><a href="#JavaScript-语言实现" class="headerlink" title="JavaScript 语言实现"></a>JavaScript 语言实现</h4><pre><code>function bubbleSort(array) {
-var length = array.length,
-i,
-j,
-temp;
-for (i = length - 1; 0 &lt; i; i--) {
-for (j = 0; j &lt; i; j++) {
-        if (array[j] &gt; array[j + 1]) {
-        temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
-        }
-}
-}
-return array;
-}
-</code></pre><h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><p><a href="https://www.processon.com/view/link/5ce3a2f1e4b0e03e4216ac80" target="_blank" rel="noopener">预览地址</a></p>
+</code></pre><h4 id="JavaScript-语言实现"><a href="#JavaScript-语言实现" class="headerlink" title="JavaScript 语言实现"></a>JavaScript 语言实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function bubbleSort(array) &#123;</span><br><span class="line">var length = array.length,</span><br><span class="line">i,</span><br><span class="line">j,</span><br><span class="line">temp;</span><br><span class="line">for (i = length - 1; 0 &lt; i; i--) &#123;</span><br><span class="line">for (j = 0; j &lt; i; j++) &#123;</span><br><span class="line">        if (array[j] &gt; array[j + 1]) &#123;</span><br><span class="line">        temp = array[j];</span><br><span class="line">        array[j] = array[j + 1];</span><br><span class="line">        array[j + 1] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h4><p><a href="https://www.processon.com/view/link/5ce3a2f1e4b0e03e4216ac80" target="_blank" rel="noopener">预览地址</a></p>
 <h3 id="常见排序算法-选择排序-Selection-Sort"><a href="#常见排序算法-选择排序-Selection-Sort" class="headerlink" title="常见排序算法 - 选择排序 (Selection Sort)"></a>常见排序算法 - 选择排序 (Selection Sort)</h3><h4 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h4><p>选择排序（Selection Sort）是一种简单直观的排序算法。它的工作原理如下，首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
 <p>选择排序的主要优点与数据移动有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对n个元素的序列进行排序总共进行至多n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。</p>
 <h5 id="实例分析：-1"><a href="#实例分析：-1" class="headerlink" title="实例分析："></a>实例分析：</h5><p>以数组 arr = [8, 5, 2, 6, 9, 3, 1, 4, 0, 7] 为例，先直观看一下每一步的变化，后面再介绍细节<br>第一次从数组 [8, 5, 2, 6, 9, 3, 1, 4, 0, 7] 中找到最小的数 0，放到数组的最前面（与第一个元素进行交换）：</p>
