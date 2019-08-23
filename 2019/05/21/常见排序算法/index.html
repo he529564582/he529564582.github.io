@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="常见排序算法 - 冒泡排序 (Bubble Sort)冒泡排序算法的流程如下：1、比较相邻的元素。如果第一个比第二个大，就交换他们两个。2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。3、针对所有的元素重复以上的步骤，除了最后一个。4、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 实例分析：以数组 arr = [5,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-23T14:15:17.307Z">
+<meta property="og:updated_time" content="2019-08-23T14:15:44.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见排序算法">
 <meta name="twitter:description" content="常见排序算法 - 冒泡排序 (Bubble Sort)冒泡排序算法的流程如下：1、比较相邻的元素。如果第一个比第二个大，就交换他们两个。2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。3、针对所有的元素重复以上的步骤，除了最后一个。4、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 实例分析：以数组 arr = [5,">
@@ -414,30 +414,8 @@
                                     ↓
 0   1   2   3   4   5   6   7   8   9
                                     ↑
-</code></pre><h4 id="JavaScript-语言实现-1"><a href="#JavaScript-语言实现-1" class="headerlink" title="JavaScript 语言实现"></a>JavaScript 语言实现</h4><pre><code>function selectionSort(array) {
-var length = array.length,
-i,
-j,
-minIndex,
-minValue,
-temp;
-for (i = 0; i &lt; length - 1; i++) {
-minIndex = i;
-minValue = array[minIndex];
-for (j = i + 1; j &lt; length; j++) {
-if (array[j] &lt; minValue) {
-        minIndex = j;
-        minValue = array[minIndex];
-}
-}
-// 交换位置
-temp = array[i];
-array[i] = minValue;
-array[minIndex] = temp;
-}
-return array
-}
-</code></pre><h4 id="流程图-1"><a href="#流程图-1" class="headerlink" title="流程图"></a>流程图</h4><p><a href="https://www.processon.com/view/link/5ce3b60de4b0f34230d661f4" target="_blank" rel="noopener">预览地址</a></p>
+</code></pre><h4 id="JavaScript-语言实现-1"><a href="#JavaScript-语言实现-1" class="headerlink" title="JavaScript 语言实现"></a>JavaScript 语言实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function selectionSort(array) &#123;</span><br><span class="line">var length = array.length,</span><br><span class="line">i,</span><br><span class="line">j,</span><br><span class="line">minIndex,</span><br><span class="line">minValue,</span><br><span class="line">temp;</span><br><span class="line">for (i = 0; i &lt; length - 1; i++) &#123;</span><br><span class="line">minIndex = i;</span><br><span class="line">minValue = array[minIndex];</span><br><span class="line">for (j = i + 1; j &lt; length; j++) &#123;</span><br><span class="line">if (array[j] &lt; minValue) &#123;</span><br><span class="line">        minIndex = j;</span><br><span class="line">        minValue = array[minIndex];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 交换位置</span><br><span class="line">temp = array[i];</span><br><span class="line">array[i] = minValue;</span><br><span class="line">array[minIndex] = temp;</span><br><span class="line">&#125;</span><br><span class="line">return array</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="流程图-1"><a href="#流程图-1" class="headerlink" title="流程图"></a>流程图</h4><p><a href="https://www.processon.com/view/link/5ce3b60de4b0f34230d661f4" target="_blank" rel="noopener">预览地址</a></p>
 
       
     </div>
