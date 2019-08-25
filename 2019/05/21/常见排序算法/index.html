@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="常见排序算法 - 冒泡排序 (Bubble Sort)冒泡排序算法的流程如下：1、比较相邻的元素。如果第一个比第二个大，就交换他们两个。2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。3、针对所有的元素重复以上的步骤，除了最后一个。4、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 实例分析：以数组 arr = [5,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-25T12:51:50.781Z">
+<meta property="og:updated_time" content="2019-08-25T12:52:18.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见排序算法">
 <meta name="twitter:description" content="常见排序算法 - 冒泡排序 (Bubble Sort)冒泡排序算法的流程如下：1、比较相邻的元素。如果第一个比第二个大，就交换他们两个。2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。3、针对所有的元素重复以上的步骤，除了最后一个。4、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 实例分析：以数组 arr = [5,">
@@ -342,12 +342,8 @@
 
       
         <h2 id="常见排序算法-冒泡排序-Bubble-Sort"><a href="#常见排序算法-冒泡排序-Bubble-Sort" class="headerlink" title="常见排序算法 - 冒泡排序 (Bubble Sort)"></a>常见排序算法 - 冒泡排序 (Bubble Sort)</h2><h4 id="冒泡排序算法的流程如下："><a href="#冒泡排序算法的流程如下：" class="headerlink" title="冒泡排序算法的流程如下："></a>冒泡排序算法的流程如下：</h4><p>1、比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>2、对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。<br>3、针对所有的元素重复以上的步骤，除了最后一个。<br>4、持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
-<h4 id="实例分析："><a href="#实例分析：" class="headerlink" title="实例分析："></a>实例分析：</h4><p>以数组 arr = [5, 1, 4, 2, 8] 为例说明，加粗的数字表示每次循环要比较的两个数字：<br>第一次外循环</p>
-<pre><code>( 5 1 4 2 8 ) → ( 1 5 4 2 8 )， 5 &gt; 1 交换位置
-( 1 5 4 2 8 ) → ( 1 4 5 2 8 )， 5 &gt; 4 交换位置
-( 1 4 5 2 8 ) → ( 1 4 2 5 8 )， 5 &gt; 2 交换位置
-( 1 4 2 5 8 ) → ( 1 4 2 5 8 )， 5 &lt; 8 位置不变
-</code></pre><p>第二次外循环（除开最后一个元素8，对剩余的序列）</p>
+<h4 id="实例分析："><a href="#实例分析：" class="headerlink" title="实例分析："></a>实例分析：</h4><p>以数组 arr = [5, 1, 4, 2, 8] 为例说明，加粗的数字表示每次循环要比较的两个数字：<br>第一次外循环<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">( 5 1 4 2 8 ) → ( 1 5 4 2 8 )， 5 &gt; 1 交换位置</span><br><span class="line">( 1 5 4 2 8 ) → ( 1 4 5 2 8 )， 5 &gt; 4 交换位置</span><br><span class="line">( 1 4 5 2 8 ) → ( 1 4 2 5 8 )， 5 &gt; 2 交换位置</span><br><span class="line">( 1 4 2 5 8 ) → ( 1 4 2 5 8 )， 5 &lt; 8 位置不变</span><br></pre></td></tr></table></figure></p>
+<p>第二次外循环（除开最后一个元素8，对剩余的序列）</p>
 <pre><code>( 1 4 2 5 8 ) → ( 1 4 2 5 8 )， 1 &lt; 4 位置不变
 ( 1 4 2 5 8 ) → ( 1 2 4 5 8 )， 4 &gt; 2 交换位置
 ( 1 2 4 5 8 ) → ( 1 2 4 5 8 )， 4 &lt; 5 位置不变
