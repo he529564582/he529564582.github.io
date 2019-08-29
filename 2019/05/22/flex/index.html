@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="flex在学习flex只是之前，平时的demo中使用到的传统布局主要有以下几种： 1、normal flow 文档流、正常流2、float + clear 清除浮动3、position relative + absolute 相对 + 绝对定位4、display inline-block 横向布局5、负 margin 扩大宽度、产生位移    这些传统的布局方式虽然可以满足我们的很多需求，但是也并">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-29T14:33:30.518Z">
+<meta property="og:updated_time" content="2019-08-29T14:34:02.590Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flex">
 <meta name="twitter:description" content="flex在学习flex只是之前，平时的demo中使用到的传统布局主要有以下几种： 1、normal flow 文档流、正常流2、float + clear 清除浮动3、position relative + absolute 相对 + 绝对定位4、display inline-block 横向布局5、负 margin 扩大宽度、产生位移    这些传统的布局方式虽然可以满足我们的很多需求，但是也并">
@@ -377,13 +377,8 @@
 <h4 id="实现手机布局"><a href="#实现手机布局" class="headerlink" title="实现手机布局"></a>实现手机布局</h4><p>如果内容被修剪，需要浏览器显示滚动条，以便查看剩余内容，可以使用 </p>
 <p>over-flow:auto;<br>实现手机上中下布局：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.content&#123;</span><br><span class="line">    height:100vh;</span><br><span class="line">    display:flex;</span><br><span class="line">    flex-direction:column;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>实现电脑左中右布局<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.content&gt;aside&#123;width:120px;&#125;</span><br><span class="line">.content&gt;main&#123;height:400px;flex:1&#125;</span><br><span class="line">.content&gt;nav&#123;width:100px;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>完美居中</p>
-<pre><code>.parent{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}      
-</code></pre>
+<p>完美居中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.parent&#123;</span><br><span class="line">    display:flex;</span><br><span class="line">    justify-content:center;</span><br><span class="line">    align-items:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
