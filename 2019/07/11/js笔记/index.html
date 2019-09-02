@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="he&#39;blog">
 <meta property="og:description" content="ES6笔记####let 命令1234所声明的变量，只在let命令所在的代码块内有不存在变量提升暂时性死区 不允许重复声明 ####const 命令123const声明一个只读的常量。一旦声明，常量的值就不能改变。const的作用域与let命令相同：只在声明所在的块级作用域内有效。暂时性死区 ES6 声明变量的六种方法 1var  function let const import class #">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-02T14:00:52.098Z">
+<meta property="og:updated_time" content="2019-09-02T14:01:17.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js笔记">
 <meta name="twitter:description" content="ES6笔记####let 命令1234所声明的变量，只在let命令所在的代码块内有不存在变量提升暂时性死区 不允许重复声明 ####const 命令123const声明一个只读的常量。一旦声明，常量的值就不能改变。const的作用域与let命令相同：只在声明所在的块级作用域内有效。暂时性死区 ES6 声明变量的六种方法 1var  function let const import class #">
@@ -357,7 +357,7 @@
 <li>不管是严格模式，还是普通模式，new Function(‘return this’)()，总是会返回全局对象。但是，如果浏览器用了 CSP（Content Security Policy，内容安全策略），那么eval、new Function这些方法都可能无法使用</li>
 </ul>
 <h4 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Math.trunc()方法用于去除一个数的小数部分，返回整数部分</span><br><span class="line">Math.trunc(4.1) // 4</span><br><span class="line">Math.trunc(4.9) // 4</span><br><span class="line">Math.trunc(-4.1) // -4</span><br><span class="line">Math.trunc(-4.9) // -4</span><br><span class="line">Math.trunc(-0.1234) // -0</span><br></pre></td></tr></table></figure>
-<p>Math.sign()<br>Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值，会先将其转换为数值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Math.sign()</span><br><span class="line">Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值，会先将其转换为数值。</span><br></pre></td></tr></table></figure>
 <p>它会返回五种值。</p>
 <p>参数为正数，返回+1；<br>参数为负数，返回-1；<br>参数为 0，返回0；<br>参数为-0，返回-0;<br>其他值，返回NaN。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Math.sign(-5) // -1</span><br><span class="line">Math.sign(5) // +1</span><br><span class="line">Math.sign(0) // +0</span><br><span class="line">Math.sign(-0) // -0</span><br><span class="line">Math.sign(NaN) // NaN</span><br></pre></td></tr></table></figure></p>
 <p>Math.cbrt()<br>Math.cbrt方法用于计算一个数的立方根。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Math.cbrt(-1) // -1</span><br><span class="line">Math.cbrt(0)  // 0</span><br><span class="line">Math.cbrt(1)  // 1</span><br><span class="line">Math.cbrt(2)  // 1.2599210498948734</span><br></pre></td></tr></table></figure></p>
